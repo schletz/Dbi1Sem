@@ -57,6 +57,4 @@ Nach dem Ausführen der Befehle (F5) ist der Benutzer SchulDb angelegt und kann 
 
 Nach dem Klick auf Test und Save steht die neue Verbindung nun in der Palette Connections zur Verfügung. Ein Klick auf die Verbindung öffnet das Abfragefenster.
 
-<a href="/pluginfile.php/129702/mod_label/intro/sqlDeveloperConnection.png">
-<img src="/pluginfile.php/129702/mod_label/intro/sqlDeveloperConnection.png" style="width:50%;">
-</a>
+![](sqlDeveloperConnection.png)
