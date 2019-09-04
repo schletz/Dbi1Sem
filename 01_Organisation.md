@@ -19,7 +19,7 @@ Schulintern muss der DNS Server automatisch bezogen werden. Wenn Sie z. B. den G
 
 Ihr Homeverzeichnis (P Laufwerk in den Laboren) können Sie unter `ausbildung\studierende\home\(account)` erreichen.
 
-**Kopierer:**
+## Kopierer ##
 Im Explorer `\\print.htl-wien5.schule` eingeben.  
 User: htl-wien5\abc123456 (abc123456 steht für den User)  
 Passwort  
