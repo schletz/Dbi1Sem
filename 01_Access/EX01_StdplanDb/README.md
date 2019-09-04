@@ -6,4 +6,7 @@
    Spalten, die dafür geeignet sind. Falls nicht, legen Sie einen AutoWert mit dem Spaltennamen **ID** an.
 1. Erstellen Sie Beziehungen zwischen den Tabellen. Aktivieren Sie dabei die Option 
    *Referentielle Integrität*
-1. Kopieren Sie die Daten mittels `STRG+C` und `STRG+V` in die erstellte Tabelle.
+1. Kopieren Sie die Daten von der CSV Datei in die Access-Tabelle, indem Sie die CSV Datei in einem
+   Editor öffnen. Danach kopieren Sie alles mittels `STRG+C` und `STRG+V` in die erstellte Tabelle.
+   Da das Trennzeichen der Tabulator ist, wird dies als Spaltentrennung erkannt.
+   
