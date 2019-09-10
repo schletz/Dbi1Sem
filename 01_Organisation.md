@@ -9,6 +9,10 @@ Unsere Schule hat eine Vereinbarung mit Microsoft, wodurch Sie Microsoft Office 
 
 Nun können Sie sich auf <a href="https://www.office.com" target="_blank">[office.com]</a> den Button *anmelden* anklicken. Geben Sie dann Ihre Schul Mailadresse und das Kennwort Ihres Schulaccounts ein. Danach können Sie die Installationsdateien von Office 365 laden.
 
+Die Kennwortrichtlinie von Microsoft verhindert allerdings ein Anmelden mit dem Initialisierungspasswort (nur Ziffern).
+Bitte ändern Sie daher das Kennwort auf https://mail.spengergasse.at (Zahnradsymbol - Optionen - Mein Konto)
+auf ein Kennwort mit mindestens 8 Stellen und mindestens einem Großbuchstaben, Kleinbuchstaben und einer Ziffer.
+
 ## VPN
 Im Browser kann unter <a href="https://gate.spengergasse.at" target="_blank">[gate spengergasse.at]</a> nach einem Login die Software AnyConnect VPN geladen werden. Nach der Installation kann der Cisco AnyConnect Client gestartet und sich mit *gate.spengergasse.at* verbunden werden. **Hinweis: Die Verbindung ist nur von außerhalb des Schulnetzes aus möglich.**
 
@@ -19,7 +23,7 @@ Schulintern muss der DNS Server automatisch bezogen werden. Wenn Sie z. B. den G
 
 Ihr Homeverzeichnis (P Laufwerk in den Laboren) können Sie unter `ausbildung\studierende\home\(account)` erreichen.
 
-## Kopierer ##
+## Kopierer
 Im Explorer `\\print.htl-wien5.schule` eingeben.  
 User: htl-wien5\abc123456 (abc123456 steht für den User)  
 Passwort  
