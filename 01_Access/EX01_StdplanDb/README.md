@@ -10,3 +10,8 @@
    Editor öffnen. Danach kopieren Sie alles mittels `STRG+C` und `STRG+V` in die erstellte Tabelle.
    Da das Trennzeichen der Tabulator ist, wird dies als Spaltentrennung erkannt.
    
+## Hinweise
+- Die Datentypen und längen müssen exakt ident sein, wenn Sie eine Beziehung zwischen den Spalten herstellen.
+- Der Datensatz in der Stundenplantabelle mit dem Raum *~B3.08MF~B5.09* wird ein Problem verursachen:
+  Dieser Raum ist nicht in der Raumtabelle eingetragen. Beheben Sie dieses Problem durch Löschen des
+  Datensatzes in der Stundenplan Tabelle.
