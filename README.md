@@ -3,7 +3,7 @@
 ![](lehrstoff.png)
 
 ## Synchronisieren des Repositories in einen Ordner
-1. Laden Sie von https://git-scm.com/downloads die Git Tools (Button *Download 2.20.1 for WIindows*)
+1. Laden Sie von https://git-scm.com/downloads die Git Tools (Button *Download 2.23.0 for Windows*)
     herunter. Es können alle Standardeinstellungen belassen werden, bei *Adjusting your PATH environment*
     muss aber der mittlere Punkt (*Git from the command line [...]*) ausgewählt sein.
 2. Lege einen Ordner auf der Festplatte an, wo Sie die Daten speichern möchten 
