@@ -15,7 +15,7 @@
     (z. B. *C:\Schule\DBI\Examples*) ausgeführt werden:
 ```bash {.line-numbers}
 git init
-git remote add origin https://github.com/schletz/Pos3xhif.git
+git remote add origin https://github.com/schletz/Dbi1Sem.git
 ```
 
 4. Legen Sie in diesem Ordner eine Datei *syncGit.cmd* mit folgenden Befehlen an. 
