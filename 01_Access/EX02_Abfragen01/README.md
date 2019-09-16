@@ -1,4 +1,6 @@
 # Übung zu Abfragen
+![](datenmodell_schuldb.png)
+
 ## Abfragen aus einer Tabelle
 Lösen Sie die folgenden Abfragebeispiele auf Basis der Datenbank *schuldb1_ablecture3.accdb*. Speichern
 Sie diese mit dem Titel EX02_(Laufnummer). Falls nicht ansderes angegeben ist, geben Sie alle Felder
