@@ -11,9 +11,8 @@ Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriteri
 1. Welche Klassen sind Fachschulklassen (enden mit FID)? Sortieren Sie nach der Klassenbezeichnung.
 1. Welche Klassen gehören zum 1. Jahrgang (beginnen mit 1). Sortieren Sie nach der Klassenbezeichnung.
 1. Welche Klassen hat Griesmayer (GT) als Klassenvorstand.
-1. Welche Schuljahre beginnen im Jahr 2009? Sehen Sie sich zuerst die Tabelle *Schuljahre* an und erkennen
-   Sie das Muster in *Sja_Nr*. Geben Sie dann einen geeigneten Filter an. Sie können auch die Access 
-   Funktion Jahr() verwenden, um das Jahr herauszufinden.
+1. Welche Schuljahre beginnen im Jahr 2009? Verwenden Sie dafür die Funktion *Year()*, die Sie auf die Spalte
+   *Sja_Datumvon* anwenden. Filtern Sie diese berechnete Spalte dann nach den Wert 2009.
 1. Wie lange dauern die verschiedenen Schuljahre? Geben Sie die alle Spalten aus Schuljahre und eine
    berechnete Spalte *AnzTage* aus. Subtrahieren Sie hierfür einfach Datumswerte Werte, die Differenz
    wird in Tagen geliefert.
