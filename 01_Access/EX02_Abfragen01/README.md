@@ -23,7 +23,7 @@ Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriteri
    Klassenbezeichnung. Sortieren Sie zuerst nach *S_Zuname* und dann nach *S_Vorname*.
 1. Welche Schüler der Abteilung HIF (haben HIF im Klassennamen) haben den Vornamen Michael oder Alexander.
    Verwenden Sie für die Filterung des Vornamens die Funktion *IN*.
-1. Gibt es Lehrer, bei denen der Wert von *L_Stundegehalten* größer als der in *L_Stundegewuenscht* ist?
+1. Gibt es Lehrer, bei denen der Wert von *L_Stundengehalten* größer als der in *L_Stundegewuenscht* ist?
    Ignorieren Sie dabei Werte, wo *L_Stundegewuenscht* NULL ist.
    Hinweis: Erstellen Sie eine Spalte, die die Differenz zwischen den Werten berechnet. Filtern Sie dann
    nach den Datensätzen, die kleiner als 0 sind.
