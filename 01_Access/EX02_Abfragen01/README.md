@@ -19,7 +19,7 @@ Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriteri
 1. Welche Staaten sind kein EU Land? Diese Staaten haben in der Tabelle *Staaten* den Wert NULL in der
    Spalte *Sta_Euland*.
 1. Welche Lehrer sind männlich (*L_Geschlecht* ist 1) und haben ein Gehalt von über 700 Euro?
-1. Welche Schüler besuchen Biomedizin-und Gesundheitstechnik? Diese Schüler haben *HBG* in ihrer
+1. Welche Schüler besuchen Biomedizin- und Gesundheitstechnik? Diese Schüler haben *HBG* in ihrer
    Klassenbezeichnung. Sortieren Sie zuerst nach *S_Zuname* und dann nach *S_Vorname*.
 1. Welche Schüler der Abteilung HIF (haben HIF im Klassennamen) haben den Vornamen Michael oder Alexander.
    Verwenden Sie für die Filterung des Vornamens die Funktion *IN*.
