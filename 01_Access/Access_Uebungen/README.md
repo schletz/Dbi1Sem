@@ -1,6 +1,6 @@
 # Übungen zu Microsoft Access
 
-## 1. Erstellen einer Stundenplan Datenbank
+## 1. Import: Erstellen einer Stundenplan Datenbank
 
 1. Erstellen Sie für jede csv Datei des Archives *Stdplan20180906.zip* eine Access Tabelle. Achten 
    Sie dabei auf die Spaltenbezeichnungen, den verwendeten Datentyp und ob eine Eingabe erforderlich ist.
