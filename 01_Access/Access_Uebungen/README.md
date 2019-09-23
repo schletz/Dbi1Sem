@@ -51,7 +51,7 @@ Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriteri
 ## 3. Abfragen aus mehreren Tabellen (INNER JOIN, basierend auf *schuldb1_ablecture3.accdb*)
 
 1. In welcher Abteilung ist der Lehrer Bruckner der Abteilungsvorstand. Geben Sie alle Spalten aus
-   der Abteiöungstabelle aus, filtern aber nach *L_Zuname*.
+   der Abteilungstabelle aus, filtern aber nach *L_Zuname*.
 1. In welchen Klassen (*K_Nr*, *K_jahrsem* ausgeben) sind Schüler, die aus den PLZ Gebieten 1210 oder 1220 kommen?
 1. Geben Sie alle Klassen (nur Spalte *K_Nr*) mit dem Langnamen (*Abt_Name*) der Abteilung aus.
 1. Geben Sie alle Spalten aus der Tabelle Abteilungen mit dem Namen (*L_Zuname* und *L_Vorname*) des AV (Abt_Leiter) aus.
