@@ -66,3 +66,14 @@ Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriteri
 1. Geben Sie alle Klassen samt Beginndatum und Endedatum aus. Falls *K_Datumvon* bzw. *K_Datumbis* leer ist, verwenden Sie die Spalten aus dem Schuljahr (*Sja_Datumvon* und *Sja_Datumbis*).
    Hinweis: Mit *Nz(Spalte1, Spalte2)* können Sie die erste Spalte, die nicht NULL ist, zurückgeliefert bekommen.
    
+## 4. Abfragen aus mehreren Tabellen (OUTER JOIN, basierend auf *schuldb1_ablecture3.accdb*)
+1. Zeigen Sie aus der Tabelle *Lehrer* den Lehrernamen mit dem Text aus *Ges_Lehrerlehrerin* (Tabelle *Geschlecht*) an. Setzen Sie diese Aufgabe mit INNER oder OUTER JOIN um. Gibt es Unterschiede bei der Ausgabe
+   zwischen den Abfragen? Begründen Sie warum (oder warum nicht)?
+1. Welche Klassen haben keine Schüler? Geben Sie *K_Nr* und *K_Jahrsem* aus.
+1. Zeigen Sie alle Lehrer (Kürzel, Vorname, Zuname) an. Wenn ein Lehrer Klassenvorstand ist zeigen Sie den Abteilungsleiter dieser Klasse (Vor- und Zuname) an.
+1. Welche Lehrer sind zwar Klassenvorstand, nicht aber Abteilungsvorstand (*Abt_Leiter*)?
+1. Welche Religionsbekenntnisse wurden nie einem Schüler zugewiesen? Geben Sie alle Spalten aus *Religionen* aus.
+1. Kommen in der Spalte *K_Vorstand* Werte vor, die nicht in *L_Nr* der Tabelle *Lehrer* vorkommen? Geben Sie *K_Vorstand* aus. Überlegen Sie sich zuerst das Ergebnis 
+   und beweisen Sie dies dann mit Hilfe einer Abfrage.
+
+
