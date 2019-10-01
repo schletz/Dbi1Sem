@@ -77,7 +77,7 @@ Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriteri
    und beweisen Sie dies dann mit Hilfe einer Abfrage.
 
 
-## 5. Abfragen mit Gruppierungen (GROUP BY, basierend auf *schuldb1_ablecture3.accdb*))
+## 5. Abfragen mit Gruppierungen (GROUP BY, basierend auf *schuldb1_ablecture3.accdb*)
 1. Ermitteln Sie die Anzahl der Klassen pro Schuljahr. Ausgabe: *K_Jahrsem*, Anzahl der Klassen
 1. Ermitteln Sie die Anzahl der Klassen pro Schuljahr, allerdings sollen auch Schuljahre ohne Klassen mit
    der Anzahl 0 ausgegeben werden. Ausgabe: *Sja_Nr*, Anzahl der Klassen
