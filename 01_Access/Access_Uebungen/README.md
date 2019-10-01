@@ -23,7 +23,7 @@
 ![](datenmodell_schuldb.png)
 
 Lösen Sie die folgenden Abfragebeispiele auf Basis der Datenbank *schuldb1_ablecture3.accdb*. Speichern
-Sie diese mit dem Titel EX0x_(Laufnummer) (x ist das Kapitel). Falls nicht ansderes angegeben ist, geben Sie alle Felder
+Sie diese mit dem Titel EX0x_(Laufnummer) (x ist das Kapitel). Falls nichts Anderes angegeben ist, geben Sie alle Felder
 der Tabelle ohne Sortierung aus.
 
 Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriterien eingeben zu können.
@@ -77,3 +77,21 @@ Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriteri
    und beweisen Sie dies dann mit Hilfe einer Abfrage.
 
 
+## 5. Abfragen mit Gruppierungen (GROUP BY, basierend auf *schuldb1_ablecture3.accdb*))
+1. Ermitteln Sie die Anzahl der Klassen pro Schuljahr. Ausgabe: *K_Jahrsem*, Anzahl der Klassen
+1. Ermitteln Sie die Anzahl der Klassen pro Schuljahr, allerdings sollen auch Schuljahre ohne Klassen mit
+   der Anzahl 0 ausgegeben werden. Ausgabe: *Sja_Nr*, Anzahl der Klassen
+1. Geben Sie die Anzahl der Schüler pro Klasse aus. Klassen mit 0 Schüler sollen auch mit der Anzahl 0
+   aufscheinen.
+1. Ermitteln Sie pro Postleitzahl die Anzahl der männlichen Schüler (*S_Geschlecht* ist 1). Geben Sie *S_Postleitzahl* und die 
+   Anzahl aus.
+1. Verwenden Sie die vorige Abfrage in einer neuen Abfrage, indem Sie die vorige Abfrage als *EX05_04*
+   speichern und wie eine Tabelle in eine neue Abfrage hineinziehen. Beantworten Sie dabei folgende Frage: Wie viele männliche
+   Schüler gibt es höchstens in einem PLZ Gebiet. Ausgabe: Anzahl.
+1. Ermitteln Sie pro Klasse den Zunamen des ersten und letzten Schülers auf der Schülerliste sowie das 
+   Geburtsdatum des jüngsten und ältesten Schülers. Hinweis: *MIN()* und *MAX()* funktionieren auch bei Zeichenketten.
+1. An welchen Tagen wurden mehrere Personen geboren, sind also mehrfach bei *S_Gebdatum* vergeben? Ausgabe:
+   *S_Gebdatum* und Anzahl der Personen.
+1. Geben Sie pro Klasse und Geschlecht die Anzahl der Personen aus.
+1. Von wie vielen Klassen ist ein Lehrer der Klassenvorstand? Geben Sie *L_Nr*, *L_Vorname* und *L_Zuname* aus.
+   Ist ein Lehrer kein Klassenvorstand, geben Sie 0 aus.
