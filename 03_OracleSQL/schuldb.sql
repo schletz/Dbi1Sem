@@ -1085,6 +1085,8 @@ ADD CONSTRAINT fk_schueler_klassen
   FOREIGN KEY (S_Klasse)
   REFERENCES KLASSEN(K_NR);  
 
+COMMIT;
+
 -- Die Kontrollausgaben erzeugen 
 SELECT COUNT(*) AS SchuelerAnzahl FROM SCHUELER;
 SELECT COUNT(*) AS LehrerAnzahl FROM LEHRER;
