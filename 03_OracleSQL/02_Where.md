@@ -163,3 +163,9 @@ FROM LEHRER
 WHERE 14*L_GEHALT > 9000
 ORDER BY L_GEHALT DESC;
 ```
+
+## Übung
+Schreiben Sie die Übung des Punktes "Abfragen aus einer Tabelle (basierend auf schuldb1_ablecture3.accdb)"
+unter https://github.com/schletz/Dbi1Sem/tree/master/01_Access/Access_Uebungen als SQL Anweisungen in
+SQL Developer.
+
