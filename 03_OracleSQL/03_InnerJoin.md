@@ -5,7 +5,7 @@
 Ausgehend vom Dump der Schuldatenbank (https://raw.githubusercontent.com/schletz/Dbi1Sem/master/03_OracleSQL/schuldb.sql)
 werden folgende Beispiele zum Thema WHERE in SQL Developer gelöst.
 
-## Liste alle Schüler mit Klasse und Abteilung
+## Liste alle Schüler mit Klasse und Abteilung der Abteilung 2
 
 ![](innerJoin01.png)
 
