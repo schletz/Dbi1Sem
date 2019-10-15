@@ -22,7 +22,6 @@ WHERE K_Abteilung = 2;
 SELECT s.S_Nr, s.S_ZUNAME, s.S_VORNAME, k.K_NR, a.ABT_NAME
 FROM Schueler s INNER JOIN Klassen k ON (s.S_Klasse = k.K_Nr)
                 INNER JOIN Abteilungen a ON (k.K_ABTEILUNG = a.ABT_ID)
-WHERE K_Abteilung = 2;
 ```
 
 ## Liste alle Klassen mit KV und AV auf.
