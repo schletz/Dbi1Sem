@@ -27,7 +27,7 @@ FROM Schueler s INNER JOIN Klassen k ON (s.S_Klasse = k.K_Nr)
 ## Liste alle Klassen mit KV und AV auf.
 Besonderheit: Lehrer wird 2x verwendet, deshalb verwenden wir l für den KV und l2 für den AV.
 
-![](innerJoin03.png)
+![](innerJoin03a.png)
 
 ```sql
 SELECT k.K_NR, l.L_ZUNAME AS KVZuname, l.L_VORNAME AS KVVorname,
