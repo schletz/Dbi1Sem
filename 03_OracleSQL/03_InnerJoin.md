@@ -3,6 +3,8 @@
 Ausgehend vom Dump der Schuldatenbank (https://raw.githubusercontent.com/schletz/Dbi1Sem/master/03_OracleSQL/schuldb.sql)
 werden folgende Beispiele zum Thema WHERE in SQL Developer gelöst.
 
+![](innerJoin.png)
+
 ```sql
 -- Liste alle Schüler mit Klasse und Abteilung
 SELECT s.S_Nr, s.S_ZUNAME, s.S_VORNAME, k.K_NR, k.K_ABTEILUNG
