@@ -32,6 +32,6 @@ FROM Klassen k INNER JOIN Lehrer l ON (k.K_VORSTAND = l.L_NR);
 
 ## Übung
 Schreiben Sie die Übung des Punktes "Abfragen aus mehreren Tabellen (INNER JOIN, basierend auf schuldb1_ablecture3.accdb)"
-unter https://github.com/schletz/Dbi1Sem/tree/master/01_Access/Access_Uebungen als SQL Anweisungen in
+unter https://github.com/schletz/Dbi1Sem/tree/master/01_Access/Access_Uebungen#3-abfragen-aus-mehreren-tabellen-inner-join-basierend-auf-schuldb1_ablecture3accdb als SQL Anweisungen in
 SQL Developer.
 
