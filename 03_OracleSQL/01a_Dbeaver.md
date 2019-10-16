@@ -15,7 +15,7 @@ Zum Verbinden müssen wie in SQL Developer die Verbindungsdaten eingegeben werde
 - Username: *SchulDb* (oder *System*, falls noch kein User existiert)
 - Passwort: *oracle*
 
-![](dbeaver02.png)
+![](images/dbeaver02.png)
 
 Da Oracle den JDBC Treiber nicht ohne Login zum Download anbietet, muss er nach dem Klicken auf Test
 Connection mittels Add JARs geladen werden. Die Dafür benötigte Datei *ojdbc7.jar* ist in diesem Ordner
@@ -30,13 +30,13 @@ als Ziel der Abfrage ausgewählt ist. Sonst bekommen Sie den Fehler *table or vi
 EInzelne Abfragen werden mit *STRG* + *ENTER* ausgeführt. Möchten Sie das ganze SQL Skript ausführen, so
 klicken Sie auf *Execute Script* oder drücken *ALT* + *X*.
 
-![](dbeaver03.png)
+![](images/dbeaver03.png)
 
 ## Diagramme erzeugen
 Ein nettes Feature ist das automatische Erzeugen von ER Diagrammen von einem Schema aus. Dies erreicht
 man im Kontextmenü des Schemas in der Navigation:
 
-![](dbeaver04.png)
+![](images/dbeaver04.png)
 
 ## Zugriff auf Access Datenbanken
 Sie können auch eine neue Verbindung zu einer Access Datenbank herstellen. Dabei wird beim erstmaligen

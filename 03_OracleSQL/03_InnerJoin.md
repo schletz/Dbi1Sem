@@ -7,7 +7,7 @@ werden folgende Beispiele zum Thema WHERE in SQL Developer gelöst.
 
 ## Liste alle Schüler mit Klasse und Abteilung der Abteilung 2
 
-![](innerJoin01.png)
+![](images/innerJoin01.png)
 
 ```sql
 SELECT s.S_Nr, s.S_ZUNAME, s.S_VORNAME, k.K_NR, k.K_ABTEILUNG
@@ -16,7 +16,7 @@ WHERE K_Abteilung = 2;
 ```
 
 ## Liste alle Schüler mit Klasse und Abteilungsname
-![](innerJoin02.png)
+![](images/innerJoin02.png)
 
 ```sql
 SELECT s.S_Nr, s.S_ZUNAME, s.S_VORNAME, k.K_NR, a.ABT_NAME
@@ -27,7 +27,7 @@ FROM Schueler s INNER JOIN Klassen k ON (s.S_Klasse = k.K_Nr)
 ## Liste alle Klassen mit KV und AV auf.
 Besonderheit: Lehrer wird 2x verwendet, deshalb verwenden wir l für den KV und l2 für den AV.
 
-![](innerJoin03a.png)
+![](images/innerJoin03a.png)
 
 ```sql
 SELECT k.K_NR, l.L_ZUNAME AS KVZuname, l.L_VORNAME AS KVVorname,
