@@ -7,7 +7,7 @@ heruntergeladen werden.
 Durch den Button *New Database Connection* kann der Verbindungsdialog geöffnet werden. In diesem Dialog
 muss Oracle als Datenbanksystem ausgewählt werden:
 
-![](dbeaver01.png)
+![](images/dbeaver01.png)
 
 Zum Verbinden müssen wie in SQL Developer die Verbindungsdaten eingegeben werden:
 - Hostname: *localhost*
