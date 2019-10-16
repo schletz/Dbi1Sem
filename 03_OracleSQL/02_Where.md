@@ -1,6 +1,6 @@
 # WHERE in SQL
 
-Ausgehend vom Dump der Schuldatenbank (https://raw.githubusercontent.com/schletz/Dbi1Sem/master/03_OracleSQL/schuldb.sql)
+Ausgehend vom Dump der Schuldatenbank (https://raw.githubusercontent.com/schletz/Dbi1Sem/master/03_OracleSQL/01_Schuldb.sql)
 werden folgende Beispiele zum Thema WHERE in SQL Developer gelöst.
 
 ```sql
