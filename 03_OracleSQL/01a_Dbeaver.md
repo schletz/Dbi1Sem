@@ -32,11 +32,17 @@ klicken Sie auf *Execute Script* oder drücken *ALT* + *X*.
 
 ![](images/dbeaver03.png)
 
+## Deaktivieren der Tabellen Aliasnamen
+Die Autocomplete Funktion weist Tabellen in der FROM Klausel einen einstelligen Alias zu. Da Oracle jedoch
+die Syntax mit AS im FROM nicht versteht, muss dieses Feature unter *Window* - *Preferences* deaktiviert werden:
+
+![](images/dbeaver5.png)
+
 ## Diagramme erzeugen
 Ein nettes Feature ist das automatische Erzeugen von ER Diagrammen von einem Schema aus. Dies erreicht
 man im Kontextmenü des Schemas in der Navigation:
 
-![](images/dbeaver04.png)
+![](images/dbeaver04a.png)
 
 ## Zugriff auf Access Datenbanken
 Sie können auch eine neue Verbindung zu einer Access Datenbank herstellen. Dabei wird beim erstmaligen
