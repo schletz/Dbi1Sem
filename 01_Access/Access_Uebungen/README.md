@@ -64,7 +64,7 @@ Mit *STRG+F2* können Sie das Kriterienfeld vergrößern um leichter die Kriteri
 1. Geben Sie für jeden Schüler (Ausgabe von *S_Zuname* und *S_Vorname*) aus, wie viele Tage er/sie am Ende des jeweiligen Klassenbesuchs alt ist (Differenz von *S_Gebdat* und *K_Datumbis*)
 1. Gibt es Fälle, wo Schüler und Lehrer den gleichen Vornamen haben? Geben Sie nur den Vornamen aus.
 1. Geben Sie alle Klassen samt Beginndatum und Endedatum aus. Falls *K_Datumvon* bzw. *K_Datumbis* leer ist, verwenden Sie die Spalten aus dem Schuljahr (*Sja_Datumvon* und *Sja_Datumbis*).
-   Hinweis: Mit *Nz(Spalte1, Spalte2)* können Sie die erste Spalte, die nicht NULL ist, zurückgeliefert bekommen.
+   Hinweis: Mit *Nz(Spalte1, Spalte2)* können Sie die erste Spalte, die nicht NULL ist, zurückgeliefert bekommen. In Oracle heißt diese Funktion *COALESCE*.
    
 ## 4. Abfragen aus mehreren Tabellen (OUTER JOIN, basierend auf *schuldb1_ablecture3.accdb*)
 1. Zeigen Sie aus der Tabelle *Lehrer* den Lehrernamen mit dem Text aus *Ges_Lehrerlehrerin* (Tabelle *Geschlecht*) an. Setzen Sie diese Aufgabe mit INNER oder OUTER JOIN um. Gibt es Unterschiede bei der Ausgabe
