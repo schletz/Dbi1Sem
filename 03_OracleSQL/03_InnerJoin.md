@@ -45,6 +45,19 @@ SELECT k.K_NR, l.L_Zuname, l.L_Vorname
 FROM Klassen k INNER JOIN Lehrer l ON (k.K_VORSTAND = l.L_NR);
 ```
 
+## Join mit "vielen" Tabellen
+
+![](images/innerJoin04.png)
+
+```sql
+SELECT 
+	s.S_Nr, s.S_ZUNAME, s.S_VORNAME, k.K_NR, a.ABT_NAME,
+	g.GES_SCHUELERSCHUELERIN, sj.SJA_BEZEICHNUNG
+FROM Schueler s INNER JOIN GESCHLECHTER g ON (s.S_GESCHLECHT = g.GES_ID)
+                INNER JOIN Klassen k      ON (s.S_Klasse = k.K_Nr)
+                INNER JOIN Abteilungen a  ON (k.K_ABTEILUNG = a.ABT_ID)
+                INNER JOIN SCHULJAHRE sj  ON (k.K_JAHRSEM = sj.SJA_NR)
+```
 ## Übung
 Schreiben Sie die Übung des Punktes "Abfragen aus mehreren Tabellen (INNER JOIN, basierend auf schuldb1_ablecture3.accdb)"
 unter https://github.com/schletz/Dbi1Sem/tree/master/01_Access/Access_Uebungen#3-abfragen-aus-mehreren-tabellen-inner-join-basierend-auf-schuldb1_ablecture3accdb als SQL Anweisungen in
