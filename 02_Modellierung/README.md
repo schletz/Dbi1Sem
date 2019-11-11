@@ -1,3 +1,6 @@
+# Moodle Kurs
+https://moodle.spengergasse.at/course/view.php?id=2676
+
 # Installation von erwin Data Modeler
 erwin Data Modeler ist eine Software, mit der Datenmodelle erstellt und in eine beliebige Zieldatenbank übertragen werden kann. In der Academic Edition gelten folgende Limitierungen <a href="https://support.erwin.com/hc/en-us/articles/115001820927-What-is-erwin-Data-Modeler-Academic-Edition-What-are-the-limitations-and-usages-" target="_blank">[1]</a>
 
