@@ -32,14 +32,14 @@
 -- Abteilung 1 und 5 wird nicht ausgegeben, da sie 
 -- keine Klassen hat.
 SELECT *
-FROM `Abteilungen` INNER JOIN `Klassen` 
-   ON (`Abt_ID` = K_Abteilung);
+FROM Abteilungen INNER JOIN Klassen 
+   ON (Abt_ID = K_Abteilung);
 
 -- Diese Abfrage gibt immer alle Abteilungen aus, auch wenn
 -- sie keine Klassen hat.  
 SELECT *
-FROM `Abteilungen` LEFT JOIN `Klassen` 
-   ON (`Abt_ID` = K_Abteilung);
+FROM Abteilungen LEFT JOIN Klassen 
+   ON (Abt_ID = K_Abteilung);
 -- Die Datenbank befüllt alle Felder aus Klassen (K_Nr, ...)
 -- bei Abteilungen ohne Klasse mit NULL.
 
@@ -89,9 +89,9 @@ FROM Klassen INNER JOIN Schueler ON (K_Nr = S_Klasse)
 SELECT *
 FROM Klassen LEFT JOIN Schueler ON (K_Nr = S_Klasse)
              INNER JOIN Staaten ON (S_Staatsbuergerschaft = Sta_Nr);
-
-             
 ```
+             
+
 
 ## Übung
 Lösen Sie die Beispiele auf https://github.com/schletz/Dbi1Sem/tree/master/01_Access/Access_Uebungen#4-abfragen-aus-mehreren-tabellen-outer-join-basierend-auf-schuldb1_ablecture3accdb
