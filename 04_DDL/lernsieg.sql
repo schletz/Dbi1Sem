@@ -1,4 +1,4 @@
--- SQL Script für DBeaver und SQLite
+-- SQL Script fÃ¼r DBeaver und SQLite
 
 -- Umgekehrte Reihenfolge wie bei CREATE TABLE!
 DROP TABLE Rating;
