@@ -15,7 +15,7 @@ HAVING MAX(sm.`Sm_schnee`) > 300
 ORDER BY MAX(sm.`Sm_schnee`) DESC;
 ```
 
-*COUNT(*)* liefert die Anzahl der Datensätze pro Gruppe, während *COUNT(Spalte)* die Anzahl der
+COUNT(*) liefert die Anzahl der Datensätze pro Gruppe, während *COUNT(Spalte)* die Anzahl der
 Datensätze liefert, wo *Spalte* ungleich null ist. Diese Abfrage liefert die Bundesländer, die
 Skigebiete ohne eingetragene Tourismusregion haben.
 ```sql
