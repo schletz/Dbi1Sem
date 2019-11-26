@@ -1,4 +1,6 @@
 # GROUP BY
+
+![](gruppierung.png)
 Auf Basis der Datenbank [https://github.com/schletz/Dbi1Sem/blob/master/01_Access/Access_Uebungen/schnee.accdb](Schnee.accdb) 
 werden folgende Abfragen durchgeführt.
 
