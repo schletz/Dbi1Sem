@@ -1,5 +1,6 @@
 # GROUP BY
-Auf Basis der Datenbank "Schneemodell.mdb" werden folgende Abfragen durchgeführt.
+Auf Basis der Datenbank [https://github.com/schletz/Dbi1Sem/blob/master/01_Access/Access_Uebungen/schnee.accdb](Schnee.accdb) 
+werden folgende Abfragen durchgeführt.
 
 Liefert alle Schigebiete des Bundeslandes Kärnten, dessen maximal gemessene Schneehöhe über 300 cm ist.
 *WHERE* filtert vor der Gruppierung, *HAVING* danach.
@@ -14,8 +15,8 @@ HAVING MAX(sm.`Sm_schnee`) > 300
 ORDER BY MAX(sm.`Sm_schnee`) DESC;
 ```
 
-COUNT(*) liefert die Anzahl der Datensätze pro Gruppe, während COUNT(Spalte) die Anzahl der
-Datensätze liefert, wo Spalte ungleich null ist. Diese Abfrage liefert die Bundesländer, die
+*COUNT(*)* liefert die Anzahl der Datensätze pro Gruppe, während *COUNT(Spalte)* die Anzahl der
+Datensätze liefert, wo *Spalte* ungleich null ist. Diese Abfrage liefert die Bundesländer, die
 Skigebiete ohne eingetragene Tourismusregion haben.
 ```sql
 SELECT s.`S_Bundesland`, COUNT(*), COUNT(s.`Tourismusregion`),
@@ -25,7 +26,7 @@ GROUP BY s.`S_Bundesland`
 HAVING COUNT(*) - COUNT(s.`Tourismusregion`) > 0;
 ```
 
-In GROUP BY können auch SQL Funktionen wie YEAR() verwendet werden:
+In *GROUP BY* können auch SQL Funktionen wie YEAR() verwendet werden:
 ```sql
 SELECT YEAR(s.`Sm_DatumZeit`), AVG(s.`Sm_schnee`)
 FROM `Schneemessung` s
