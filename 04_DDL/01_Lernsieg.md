@@ -5,7 +5,7 @@ verschiedenen Kriterien bewerten.
 
 Ein Datenmodell, welches diese Anforderungen (minimal) abdeckt, könnte so aussehen:
 
-![](lernsieg_model.png)
+![](images/lernsieg_model.png)
 
 ## CREATE TABLE Statements
 

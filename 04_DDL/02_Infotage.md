@@ -1,6 +1,6 @@
 # Übung 2: Infotage
 
-![](infotage_model.png)
+![](images/infotage_model.png)
 
 ## CREATE TABLE Statements
 
