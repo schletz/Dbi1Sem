@@ -33,7 +33,7 @@ Danach erfolgt die Konfiguration in DataGrib:
 3. Wähle `net.ucanaccess.jdbc.UcanaccessDriver` als Class
 4. Speichere den Treiber unter Access Driver (oder einem anderen Namen).
 
-![](images/datagrib1.png)
+![](images/datagrib1a.png)
 
 Für den Zugriff wird der Treiber nun verwendet:
 
