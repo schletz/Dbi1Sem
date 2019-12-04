@@ -33,8 +33,11 @@ Danach erfolgt die Konfiguration in DataGrib:
 3. Wähle `net.ucanaccess.jdbc.UcanaccessDriver` als Class
 4. Speichere den Treiber unter Access Driver (oder einem anderen Namen).
 
-![](images/datagrib1a.png)
+![](images/datagrib1b.png)
 
 Für den Zugriff wird der Treiber nun verwendet:
 
 ![](images/datagrib2.png)
+
+Da die Autocompletition immer Anführungszeichen um die Tabellen- und Spaltennamen setzt, muss es dem
+Ausführen des Statements mit *CTRL+R* entfernt werden (ersetze " durch nichts)
