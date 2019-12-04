@@ -67,3 +67,34 @@ Nach der Registrierung können die beliebtesten Produkte von https://account.jet
 geladen werden:
 
 ![](images/jetbrains_download.png)
+
+### Zugriff auf Access
+
+VOn https://stackoverflow.com/questions/36820072/how-do-i-connect-a-ms-access-database-to-jetbrains-datagrip:
+For Future readers this is still very doable (I'm on DataGrip version 208.1.4):
+
+Get [UcanAccess](http://ucanaccess.sourceforge.net/)
+
+1. Download and extract UcanAccess somewhere: pathToUcanAccess
+2. In Datagrip goto add new connection: "Driver And Data source"
+   - this will create a connection "Database Driver -" and a Driver "Database Driver"
+3. Edit the newly created Driver "Database Driver":
+   1. Under Additional Files add:
+      - <pathToUcanAccess>\ucanaccess-4.0.4.jar
+      - <pathToUcanAccess>\lib\commons-lang-2.6.jar
+      - <pathToUcanAccess>\lib\commons-logging-1.1.3.jar
+      - <pathToUcanAccess>\lib\hsqldb.jar
+      - <pathToUcanAccess>\lib\jackcess-2.1.11.jar
+   2. For Dialect select "SQL Driver"
+   3. Hit Apply (this should load the classes from the added files)
+   4. Under the class combo you should now see net.ucanaccess.jdbc.UcanaccessDriver, select it and hit apply again.
+   5. Under Url templates add a new template, for name enter "default" for template enter `jdbc:ucanaccess://{file::identifier.sqlite};newdatabaseversion=V2010`
+   6. Hit apply.
+4. Now edit the database connection "Database Driver -":
+   1. Next to the text box for url, in the drop down select default (or what ever you named the template in step 3.5)
+      - A file select field should replace the previously visible "user" and "password" fields
+   2. In the file selector, select your mdb
+      - the url field should now look like `jdbc:ucanaccess://C:/data/MDBs/myMdbFile.mdb;newdatabaseversion=V2010`
+   3. Hit apply and then ok.
+   
+You should see your Connection popup in the list, double-click to connect, expand it down the tree `("Public \ <unnamed> \ tables")` and you should see your tables.
