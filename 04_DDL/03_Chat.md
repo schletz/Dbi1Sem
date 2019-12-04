@@ -22,6 +22,10 @@ Anweisungen immer *INSERT* Anweisungen vorgegeben, die entweder funktionieren od
 So können Sie die Korrektheit überprüfen.
 
 ```sql
+-- Für SQLite aktivieren wir den Foreigen Key Check. Je nach Datenbankeditor wird die Datenbank
+-- eventuell ohne diese Einstellung angelegt.
+ PRAGMA foreign_keys = ON;
+
 -- *************************************************************************************************
 -- SQL DDL Übung
 -- *************************************************************************************************
