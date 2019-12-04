@@ -10,6 +10,10 @@ Ein Datenmodell, welches diese Anforderungen (minimal) abdeckt, könnte so ausse
 ## CREATE TABLE Statements
 
 ```sql
+-- Für SQLite aktivieren wir den Foreigen Key Check. Je nach Datenbankeditor wird die Datenbank
+-- eventuell ohne diese Einstellung angelegt.
+PRAGMA foreign_keys = ON;
+
 -- SQL Script für DBeaver und SQLite
 
 -- Umgekehrte Reihenfolge wie bei CREATE TABLE!

@@ -5,6 +5,10 @@
 ## CREATE TABLE Statements
 
 ```sql
+-- Für SQLite aktivieren wir den Foreigen Key Check. Je nach Datenbankeditor wird die Datenbank
+-- eventuell ohne diese Einstellung angelegt.
+PRAGMA foreign_keys = ON;
+
 -- SQL Script für DBeaver und SQLite
 DROP TABLE IF EXISTS Task;
 DROP TABLE IF EXISTS Equipment;
