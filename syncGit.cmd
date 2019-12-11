@@ -5,4 +5,3 @@ git add -A
 git commit -a -m "Commit %mydate%"
 git pull origin master --allow-unrelated-histories
 git push origin master
-pause
