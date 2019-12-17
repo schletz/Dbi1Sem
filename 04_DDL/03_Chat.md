@@ -8,11 +8,11 @@ ab:
 ![](images/03_chat_modell.png)
 
 Arbeiten Sie in Oracle, müssen Sie in den INSERT Statements den Datumswert mit der Funktion *TO_DATE()*
-einfügen. Beispiel:
+samt Formatangabe einfügen. Beispiel:
 
 ```sql
 -- Version für SQLite
-INSERT INTO Message VALUES (1, 1, 2, 'Message1', '2019-03-13T08:00:00', NULL);
+INSERT INTO Message VALUES (1, 1, 2, 'Message1', DATETIME('2019-03-13T08:00:00'), NULL);
 -- Version für Oracle
 INSERT INTO Message VALUES (1, 1, 2, 'Message1', TO_DATE('2019-03-13T08:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), NULL);
 ```
@@ -77,19 +77,19 @@ CREATE TABLE Message (
     -- FÜGEN SIE HIER IHRE TABELLENDEFINITION EIN.
 );
 -- Diese INSERT Statements sollen funktionieren
-INSERT INTO Message VALUES (1, 1, 2, 'Message1', '2019-03-13T08:00:00', NULL);
-INSERT INTO Message VALUES (2, 1, 3, 'Message2', '2019-03-13T09:00:00', NULL);
-INSERT INTO Message VALUES (3, 2, 3, 'Message3', '2019-03-13T10:00:00', '2019-03-13T11:00:00');
+INSERT INTO Message VALUES (1, 1, 2, 'Message1', DATETIME('2019-03-13T08:00:00'), NULL);
+INSERT INTO Message VALUES (2, 1, 3, 'Message2', DATETIME('2019-03-13T09:00:00'), NULL);
+INSERT INTO Message VALUES (3, 2, 3, 'Message3', DATETIME('2019-03-13T10:00:00'), DATETIME('2019-03-13T11:00:00'));
 -- Diese Statements sollen abgelehnt werden
-INSERT INTO Message VALUES (1, 1, 2, 'Message4', '2019-03-13T08:00:00', NULL);  -- PK Constraint
-INSERT INTO Message VALUES (11, 1, 2, 'Message5', '2019-03-13T08:00:00', '2019-03-13T07:00:00'); -- Confirmed Constraint
-INSERT INTO Message VALUES (12, 1, 1, 'Message6', '2019-03-13T08:00:00', NULL); -- Recipient Constraint
-INSERT INTO Message VALUES (13, NULL, 2, 'Message7', '2019-03-13T08:00:00', NULL); -- Sender NULL Constraint
-INSERT INTO Message VALUES (14, 1, NULL, 'Message8', '2019-03-13T08:00:00', NULL); -- Recipient NULL Constraint
-INSERT INTO Message VALUES (15, 1, 2, NULL, '2019-03-13T08:00:00', NULL);          -- Message NULL Constraint
+INSERT INTO Message VALUES (1, 1, 2, 'Message4', DATETIME('2019-03-13T08:00:00'), NULL);  -- PK Constraint
+INSERT INTO Message VALUES (11, 1, 2, 'Message5', DATETIME('2019-03-13T08:00:00'), DATETIME('2019-03-13T07:00:00')); -- Confirmed Constraint
+INSERT INTO Message VALUES (12, 1, 1, 'Message6', DATETIME('2019-03-13T08:00:00'), NULL); -- Recipient Constraint
+INSERT INTO Message VALUES (13, NULL, 2, 'Message7', DATETIME('2019-03-13T08:00:00'), NULL); -- Sender NULL Constraint
+INSERT INTO Message VALUES (14, 1, NULL, 'Message8', DATETIME('2019-03-13T08:00:00'), NULL); -- Recipient NULL Constraint
+INSERT INTO Message VALUES (15, 1, 2, NULL, DATETIME('2019-03-13T08:00:00'), NULL);          -- Message NULL Constraint
 INSERT INTO Message VALUES (16, 1, 2, 'Message10', NULL, NULL);                    -- DateSended NULL Constraint
-INSERT INTO Message VALUES (17, 1, 10, 'Message11', '2019-03-13T08:00:00', NULL);  -- FK Constraint
-INSERT INTO Message VALUES (18, 11, 2, 'Message12', '2019-03-13T08:00:00', NULL);  -- FK Constraint
+INSERT INTO Message VALUES (17, 1, 10, 'Message11', DATETIME('2019-03-13T08:00:00'), NULL);  -- FK Constraint
+INSERT INTO Message VALUES (18, 11, 2, 'Message12', DATETIME('2019-03-13T08:00:00'), NULL);  -- FK Constraint
 
 -- Korrekte Ausgabe des SELECT Statements (Datumsausgaben können im Format abweichen)
 -- M_ID M_Sender    M_Recipient M_Text      M_DateSended                M_DateConfirmed
