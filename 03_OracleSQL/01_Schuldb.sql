@@ -2,7 +2,8 @@
 -- MUSTERDATENBANK "SCHÜLERVERWALTUNG"
 -- Importskript für Oracle
 -- Datenstand 8. Oktober 2018
--- 
+-- Datenmodell: https://raw.githubusercontent.com/schletz/Dbi1Sem/master/01_Access/Access_Uebungen/datenmodell_schuldb.png
+
 -- Am Ende des Skriptes muss 484 als Schüleranzahl, 120 als Lehreranzahl und
 -- 39 als Klassenanzahl ausgegeben werden.
 -- ******************************************************************************
