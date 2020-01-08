@@ -31,8 +31,8 @@ CREATE TABLE Haltestelle (
     Name            VARCHAR(64) NOT NULL,
     Gemeinde        VARCHAR(64) NOT NULL,
     Gemeinde_id     INT         NOT NULL,
-    Wgs84_lat       FLOAT,
-    Wgs84_lon       FLOAT,
+    Wgs84_lat       NUMERIC(15,13),         -- entspricht DECIMAL(15,13)
+    Wgs84_lon       NUMERIC(16,13),         -- entspricht DECIMAL(16,13)
     CHECK(Gemeinde_id >= 10000 AND Gemeinde_id <= 99999),
     CHECK(Wgs84_lat IS NOT NULL AND Wgs84_lon IS NOT NULL OR Wgs84_lat IS NULL AND Wgs84_lon IS NULL)
     UNIQUE(Name, Gemeinde_id)
