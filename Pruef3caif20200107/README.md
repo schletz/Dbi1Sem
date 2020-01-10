@@ -99,8 +99,10 @@ DBeaver und SQLite erstellen Sie einfach eine leere Datenbank, indem Sie bei *Br
 Datei angeben. In Oracle können Sie mit der *SchulDb* Verbindung arbeiten, da die Tabellennamen nicht
 kollidieren.
 
-Schreiben Sie die CREATE TABLE Anweisungen in den Vorgegebenen Bereich der SQL Datei. Die INSERT
-Anweisungen im unteren Teil dienen zur Kontrolle ihrer Arbeit. Hinweis: In DBeaver können Sie mehrere
+Schreiben Sie die CREATE TABLE Anweisungen in den vorgegebenen Bereich der SQL Datei
+[wiener_linien_angabe.sql](wiener_linien_angabe.sql).
+
+Die Anweisungen im unteren Teil dienen zur Kontrolle ihrer Arbeit. Hinweis: In DBeaver können Sie mehrere
 Anweisungen markieren und mit *ALT + X* oder *Execute SQL Script* nur diese Anweisungen ausführen.
 
 Die Anweisung *PRAGMA foreign_keys = ON;* muss nur in SQLite ausgeführt werden, damit die Prüfung
