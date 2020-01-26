@@ -7,3 +7,4 @@
 ## Inhalt
 
 - [Insert](01_Insert.md)
+- [Update und Delete](02_Update_Delete.md)
