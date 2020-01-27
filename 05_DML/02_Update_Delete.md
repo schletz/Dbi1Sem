@@ -44,13 +44,19 @@ einzufügen.
 Bilden Sie die folgenden Geschäftsfälle ab. Prüfen Sie die Richtigkeit, indem Sie die Tabellen
 mit einem SELECT am Ende ausgeben.
 
+Führen Sie in Ihrem SQL Skript als ersten Befehl aus:
+
+```sql
+PRAGMA foreign_keys = 1;
+```
+
 1. Legen Sie in der Tabelle *Fach* ein neues Fach *DBI* mit dem Fachnamen *Datenbanken* an.
 2. Legen Sie in der Tabelle Lehrer einen neuen Lehrer *SZ* (Michael Schletz) an.
 3. Legen Sie alle Semesterprüfungen, die noch nicht oder mit 5 beurteilt sind, mit Datum 24. Feb
    2020 ohne Note aber mit den selben Daten (Fach, Prüfer, Schüler) erneut an.
 4. Aktualisieren Sie alle Schüler ohne Geschlecht auf den Wert *m*.
 5. Verschlechtern Sie alle Semesterprüfungen von BAK um 1 Notengrad (also + 1). Beachten Sie,
-   dass es keine Noten größer als 5 geben kann. Verwenden Sie deshalb Min() zur Lösung dieses
+   dass es keine Noten größer als 5 geben kann. Verwenden Sie eine WHERE Klausel zur Lösung dieses
    Problemes.
 6. Löschen Sie die Klasse 3BHIF samt aller Daten aus dem System. Beachten Sie das Datenmodell.
    Gibt es eine Reihenfolge, in der Sie vorgehen müssen?
