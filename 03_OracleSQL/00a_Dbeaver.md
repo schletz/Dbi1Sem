@@ -18,7 +18,7 @@ Zum Verbinden müssen wie in SQL Developer die Verbindungsdaten eingegeben werde
 ![](images/dbeaver02.png)
 
 Da Oracle den JDBC Treiber nicht ohne Login zum Download anbietet, muss er nach dem Klicken auf Test
-Connection mittels Add JARs geladen werden. Die Dafür benötigte Datei *ojdbc7.jar* ist in diesem Ordner
+Connection mittels Add JARs geladen werden. Die Dafür benötigte Datei [ojdbc10.jar](ojdbc10.jar) ist in diesem Ordner
 im Repository enthalten.
 
 ## Zugriff auf das Schema
