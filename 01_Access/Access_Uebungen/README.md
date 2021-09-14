@@ -14,9 +14,8 @@
    
 ### Hinweise
 - Die Datentypen und längen müssen exakt ident sein, wenn Sie eine Beziehung zwischen den Spalten herstellen.
-- Der Datensatz in der Stundenplantabelle mit dem Raum `~B3.08MF~B5.09` wird ein Problem verursachen:
-  Dieser Raum ist nicht in der Raumtabelle eingetragen. Beheben Sie dieses Problem durch Löschen des
-  Datensatzes in der Stundenplan Tabelle.
+- Der Datensatz in Klassentabelle mit dem Raum `WAKL` wird ein Problem verursachen. Was ist die Ursache
+  des Problems? Gibt es Lösungsvorschläge?
 
 ## 2. Abfragen aus einer Tabelle (basierend auf *schuldb1_ablecture3.accdb*)
 
