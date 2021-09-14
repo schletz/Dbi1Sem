@@ -8,7 +8,7 @@ erwin Data Modeler ist eine Software, mit der Datenmodelle erstellt und in eine 
 
 So kommen Sie zu Ihrer Version:
 
-1. Auf <a href="http://go.erwin.com/erwin-academic-edition-free-trial" target="_blank">[go.erwin.com]</a> können Sie eine Academic Licence beantragen. Verwenden Sie dafür folgende Daten:
+1. Auf <a href="https://www.erwin.com/register/129709/" target="_blank">[www.erwin.com]</a> können Sie eine Academic Licence beantragen. Verwenden Sie dafür folgende Daten:
     - Ihren Namen
     - Ihre Schul-Mailadresse (endet auf *@spengergasse.at*), diese wird akzeptiert.
     - Den Schulnamen *HTL Spengergasse*
