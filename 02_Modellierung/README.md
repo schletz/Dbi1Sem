@@ -62,8 +62,8 @@ entity Student {
 Class ||..o{ Student
 
 @enduml
+(Hier 3 Backticks einfügen)
 
-```
 ```
 
 Die Syntax ist auf https://plantuml.com/de/ie-diagram nachzulesen.
