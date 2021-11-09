@@ -1,7 +1,7 @@
 # Ein kleines Diagramm
 
 Mit der Extension *Markdown Preview Enhanced* können Sie PlantUML Diagramme in Markdown
-Dateien einbetten. Die Voransicht sollte nun an dieser Stelle ein kleines ER Diagramm rendern. Es
+Dateien einbetten. Die Voransicht sollte unter der Beschreibung ein kleines ER Diagramm rendern. Es
 gelten folgende Regeln:
 
 - Erforderliche Felder (NOT NULL) werden mit einem Stern (\*) gekennzeichnet.
@@ -14,13 +14,14 @@ gelten folgende Regeln:
     optional.
   -  `||--0{` definiert eine identifizierende 1 : n Beziehung. Der FK ist also Teil des Primärschlüssels.
 - Fremdschlüssel werden mit \<\<FK\>\> gekennzeichnet.
+- Constraints werden in 2 spitzen Klammern angegeben (z. B. \<\<unique\>\>, \<\<index\>\>).
 
 ```plantuml
 @startuml
 ' hide the spot
 hide circle
-' avoid problems with angled crows feet
-skinparam linetype ortho
+' Optional: enable for orthogonal lines.
+' skinparam linetype ortho
 
 entity Room {
     *Id : number <<generated>>
@@ -36,20 +37,32 @@ entity Schoolyear {
     *End : datetime
 }
 
+entity Teacher {
+    *Id : number <<generated>>
+    ---
+    *Shortname : varchar(8) <<unique>>
+    *Firstname : varchar(255)
+    *Lastname : varchar(255)
+    *Accountname : varchar(16) <<unique>>
+}
+
 entity Class {
     *Id : number <<generated>>
     ---
     *Name : varchar(16)
     *SchoolyearId : number
+    *TeacherId : number
     RoomId : varchar(16) <<FK>>
 }
+
 Schoolyear ||..o{ Class
+Teacher ||..o{ Class
 Room |o..o{ Class
 
 entity Subject {
     *Id : number <<generated>>
     ---
-    *Name : varchar(16)
+    *Name : varchar(16) <<unique>>
     *Longname : varchar(255)
 }
 
@@ -57,20 +70,25 @@ entity Subject {
 entity Student {
     *Id : number <<generated>>
     ---
-    *Firstname : varchar(200)
-    *Lastname : varchar(200)
+    *Firstname : varchar(255)
+    *Lastname : varchar(255)
     *Accountname : varchar(16) <<unique>>
     *ClassId : number <<FK>>
 }
 
 Class ||..o{ Student
 
+
+
 entity Lesson {
     *Id : number <<generated>>
     ---
     *ClassId : number <<FK>>
     *SubjectId : number <<FK>>
+    *TeacherId : number <<FK>>
 }
+
+Teacher ||..o{ Lesson
 
 Class ||..o{ Lesson
 Subject ||..o{ Lesson
