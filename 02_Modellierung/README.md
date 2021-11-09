@@ -1,4 +1,74 @@
-# Installation von erwin Data Modeler
+# Modellierungstools
+
+## PlantUML und VS Code als Modellierungswerkzeug
+
+Im Gegensatz zu relationalen Datenbanken, wo ER Diagramme als datenbankenunabhängiges Modellierungstool
+verwendet werden können, gibt es für NoSQL keine einheitliche "Modellierungssprache". Da aber
+schlussendlich der Datenbestand mittels Modelklassen in Java oder C# verwaltet wird (bzw. werden kann)
+können Klassendiagramme verwendet werden. Solche Diagramme könenn wie folgt erzeugt werden:
+
+1. Prüfe, ob Java installiert und im PATH eingetragen ist. Der Befehl *java -version* muss erkannt werden.
+1. Installiere [Visual Studio Code](https://code.visualstudio.com). Achtung: Aktiviere beim Setup
+   die Option "In den Explorer integrieren", damit Sie im Kontextmenü VS Code starten können.
+1. Installiere die folgenden Extensions:
+   - Markdown PDF
+   - Markdown Preview Enhanced
+   - PlantUML
+1. Öffne die VS Code Konfiguration (*F1* - "*settings*" eingeben - "*Preferences: Open Settings (JSON)*" wählen)
+   und füge folgende Zeilen hinzu:
+
+```javascript
+    "markdown-pdf.plantumlOpenMarker": "```plantuml\n",
+    "markdown-pdf.plantumlCloseMarker": "```"   
+```
+
+Nun steht durch die Extension *Markdown Preview Enhanced* ein Icon bereit, welches eine Vorschau mit
+dem gerenderten Diagramm bietet:
+![](preview_vscode.png)
+
+### Demo Markdownfile mit PlantUML
+
+Kopieren Sie den folgenden Code in die Datei *demo.md*. Es sollte ein ER Diagramm gerendert werden:
+```text
+# Ein kleines Diagramm
+
+```plantuml
+@startuml
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity Room {
+    *id : number <<generated>>
+    ---
+    *name : varchar(16)
+}
+
+entity Class {
+    *name : varchar(16)
+    ---
+    roomId : number <<FK>>
+}
+Room |o--o{ Class
+
+entity Student {
+    *id : number <<generated>>
+    ---
+    *class : varchar(16) <<FK>>
+}
+
+Class ||..o{ Student
+
+@enduml
+
+```
+```
+
+Die Syntax ist auf https://plantuml.com/de/ie-diagram nachzulesen.
+
+## Installation von erwin Data Modeler
 erwin Data Modeler ist eine Software, mit der Datenmodelle erstellt und in eine beliebige Zieldatenbank übertragen werden kann. In der Academic Edition gelten folgende Limitierungen <a href="https://support.erwin.com/hc/en-us/articles/115001820927-What-is-erwin-Data-Modeler-Academic-Edition-What-are-the-limitations-and-usages-" target="_blank">[1]</a>
 
 * Diagramming is limited to 25 entities
