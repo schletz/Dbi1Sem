@@ -29,42 +29,98 @@ dem gerenderten Diagramm bietet:
 ### Demo Markdownfile mit PlantUML
 
 Kopieren Sie den folgenden Code in die Datei *demo.md*. Es sollte ein ER Diagramm gerendert werden:
-```text
+````
 # Ein kleines Diagramm
+
+Mit der Extension *Markdown Preview Enhanced* können Sie PlantUML Diagramme in Markdown
+Dateien einbetten. Die Voransicht sollte nun an dieser Stelle ein kleines ER Diagramm rendern. Es
+gelten folgende Regeln:
+
+- Erforderliche Felder (NOT NULL) werden mit einem Stern (\*) gekennzeichnet.
+- Primärschlüssel werden im oberen Teil angegeben. Danach kommen 3 Striche.
+  Darunter die restlichen Attribute.
+- Generierte Werte (wie autoincrement Werte) werden mit \<\<generated\>\> gekennzeichnet.
+- Beziehungen kommen in mehreren Arten vor:
+  - `||..o{` definiert eine nicht identifizierende 1 : n Beziehung. Der FK ist also ein Attribut.
+  - `|o..o{` definiert eine (0, 1) : n Beziehung. Der Fremdschlüssel ist also auf der n Seite
+    optional.
+  -  `||--0{` definiert eine identifizierende 1 : n Beziehung. Der FK ist also Teil des Primärschlüssels.
+- Fremdschlüssel werden mit \<\<FK\>\> gekennzeichnet.
 
 ```plantuml
 @startuml
 ' hide the spot
 hide circle
-
 ' avoid problems with angled crows feet
 skinparam linetype ortho
 
 entity Room {
-    *id : number <<generated>>
+    *Id : number <<generated>>
     ---
-    *name : varchar(16)
+    *Name : varchar(16) <<unique>>
+    Capacity : number
+}
+
+entity Schoolyear {
+    *Id : number
+    ---
+    *Start : datetime
+    *End : datetime
 }
 
 entity Class {
-    *name : varchar(16)
+    *Id : number <<generated>>
     ---
-    roomId : number <<FK>>
+    *Name : varchar(16)
+    *SchoolyearId : number
+    RoomId : varchar(16) <<FK>>
 }
-Room |o--o{ Class
+Schoolyear ||..o{ Class
+Room |o..o{ Class
+
+entity Subject {
+    *Id : number <<generated>>
+    ---
+    *Name : varchar(16)
+    *Longname : varchar(255)
+}
+
 
 entity Student {
-    *id : number <<generated>>
+    *Id : number <<generated>>
     ---
-    *class : varchar(16) <<FK>>
+    *Firstname : varchar(200)
+    *Lastname : varchar(200)
+    *Accountname : varchar(16) <<unique>>
+    *ClassId : number <<FK>>
 }
 
 Class ||..o{ Student
 
-@enduml
-(Hier 3 Backticks einfügen)
+entity Lesson {
+    *Id : number <<generated>>
+    ---
+    *ClassId : number <<FK>>
+    *SubjectId : number <<FK>>
+    *DayOfWeek : number
+    *LessonNumber : number
+}
 
+Class ||..o{ Lesson
+Subject ||..o{ Lesson
+
+entity LessonPlanned {
+    *LessonId : number <<FK>>
+    *DayOfWeek : number
+    *LessonNumber : number
+    ---
+    *RoomId
+}
+Lesson ||--o{ LessonPlanned
+
+@enduml
 ```
+````
 
 Die Syntax ist auf https://plantuml.com/de/ie-diagram nachzulesen.
 
