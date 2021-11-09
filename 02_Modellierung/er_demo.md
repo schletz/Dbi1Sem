@@ -4,17 +4,16 @@ Mit der Extension *Markdown Preview Enhanced* können Sie PlantUML Diagramme in 
 Dateien einbetten. Die Voransicht sollte unter der Beschreibung ein kleines ER Diagramm rendern. Es
 gelten folgende Regeln:
 
-- Erforderliche Felder (NOT NULL) werden mit einem Stern (\*) gekennzeichnet.
+- Erforderliche Felder (*NOT NULL*) werden mit einem Stern (\*) gekennzeichnet.
 - Primärschlüssel werden im oberen Teil angegeben. Danach kommen 3 Striche.
   Darunter die restlichen Attribute.
-- Generierte Werte (wie autoincrement Werte) werden mit \<\<generated\>\> gekennzeichnet.
+- Generierte Werte (wie autoincrement Werte) werden mit *\<\<generated\>\>* gekennzeichnet.
 - Beziehungen kommen in mehreren Arten vor:
   - `||..o{` definiert eine nicht identifizierende 1 : n Beziehung. Der FK ist also ein Attribut.
-  - `|o..o{` definiert eine (0, 1) : n Beziehung. Der Fremdschlüssel ist also auf der n Seite
-    optional.
+  - `|o..o{` definiert eine (0, 1) : n Beziehung. Der FK ist also optional (nullable).
   -  `||--0{` definiert eine identifizierende 1 : n Beziehung. Der FK ist also Teil des Primärschlüssels.
-- Fremdschlüssel werden mit \<\<FK\>\> gekennzeichnet.
-- Constraints werden in 2 spitzen Klammern angegeben (z. B. \<\<unique\>\>, \<\<index\>\>).
+- Fremdschlüssel werden mit *\<\<FK\>\>* gekennzeichnet.
+- Constraints werden in 2 spitzen Klammern angegeben (z. B. *\<\<unique\>\>*, *\<\<index\>\>*).
 
 ```plantuml
 @startuml
@@ -50,8 +49,8 @@ entity Class {
     *Id : number <<generated>>
     ---
     *Name : varchar(16)
-    *SchoolyearId : number
-    *TeacherId : number
+    *SchoolyearId : number <<FK>>
+    *TeacherId : number <<FK>>
     RoomId : varchar(16) <<FK>>
 }
 
