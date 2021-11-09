@@ -70,8 +70,6 @@ entity Lesson {
     ---
     *ClassId : number <<FK>>
     *SubjectId : number <<FK>>
-    *DayOfWeek : number
-    *LessonNumber : number
 }
 
 Class ||..o{ Lesson
