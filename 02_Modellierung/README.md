@@ -28,7 +28,7 @@ dem gerenderten Diagramm bietet:
 
 ### Demo Markdownfile mit PlantUML
 
-Kopieren Sie den Code aus der Datei [er_demo](er_demo.md) in eine neue Datei mit dem Namen
+Kopiere den Code aus der Datei [er_demo](er_demo.md) in eine neue Datei mit dem Namen
 *er_demo.md*. **Wichtig: Klicke auf RAW, um den Code anzuzeigen. Dieser muss kopiert werden!**
 Es sollte in der Vorschau mit Markdown Preview Enhanced ein ER Diagramm gerendert werden.
 Mit *F1* - *Markdown PDF: Export (PDF)* kann ein PDF erzeugt werden. Es sollte so aussehen wie
