@@ -10,7 +10,8 @@ einem SQL Editor wie DBeaver. Die Datenbank hat folgendes Aussehen:
 ![](datenmodell.png)
 
 Die Ausgaben müssen den angegebenen Musterausgaben entsprechen. Die Sortierung muss aber - wenn
-dies nicht angegeben ist - nicht übereinstimmen.
+dies nicht angegeben ist - nicht übereinstimmen. Formatierungen von Nummern oder Datumswerten
+können entsprechend der lokalen Einstellung des Rechners abweichen.
 
 ## Filterabfragen
 
@@ -69,21 +70,21 @@ dies nicht angegeben ist - nicht übereinstimmen.
 
 |Ean|Name|Basispreis|ProduktkategorieId|FilialeId|ProduktEan|Preis|Verkaufstart|Verkaufsende|
 |---|----|----------|------------------|---------|----------|-----|------------|------------|
-|377013|Practical Fresh Keyboard|621.7|1|1|377013|596.74|2020-07-02 00:00:00|2021-05-07 00:00:00|
-|397267|Handcrafted Concrete Chips|525.74||4|397267|473.25|2020-08-15 00:00:00|2021-08-03 00:00:00|
-|329460|Handmade Frozen Computer|100.73|2|9|329460|93.55|2020-04-16 00:00:00|2020-05-27 00:00:00|
-|330088|Refined Metal Hat|1732.9|7|10|330088|1712.54|2020-03-30 00:00:00|2021-02-12 00:00:00|
+|377013|Practical Fresh Keyboard|621.7|1|1|377013|596.74|2020-07-02|2021-05-07|
+|397267|Handcrafted Concrete Chips|525.74||4|397267|473.25|2020-08-15|2021-08-03|
+|329460|Handmade Frozen Computer|100.73|2|9|329460|93.55|2020-04-16|2020-05-27|
+|330088|Refined Metal Hat|1732.9|7|10|330088|1712.54|2020-03-30|2021-02-12|
 
 **(3)**  In welchen Filialen ist der Verkaufspreis 5 % unter dem Basispreis des Produktes?  Geben Sie nur Produkte aus, dessen EAN mit 4 beginnt.
 
 |Ean|Name|Basispreis|ProduktkategorieId|FilialeId|ProduktEan|Preis|Verkaufstart|Verkaufsende|
 |---|----|----------|------------------|---------|----------|-----|------------|------------|
-|417818|Fantastic Plastic Towels|929.73|4|2|417818|838.19|2020-04-28 00:00:00||
-|453921|Tasty Fresh Salad|228.69||3|453921|214.91|2020-06-19 00:00:00||
-|499274|Handcrafted Concrete Chips|271.02|5|6|499274|246.94|2020-08-29 00:00:00||
-|453216|Unbranded Granite Car|776.85|3|7|453216|721.35|2020-07-01 00:00:00|2020-08-15 00:00:00|
-|464843|Incredible Granite Bacon|368.67|5|8|464843|348.19|2020-03-30 00:00:00||
-|498943|Fantastic Plastic Shirt|1641.06|2|8|498943|1494.97|2020-02-02 00:00:00||
+|417818|Fantastic Plastic Towels|929.73|4|2|417818|838.19|2020-04-28||
+|453921|Tasty Fresh Salad|228.69||3|453921|214.91|2020-06-19||
+|499274|Handcrafted Concrete Chips|271.02|5|6|499274|246.94|2020-08-29||
+|453216|Unbranded Granite Car|776.85|3|7|453216|721.35|2020-07-01|2020-08-15|
+|464843|Incredible Granite Bacon|368.67|5|8|464843|348.19|2020-03-30||
+|498943|Fantastic Plastic Shirt|1641.06|2|8|498943|1494.97|2020-02-02||
 
 **(4)** Welche Produkte werden in der Filiale 1 nicht mehr verkauft (Verkaufsende ist nicht NULL).
         Geben Sie die in der Lösung angegebenen Spalten aus. Mit AS können Sie einen Alias definieren.
