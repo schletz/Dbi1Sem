@@ -132,7 +132,7 @@ können entsprechend der lokalen Einstellung des Rechners abweichen.
 
 ## GROUP BY
 
-**(1)**Geben Sie die Anzahl der Filialen pro Bundesland aus
+**(1)** Geben Sie die Anzahl der Filialen pro Bundesland aus
 
 |Bundesland|Anzahl|
 |----------|------|
@@ -170,7 +170,8 @@ können entsprechend der lokalen Einstellung des Rechners abweichen.
 |197332|Unbranded Concrete Pants|1046.77|995.37|995.37|995.37|
 
 
-**(4)** Listen Sie alle Kategorien und die Anzahl der Produkte auf. Geben Sie alle Kategorien mit Produkten aus.
+**(4)** Listen Sie alle Kategorien und die Anzahl der Produkte auf. Geben Sie nur Kategorien, die
+        auch Produkte haben, aus.
 
 |Name|Anzahl|
 |----|------|
