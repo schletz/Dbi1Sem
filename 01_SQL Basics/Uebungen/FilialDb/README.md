@@ -43,7 +43,7 @@ können entsprechend der lokalen Einstellung des Rechners abweichen.
 |720936|Sleek Metal Soap|1521.27|3|
 |756407|Fantastic Soft Shoes|1572.24|1|
 
-**(4)** Welche Produkte sind keiner Kategorie zugeordnet? Geben Sie nur Produkte aus, dessen EAN mit 3 beginnt.
+**(4)** Welche Produkte sind keiner Kategorie zugeordnet? Geben Sie nur Produkte aus, deren EAN mit 3 beginnt.
 
 |Ean|Name|Basispreis|ProduktkategorieId|
 |---|----|----------|------------------|
@@ -66,7 +66,7 @@ können entsprechend der lokalen Einstellung des Rechners abweichen.
 |191968|Small Plastic Mouse|1536.92|4|4|Intelligent|
 |197332|Unbranded Concrete Pants|1046.77|3|3|Unbranded|
 
-**(2)** In welchen Filialen wird ein Produkt unter dem Basispreis verkauft? Geben Sie nur Produkte aus, dessen EAN mit 3 beginnt.
+**(2)** In welchen Filialen wird ein Produkt unter dem Basispreis verkauft? Geben Sie nur Produkte aus, deren EAN mit 3 beginnt.
 
 |Ean|Name|Basispreis|ProduktkategorieId|FilialeId|ProduktEan|Preis|Verkaufstart|Verkaufsende|
 |---|----|----------|------------------|---------|----------|-----|------------|------------|
@@ -75,7 +75,7 @@ können entsprechend der lokalen Einstellung des Rechners abweichen.
 |329460|Handmade Frozen Computer|100.73|2|9|329460|93.55|2020-04-16|2020-05-27|
 |330088|Refined Metal Hat|1732.9|7|10|330088|1712.54|2020-03-30|2021-02-12|
 
-**(3)**  In welchen Filialen ist der Verkaufspreis 5 % unter dem Basispreis des Produktes?  Geben Sie nur Produkte aus, dessen EAN mit 4 beginnt.
+**(3)**  In welchen Filialen ist der Verkaufspreis 5 % unter dem Basispreis des Produktes?  Geben Sie nur Produkte aus, deren EAN mit 4 beginnt.
 
 |Ean|Name|Basispreis|ProduktkategorieId|FilialeId|ProduktEan|Preis|Verkaufstart|Verkaufsende|
 |---|----|----------|------------------|---------|----------|-----|------------|------------|
@@ -121,7 +121,7 @@ können entsprechend der lokalen Einstellung des Rechners abweichen.
 |10|Fantastic|
 
 
-**(3)** Welche Produkte werden in keiner Filiale verkauft, haben also keinen Eintrag in der Tabelle Filialpreis? Geben Sie nur Produkte aus, dessen EAN mit 3 beginnt.
+**(3)** Welche Produkte werden in keiner Filiale verkauft, haben also keinen Eintrag in der Tabelle Filialpreis? Geben Sie nur Produkte aus, deren EAN mit 3 beginnt.
 
 |Ean|Name|Basispreis|ProduktkategorieId|
 |---|----|----------|------------------|
@@ -140,7 +140,7 @@ können entsprechend der lokalen Einstellung des Rechners abweichen.
 |W|4|
 
 **(2)** Geben Sie den Durchschnittspreis des Produktes aus. Dies ist der Durchschnittswert von allen Preisen in der Tabelle Filialpreis des Produktes.
-        Verwenden Sie die AVG() Funktion. Geben Sie nur die Produkte aus, dessen EAN Nummer mit 1 beginnt.
+        Verwenden Sie die AVG() Funktion. Geben Sie nur die Produkte aus, deren EAN Nummer mit 1 beginnt.
 
 |Ean|Name|AvgPreis|
 |---|----|--------|
