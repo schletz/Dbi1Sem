@@ -76,14 +76,14 @@ dies nicht angegeben ist - nicht übereinstimmen.
 
 **(3)**  In welchen Filialen ist der Verkaufspreis 5 % unter dem Basispreis des Produktes?  Geben Sie nur Produkte aus, dessen EAN mit 4 beginnt.
 
-|Ean|Name|Basispreis|ProduktkategorieId|FilialeId|ProduktEan|Preis|Verkaufstart|Verkaufsende|p.Basispreis * 0.01|
-|---|----|----------|------------------|---------|----------|-----|------------|------------|-------------------|
-|417818|Fantastic Plastic Towels|929.73|4|2|417818|838.19|2020-04-28 00:00:00||9.2973|
-|453921|Tasty Fresh Salad|228.69||3|453921|214.91|2020-06-19 00:00:00||2.2869|
-|499274|Handcrafted Concrete Chips|271.02|5|6|499274|246.94|2020-08-29 00:00:00||2.7102|
-|453216|Unbranded Granite Car|776.85|3|7|453216|721.35|2020-07-01 00:00:00|2020-08-15 00:00:00|7.7685|
-|464843|Incredible Granite Bacon|368.67|5|8|464843|348.19|2020-03-30 00:00:00||3.6867|
-|498943|Fantastic Plastic Shirt|1641.06|2|8|498943|1494.97|2020-02-02 00:00:00||16.4106|
+|Ean|Name|Basispreis|ProduktkategorieId|FilialeId|ProduktEan|Preis|Verkaufstart|Verkaufsende|
+|---|----|----------|------------------|---------|----------|-----|------------|------------|
+|417818|Fantastic Plastic Towels|929.73|4|2|417818|838.19|2020-04-28 00:00:00||
+|453921|Tasty Fresh Salad|228.69||3|453921|214.91|2020-06-19 00:00:00||
+|499274|Handcrafted Concrete Chips|271.02|5|6|499274|246.94|2020-08-29 00:00:00||
+|453216|Unbranded Granite Car|776.85|3|7|453216|721.35|2020-07-01 00:00:00|2020-08-15 00:00:00|
+|464843|Incredible Granite Bacon|368.67|5|8|464843|348.19|2020-03-30 00:00:00||
+|498943|Fantastic Plastic Shirt|1641.06|2|8|498943|1494.97|2020-02-02 00:00:00||
 
 **(4)** Welche Produkte werden in der Filiale 1 nicht mehr verkauft (Verkaufsende ist nicht NULL).
         Geben Sie die in der Lösung angegebenen Spalten aus. Mit AS können Sie einen Alias definieren.
