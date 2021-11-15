@@ -3,6 +3,7 @@
 ![](lehrstoff.png)
 
 ## Synchronisieren des Repositories in einen Ordner
+
 1. Laden Sie von https://git-scm.com/downloads die Git Tools (Button *Download 2.23.0 for Windows*)
     herunter. Es können alle Standardeinstellungen belassen werden, bei *Adjusting your PATH environment*
     muss aber der mittlere Punkt (*Git from the command line [...]*) ausgewählt sein.
@@ -11,18 +12,11 @@
     Repository ist nur die lokale Version des Repositories auf https://github.com/schletz/Dbi1Sem.git.
     Hier werden keine Commits gemacht und alle lokalen Änderungen dort werden bei der 
     nächsten Synchronisation überschrieben.
-3. Initialisieren Sie den Ordner mit folgenden Befehlen, die in der Konsole in diesem Verzeichnis
-    (z. B. *C:\Schule\DBI\Examples*) ausgeführt werden:
-```bash {.line-numbers}
-git init
-git remote add origin https://github.com/schletz/Dbi1Sem.git
+3. Führen Sie in diesem Ordner den folgenden Befehl aus:
+
+```text
+git clone https://github.com/schletz/Dbi1Sem.git
 ```
 
-4. Legen Sie in diesem Ordner eine Datei *syncGit.cmd* mit folgenden Befehlen an. 
-    Durch Doppelklick auf diese Datei wird immer der neueste Stand geladen. Neu erstellte Dateien
-    in diesem Ordner bleiben auf der Festplatte, geänderte Dateien werden allerdings durch 
-    *git reset* auf den Originalstand zurückgesetzt.
-```bash {.line-numbers}
-git reset --hard
-git pull origin master --allow-unrelated-histories
-```
+Um Änderungen auf den Rechner zu Übertragen, können Sie die Datei *resetGit.cmd* ausführen.
+Alle lokalen Änderungen gehen dabei verloren!
