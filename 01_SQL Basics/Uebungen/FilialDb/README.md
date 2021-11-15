@@ -115,19 +115,20 @@ können entsprechend der lokalen Einstellung des Rechners abweichen.
 
 **(2)** Welche Kategorien haben keine Produkte?
 
-|Id|Name|Ean|Name|Basispreis|ProduktkategorieId|
-|--|----|---|----|----------|------------------|
-|9|Small|||||
-|10|Fantastic|||||
+|Id|Name|
+|--|----|
+|9|Small|
+|10|Fantastic|
+
 
 **(3)** Welche Produkte werden in keiner Filiale verkauft, haben also keinen Eintrag in der Tabelle Filialpreis? Geben Sie nur Produkte aus, dessen EAN mit 3 beginnt.
 
-|Ean|Name|Basispreis|ProduktkategorieId|FilialeId|ProduktEan|Preis|Verkaufstart|Verkaufsende|
-|---|----|----------|------------------|---------|----------|-----|------------|------------|
-|313493|Gorgeous Metal Pants|1708.34|5||||||
-|348949|Sleek Cotton Pizza|282.33|7||||||
-|359366|Practical Soft Shoes|1119.9|8||||||
-|381481|Tasty Soft Pants|441.75|3||||||
+|Ean|Name|Basispreis|ProduktkategorieId|
+|---|----|----------|------------------|
+|313493|Gorgeous Metal Pants|1708.34|5|
+|348949|Sleek Cotton Pizza|282.33|7|
+|359366|Practical Soft Shoes|1119.9|8|
+|381481|Tasty Soft Pants|441.75|3|
 
 ## GROUP BY
 
