@@ -1,10 +1,4 @@
-# 2. Prüfung in DBI: Data Modeling Language  
-
-| Datum  | 7. Jänner 2020, 18:50 - 19:35                        |
-| ------ | ---------------------------------------------------- |
-| Klasse | 3CAIF                                                |
-| Prüfer | SZ                                                   |
-| Erlaubte Hilfsmittel | Unterlagen im Internet, eigener Laptop |
+# Haltestellen Datenbank
 
 ## Problemstellung
 
@@ -82,22 +76,10 @@ Erstellen Sie die korrekten CREATE TABLE Anweisungen, die folgende Fälle abdeck
 |231116889|214433687|214666497|H|1|U1-H|
 |378112298|214433717|345540619|H|1||
 
-## Bewertung
-
-Ihre Arbeit wird durch die INSERT Anweisungen automatisch geprüft. Pro falsch eingetragener
-Zeile gibt es 1 Punkt Abzug, es gibt jedoch keine negativen Punkte pro Teilbereich.
-
-Folgende Punkte werden bei den Teilbereichen vergeben:
-Tabelle Linie: 8 Punkte, Tabelle Haltestelle: 8 Punkte, Tabelle Steig: 8 Punkte. Daraus ergeben
-sich die Noten mit Sehr gut: 24-22 Punkte, Gut: 21-19 Punkte, Befriedigend: 18-16 Punkte,
-Genügend 15-13 Punkte.
-
 ## Durchführen der Arbeit
 
-Sie können die Aufgabenstellung mit einer SQLite oder Oracle Datenbank lösen. Beim Arbeiten mit
-DBeaver und SQLite erstellen Sie einfach eine leere Datenbank, indem Sie bei *Browse* eine neue
-Datei angeben. In Oracle können Sie mit der *SchulDb* Verbindung arbeiten, da die Tabellennamen nicht
-kollidieren.
+Erstellen Sie in DBeaver eine leere SQLite Datenbank, indem Sie bei *Browse* eine neue
+Datei angeben. 
 
 Schreiben Sie die CREATE TABLE Anweisungen in den vorgegebenen Bereich der SQL Datei
 [wiener_linien_angabe.sql](wiener_linien_angabe.sql).
@@ -108,8 +90,3 @@ Anweisungen markieren und mit *ALT + X* oder *Execute SQL Script* nur diese Anwe
 Die Anweisung *PRAGMA foreign_keys = ON;* muss nur in SQLite ausgeführt werden, damit die Prüfung
 des Fremdschlüssels aktiviert wird. Fehler können Sie mit *Ignore* ignorieren, damit das Skript
 weiter ausgeführt wird.
-
-## Abgabe
-
-Versehen Sie die SQL Datei mit Ihrem Namen und schicken Sie die Datei per Email an
-schletz@spengergasse.at. Der Betreff soll *2. Prüfung 3CAIF* lauten.

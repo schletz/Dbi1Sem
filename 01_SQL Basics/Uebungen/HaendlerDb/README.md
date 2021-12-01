@@ -1,25 +1,16 @@
-# 1. Prüfung in SQL
-Klasse: 3CAIF
-Datum: 5. November 2019
-Prüfer: SZ
+# Eine kleine Händlerdatenbank
 
+Themenbereich: JOIN Operationen (ohne Gruppierung)
 
 ## Hinweise zur Bearbeitung der Aufgaben
-1. In diesem Verzeichnis befindet sich die Datei *HaendlerDb.mdb*, falls Sie eine Accessdatenbank
-   zur Lösung der Aufgaben verwenden möchten. Falls Sie mit SQLite arbeiten möchten, gibt es in
-   *HaendlerDb.db* eine SQLite Version. Falls Sie die Aufgabenstellung mit einer Oracle Datenbank
-   umsetzen möchten, befindet sich in [create_oracle.sql](create_oracle.sql) der SQL Dump für Oracle.
-1. Falls Sie DBeaver oder SQL Developer verwenden, kopieren Sie den untenstehenden SQL Code mit den
-   Angaben in ein neues
-   Abfragefenster und führen Sie Ihre Lösung unter das jeweilige Beispiel ein. Falls Sie die 
-   Abfragen mit Access lösen, kopieren Sie den SQL Code mit Hilfe eines Texteditors in diese Datei.
-1. Ihre Ausgabe darf von der korrekten Ausgabe bezüglich der Formatierung und Sortierung abweichen
-   (außer es ist eine spezielle Sortierung in der Angabe verlangt).
-1. Wenn Sie fertig sind, senden Sie die SQL Datei mit allen Lösungen per Mail an *schletz@spengergasse.at*.
 
-## Bewertung
-Jede korrekt gelöste Aufgabe bringt 1 Punkt. 8 Punkte = Sehr gut, 7 Punkte = Gut, 6 Punkte = Befriedigend,
-5 Punkte = Genügend, 4 oder weniger Punkte = Nicht genügend.
+
+1. In diesem Verzeichnis befindet sich eine SQLite Datenbank [HaendlerDb.db](HaendlerDb.db).
+   Öffnen Sie diese Datenbank mit DBeaver und erstellen Sie ein neues Abfragefenster.
+2. Kopieren Sie den untenstehenden SQL Code mit den Angaben in das
+   Abfragefenster in DBeaver und fügen Sie Ihre Lösung unter das jeweilige Beispiel ein. 
+3. Ihre Ausgabe darf von der korrekten Ausgabe bezüglich der Formatierung und
+   Sortierung abweichen (außer es ist eine spezielle Sortierung in der Angabe verlangt).
 
 ## Datenmodell
 
