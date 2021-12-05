@@ -133,7 +133,11 @@ CREATE TABLE Rating (
    sicher, dass das Skript auch mehrmals ausgeführt werden kann.
 4. Prüfen Sie durch Doppelklick auf *Tables*, ob alle Tabellen im ER Diagramm sichtbar sind.
    Vorsicht: Sie müssen vorher mit F5 die Tabellen in DBeaver aktualisieren.
-4. Schreiben Sie folgende SELECT Statements für dieses Modell:
+5. UNIQUE Constraints können auch mehrere Spalten besitzen. So sagt. z. B. aus, dass
+   bei *UNIQUE(Email, PhoneNr)* das Wertepaar aus Mail und Telefonnummer nicht doppelt
+   vorkommen kann. Die selbe Email kann mit unterschiedlichen Telefonnummern sehr wohl
+   verwendet werden. Erkennen Sie im Modell sinnvolle Paare, die eindeutig sein müssen?
+6. Schreiben Sie folgende SELECT Statements für dieses Modell:
    1. Geben Sie pro Schule die durchschnittlichen Werte jedes Ratingkriteriums aus.
    2. Geben Sie pro Lehrer die durchschnittlichen Werte jedes Ratingkriteriums aus.
    3. Geben Sie pro Schule die durchschnittlichen Werte jedes Ratingkriteriums aus, allerdings nur
