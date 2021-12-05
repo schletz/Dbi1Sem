@@ -12,6 +12,41 @@ https://www.plantuml.com/plantuml/uml/dL9HJy8m47wcl-BUJ4ZW1nX2I5GIeq6ZwFkndMj3ry
 
 ## CREATE TABLE Statements
 
+### Datentypen
+
+Im Gegensatz zu Java oder C# sind Datentypen abhängig von der Datenbank. Nicht alle Datenbanken
+"verstehen" alle Datentypen. Es gibt aber in Ansi SQL eine Grundmenge, die jede Datenbank
+zumindest versteht. SQLite deckt nicht jeden Datentyp ab, versteht aber zumindest die Definition.
+
+Eine Auswahl ist in der folgenden Tabelle:
+
+| ANSI SQL              | SQL Server                     | SQLite  |
+|-----------------------|--------------------------------|---------|
+| INTEGER               | INTEGER                        | INTEGER |
+| CHAR(n), VARCHAR(n)   | CHAR, VARCHAR, NCHAR, NVARCHAR | TEXT    |
+| DECIMAL(p, s)         | DECIMAL(p, s)                  | NUMERIC |
+| REAL                  | REAL                           | REAL    |
+| DATE, TIME, TIMESTAMP | DATETIME                       | NUMERIC |
+
+<sup>Vgl. https://support.microsoft.com/en-us/office/equivalent-ansi-sql-data-types-7a0a6bef-ef25-45f9-8a9a-3c5f21b5c65d
+und https://www.sqlite.org/datatype3.html
+</sup>
+
+#### DECIMAL(p, s)
+
+*p* bezeichnet die *gesamten Stellen* und *s* den Nachkommaanteil (scale).
+*DECIMAL(6,2)* kann also Werte von -9999.99 bis +9999.99 speichern. Der Speicherbedarf "springt"
+jedoch und verläuft nicht kontinuierlich. Deswegen ist *DECIMAL(9,s)* häufig anzutreffen.
+
+| Precision | Storage bytes |
+|-----------|---------------|
+| 1 - 9     | 5             |
+| 10-19     | 9             |
+| 20-28     | 13            |
+| 29-38     | 17            |
+
+<sup>Vgl. https://docs.microsoft.com/en-us/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=sql-server-ver15</sup>
+
 ### Primärschlüssel
 
 Primärschlüssel können - wenn sie nur aus einer Spalte bestehen - mit dem Constraint
