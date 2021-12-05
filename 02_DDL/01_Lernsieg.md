@@ -141,5 +141,5 @@ CREATE TABLE Rating (
    1. Geben Sie pro Schule die durchschnittlichen Werte jedes Ratingkriteriums aus.
    2. Geben Sie pro Lehrer die durchschnittlichen Werte jedes Ratingkriteriums aus.
    3. Geben Sie pro Schule die durchschnittlichen Werte jedes Ratingkriteriums aus, allerdings nur
-      wenn mehr als 3 Ratings eingetragen wurden.
+      wenn mehr als 3 Ratings eingetragen wurden (HAVING verwenden).
    4. Geben Sie die Anzahl der 5 Sterne Bewertungen (*Value* ist 5) pro Schule und Kriterium aus.
