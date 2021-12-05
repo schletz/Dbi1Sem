@@ -1,4 +1,4 @@
-# Übung 2: Infotage
+# CREATE TABLE 2: Mehrteilige Schlüssel und CHECK
 
 ![](images/infotage_model.png)
 
@@ -35,7 +35,7 @@ CREATE TABLE Project (
 CREATE TABLE Member (
 	M_Pupil            INTEGER,
 	M_Project          INTEGER,
-	M_Presence_Checked DATETIME,
+	M_Presence_Checked TIMESTAMP,
 	PRIMARY KEY (M_Pupil, M_Project),
 	FOREIGN KEY (M_Pupil)   REFERENCES Pupil(P_Number),
 	FOREIGN KEY (M_Project) REFERENCES Project(PR_ID) 
@@ -44,8 +44,8 @@ CREATE TABLE Member (
 CREATE TABLE Task (
 	T_ID        INTEGER PRIMARY KEY AUTOINCREMENT,
 	T_Name      VARCHAR(200) NOT NULL,
-	T_Started   DATETIME,
-	T_Finished  DATETIME,
+	T_Started   TIMESTAMP,
+	T_Finished  TIMESTAMP,
 	T_M_Pupil   INTEGER,
 	T_M_Project INTEGER,
 	FOREIGN KEY (T_M_Pupil, T_M_Project) REFERENCES Member(M_Pupil, M_Project),
@@ -56,14 +56,15 @@ CREATE TABLE Equipment (
 	E_Inventory VARCHAR(16)  PRIMARY KEY,
 	E_Name      VARCHAR(200) NOT NULL,
 	E_Project   INTEGER,
-	E_Rented    DATETIME,
-	E_Back      DATETIME,
+	E_Rented    TIMESTAMP,
+	E_Back      TIMESTAMP,
 	FOREIGN KEY (E_Project) REFERENCES Project(PR_ID),
 	CHECK(E_Back IS NULL OR E_Back > E_Rented)
 );
 ```
 
 ## Übung
+
 1. Vervollständigen Sie dieses CREATE TABLE Skript, sodass auch die rot umrandeten Tabellen im Modell
    erstellt werden.
-2. Erstellen Sie eine SQLite oder ORACLE Datenbank mit Ihrem CREATE TABLE Skript.
+2. Erstellen Sie eine SQLite mit Ihrem CREATE TABLE Skript.
