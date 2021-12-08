@@ -11,9 +11,10 @@
             <b>1</b> Datenmodellierung
             <ol>
                 <li>Die Datenbank als strukturierter Informationsspeicher.</li>
-                <li>Datenbanktabellen: Der Begriff Schema</li>
-                <li>ER Diagramme als Modellierungs- und Darstellungstechnik</li>
-                <li>Primärschlüssel, künstliche und natürliche Schlüssel</li>
+                <li>Datenbanktabellen: Der Begriff Schema.</li>
+                <li>Datentypen und die NOT NULL Eigenschaft.</li>
+                <li>ER Diagramme als Modellierungs- und Darstellungstechnik.</li>
+                <li>Primärschlüssel, künstliche und natürliche Schlüssel.</li>
                 <li>Relationen zwischen Tabellen: Fremdschlüssel und referentielle Integrität.</li>
                 <li>Mehrteilige Schlüssel.</li>
             </ol>
