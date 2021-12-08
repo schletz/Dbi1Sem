@@ -1,6 +1,37 @@
 # DBI für das 1. Semester des Kollegs bzw. Aufbaulehrganges
 
-![](lehrstoff.png)
+## Lehrinhalte
+
+<table>
+    <tr>
+        <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th>
+    </tr>
+    <tr>
+        <td colspan="3" valign="top">
+            <b>1</b> Datenmodellierung
+            <ol>
+                <li>Die Datenbank als strukturierter Informationsspeicher.</li>
+                <li>Datenbanktabellen: Der Begriff Schema</li>
+                <li>ER Diagramme als Modellierungs- und Darstellungstechnik</li>
+                <li>Primärschlüssel, künstliche und natürliche Schlüssel</li>
+                <li>Relationen zwischen Tabellen: Fremdschlüssel und referentielle Integrität.</li>
+                <li>Mehrteilige Schlüssel.</li>
+            </ol>
+        </td>    
+        <td colspan="2" valign="top">
+            <b>2</b> SQL
+            <ol>
+                <li>Filterungen mit WHERE</li>
+                <li>INNER JOIN Anweisungen</li>
+                <li>OUTER JOIN Anweisungen</li>
+                <li>Gruppierungen</li>
+                <li>Having</li>
+                <li>DDL (CREATE TABLE Anweisungen)</li>
+                <li>DML (INSERT, UPDATE und DELETE Anweisungen)</li>
+            </ol>
+        </td>
+    </tr>
+</table>
 
 ## Synchronisieren des Repositories in einen Ordner
 
