@@ -10,54 +10,10 @@ vom Präsenzunterricht abmelden können.
 Unsere Schule möchte diese Abmeldungen elektronisch erfassen. Das folgende ER Modell zeigt
 eine mögliche Umsetzung:
 
-```plantuml
-@startuml
-hide circle
-skinparam linetype ortho
-
-entity Class {
-    *Id : Integer <<generated>>
-    ---
-    *Name : String
-    *Schoolyear : Integer
-}
-
-entity Student {
-    *Accountname : String
-    ---
-	*Firstname : String
-	*Lastname : String
-	*Email : String    
-}
-
-entity Absence {
-    *Id : Integer <<generated>>
-    ---
-    *StudentAccountname : String
-    *Date : DateTime
-}
-
-Absence }o--|| Student
-
-entity Module {
-    *Id : Integer <<generated>>
-    ---
-    *ClassId : Integer
-    *SubjectShortname : String
-}
-
-Module }o--|| Class
-
-entity Inskription {
-    *ModuleId : Integer
-    *StudentAccountname : String
-}
-
-Inskription }o--|| Module
-Inskription }o--|| Student
-@enduml
-```
-
+![](04_PresenceManager_Diagramm.svg)
+<sup>
+https://www.plantuml.com/plantuml/uml/bP5BQiCm48RNrIcqDlW29OI4Fi3GTkDUG946MuqqCgFHmZIvU_s8NFVHGhmn_3FytoTf5raH9-z4Qmr8RKax4F5eiLEal7GMWViEP21kWn20RBcNTqx5AD-57BwYCl9MLiZG0CdDfW44KWnckvtcPLdEUo_Amx1PCrbivgZMRGYk1qMV5UAyO6fE1f0pQAzrICYuxbaGDyMZfVXrE8HFwcVsu9LrIp0Mh9ZxGmJKSEtXBgf_AXRtYiTe_BrQ3oCneywXB4-dVDh5v3cOvAuMcPvclNpnIuStq5otWRxP3I8pANjC3Oj5XV58jcCRCAlCwsl6ltUGAQkcZ9gRVflaozW1ckJT1m00
+</sup>
 ### Erklärung des Modelles
 
 Die Tabelle *Class* speichert die Klassen der Schule über mehrere Schuljahre hinweg. Es kann eine
