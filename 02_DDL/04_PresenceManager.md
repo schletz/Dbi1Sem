@@ -146,7 +146,7 @@ INSERT INTO Absence (Id, StudentAccountname, Date) VALUES (3, 'ACC1002', DATETIM
 -- Den Student ACC1005 gibt es nicht.
 INSERT INTO Absence (Id, StudentAccountname, Date) VALUES (10, 'ACC1005', DATETIME('2022-01-18'));
 -- Die Klasse 10 gibt es nicht.
-INSERT INTO Module (Id, ClassId, SubjectShortname) VALUES (1, 10, 'POS');
+INSERT INTO Module (Id, ClassId, SubjectShortname) VALUES (8, 10, 'POS');
 -- Den Student ACC1005 gibt es nicht.
 INSERT INTO Inskription (ModuleId, StudentAccountname) VALUES (1, 'ACC1005');
 -- Das Modul 10 gibt es nicht.
