@@ -71,7 +71,8 @@ ersetzen ist.
 - **4P** Die FK Prüfungen liefern wie erwartet einen foreign key constraint Fehler (1P pro INSERT).
 - **5P** Die anderen Constraints sind implementiert (1P pro INSERT).
 
-Die Beurteilung wird nach folgendem Schema gegeben:
+Die Beurteilung wird nach folgendem Schema gegeben. Eine Note, die besser als Genügend ist, wird
+nur gegeben wenn alle INSERT Anweisungen, die erfolgreich ausgeführt werden sollen, auch funktionieren.
 19 - 18P: Sehr gut, 17 - 16P: Gut, 15 - 13P: Befriedigend, 12 - 10P: Genügend
 
 ```sql
