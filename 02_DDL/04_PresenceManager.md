@@ -44,6 +44,11 @@ Zusätzlich sind folgende - nicht im Modell abgebildete - Constraints sinnvoll:
 
 ## Arbeitsauftrag
 
+Erstellen Sie in DBeaver (oder einem andere SQL Editor) eine leere SQLite Datenbank. Das erreichen
+Sie dadurch, dass sie Sich zu einer Datei verbinden, die (noch) nicht existiert. Der Treiber
+legt dann die Datei automatisch an. Öffnen Sie dann die Verbindung zur Datenbank, damit Sie ein
+neues SQL Editorfenster erstellen können.
+
 Kopieren Sie das untenstehende SQL Skript in DBeaver. Schreiben Sie die CREATE TABLE Anweisungen so,
 dass die nachfolgenden INSERT Anweisungen funktionieren. Es ist nur der Inhalt der CREATE TABLE
 Anweisung zu Implementieren. Der Rest der SQL Datei darf nicht geändert werden.
