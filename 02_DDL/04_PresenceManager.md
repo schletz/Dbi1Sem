@@ -68,7 +68,7 @@ ersetzen ist.
 - **2P** Die INSERT Anweisungen für die Tabelle Module, die erfolgreich ausgeführt werden sollen, funktionieren.
 - **2P** Die INSERT Anweisungen für die Tabelle Inskription, die erfolgreich ausgeführt werden sollen, funktionieren.
 - **2P** Die INSERT Anweisungen für die Tabelle Absence, die erfolgreich ausgeführt werden sollen, funktionieren.
-- **4P** Die FK Prüfungen funktionieren (1P pro INSERT)
+- **4P** Die FK Prüfungen liefern wie erwartet einen foreign key constraint Fehler (1P pro INSERT)
 - **5P** Die anderen Constraints sind implementiert (1P pro INSERT)
 
 Die Beurteilung wird nach folgendem Schema gegeben:
