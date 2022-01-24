@@ -5,7 +5,7 @@ Erstellen Sie in DBeaver eine SQLite Datenbank oder legen Sie einen User in Orac
 sich unter diesem User. Bilden Sie das folgende Datenmodell mittels *CREATE TABLE* Statements
 ab:
 
-![](images/03_chat_modell.png)
+![](03_chat_modell.png)
 
 Arbeiten Sie in Oracle, müssen Sie in den INSERT Statements den Datumswert mit der Funktion *TO_DATE()*
 samt Formatangabe einfügen. Beispiel:

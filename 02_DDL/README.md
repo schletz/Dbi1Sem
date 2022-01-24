@@ -1,4 +1,10 @@
-# DDL Befehle (CREATE TABLE)
+# DDL Befehle (CREATE TABL
+
+## Inhalt
+
+- [Das CREATE TABLE Kommando](01_CreateTableCommand.md)
+- [Mehrteilige Schlüssel und CHECK](02_CombinedKeys.md)
+- [Übungen](Uebungen)
 
 ![](https://www.sqltutorial.org/wp-content/uploads/2016/04/SQL-Cheat-Sheet-2.png)
 
