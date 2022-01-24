@@ -1,4 +1,4 @@
-# DDL Befehle (CREATE TABL
+# DDL Befehle (CREATE TABLE)
 
 ## Inhalt
 
