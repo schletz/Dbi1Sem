@@ -2,7 +2,7 @@
 
 Themenbereich: CREATE TABLE  
 
-Fügen Sie in die Datenbank *Sempruef.db* folgende Tabellen mit Hilfe von CREATE TABLE Anweisungen
+Fügen Sie in die Datenbank [Sempruef.db](Sempruef.db) folgende Tabellen mit Hilfe von CREATE TABLE Anweisungen
 ein. Die angezeigten Daten geben Ihnen einen Überblick, welche Daten dort gespeichert werden sollen.
 
 (1) Erstellen Sie eine Tabelle *Lesson*. Sie soll speichern, welcher Lehrer welche Klasse in welchem
@@ -35,7 +35,7 @@ Stellen Sie mit Constraints sicher, dass folgende Regeln eingehalten werden:
 (2) Erstellen Sie eine Tabelle *Lernwerkstatt*. In einer Lernwerkstatt betreut ein Lehrer einen Schüler
 in einem Fach. Die Tabelle kann so aussehen:
 
-| LW_Schueler	| LW_Fach	| LW_Betreuer	| LW_Anmeldung	| 
+| LW_Schueler	| LW_Fach	| LW_Betreuer	| LW_Anmeldung	    | 
 | -----------	| -------	| -----------	| ---------------	| 
 | 1004       	| POS    	| LIC        	| 1.11.2019      	| 
 | 1004       	| E      	| LIC        	| 1.11.2019      	| 
@@ -74,3 +74,29 @@ Stellen Sie mit Constraints sicher, dass folgende Regeln eingehalten werden:
 - *AB_Datum*: Datum, wann die Stunde statt gefunden hat.
 - *AB_Schueler* und *AB_Fach* müssen gemeinsam auf den Primärschlüssel in Lernwerkstatt verweisen.
 
+(4) Fügen Sie die oben abgebildeten Datensätze mittels INSERT Anweisung in die Datenbank ein.
+
+```sql
+-- *************************************************************************************************
+-- Übung un SQL: CREATE TABLE und INSERT Kommandos
+-- Vor- und Zuname:
+-- *************************************************************************************************
+
+PRAGMA foreign_keys = ON;
+DROP TABLE IF EXISTS Lesson;
+DROP TABLE IF EXISTS Lernwerkstatt;
+DROP TABLE IF EXISTS Arbeitsbericht;
+
+CREATE TABLE Lesson(
+
+);
+
+CREATE TABLE Lernwerkstatt(
+
+);
+
+CREATE TABLE Arbeitsbericht(
+
+);
+
+```
