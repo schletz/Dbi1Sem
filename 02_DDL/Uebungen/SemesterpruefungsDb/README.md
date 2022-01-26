@@ -76,6 +76,9 @@ Stellen Sie mit Constraints sicher, dass folgende Regeln eingehalten werden:
 
 (4) Fügen Sie die oben abgebildeten Datensätze mittels INSERT Anweisung in die Datenbank ein.
 
+Verwenden Sie als Vorlage das folgende SQL Skript und speichern es unter Ihrem Accountnamen.
+Das Skript muss auch mehrmals vollständig ausführbar sein.
+
 ```sql
 -- *************************************************************************************************
 -- Übung un SQL: CREATE TABLE und INSERT Kommandos
@@ -98,5 +101,10 @@ CREATE TABLE Lernwerkstatt(
 CREATE TABLE Arbeitsbericht(
 
 );
+
+-- *************************************************************************************************
+-- INSERT ANWEISUNGEN
+-- *************************************************************************************************
+
 
 ```
