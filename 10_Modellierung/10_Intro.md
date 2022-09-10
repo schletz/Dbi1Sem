@@ -37,6 +37,7 @@ Um effizient arbeiten zu können, müssen wir also zuerst erheben welche Informa
 effizientes Meldesystem für Störungen notwendig sind. Dafür gibt es standardisierte Entwurfsprozesse.
 
 ![](schritte_der_datenmodellierung.jpg)
+
 <sup>Quelle: Schwickert: Datenmodellierung und Datenbanksysteme, S 11</sup>
 
 ## Entity Relationship Modeling als Entwurfsmuster
