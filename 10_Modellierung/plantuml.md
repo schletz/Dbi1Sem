@@ -1,13 +1,16 @@
 ## PlantUML und VS Code als Modellierungswerkzeug
 
 1. Prüfe, ob Java installiert und im PATH eingetragen ist. Der Befehl *java -version* muss erkannt werden.
-1. Installiere [Visual Studio Code](https://code.visualstudio.com). Achtung: Aktiviere beim Setup
+   Java kann von https://jdk.java.net/18/ geladen werden. Entpacke das Archiv direkt nach *C:*, sodass
+   ein Ordner *C:\jdk-18.0.2.1* entsteht. Füge *C:\jdk-18.0.2.1\bin* zur PATH Variable hinzu
+   ([Anleitung](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)).
+2. Installiere [Visual Studio Code](https://code.visualstudio.com). Achtung: Aktiviere beim Setup
    die Option "In den Explorer integrieren", damit Sie im Kontextmenü VS Code starten können.
-1. Installiere die folgenden Extensions:
+3. Installiere die folgenden Extensions:
    - Markdown PDF
    - Markdown Preview Enhanced
    - PlantUML
-1. Öffne die VS Code Konfiguration (*F1* - "*settings*" eingeben - "*Preferences: Open Settings (JSON)*" wählen)
+4. Öffne die VS Code Konfiguration (*F1* - "*settings*" eingeben - "*Preferences: Open Settings (JSON)*" wählen)
    und füge folgende Zeilen hinzu:
 
 ```javascript
