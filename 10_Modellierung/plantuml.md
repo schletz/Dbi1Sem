@@ -1,10 +1,5 @@
 ## PlantUML und VS Code als Modellierungswerkzeug
 
-Im Gegensatz zu relationalen Datenbanken, wo ER Diagramme als datenbankenunabhängiges Modellierungstool
-verwendet werden können, gibt es für NoSQL keine einheitliche "Modellierungssprache". Da aber
-schlussendlich der Datenbestand mittels Modelklassen in Java oder C# verwaltet wird (bzw. werden kann)
-können Klassendiagramme verwendet werden. Solche Diagramme könenn wie folgt erzeugt werden:
-
 1. Prüfe, ob Java installiert und im PATH eingetragen ist. Der Befehl *java -version* muss erkannt werden.
 1. Installiere [Visual Studio Code](https://code.visualstudio.com). Achtung: Aktiviere beim Setup
    die Option "In den Explorer integrieren", damit Sie im Kontextmenü VS Code starten können.
