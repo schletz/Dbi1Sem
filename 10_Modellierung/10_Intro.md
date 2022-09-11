@@ -71,6 +71,35 @@ Wir diskutieren folgende Fragestellungen:
 - Warum ist die Person kein Attribut bei Störung? Denke an ein Klassendiagramm in der OOP Programmierung.
 - Welchen Wert kann das Attribut *Behoben am* haben?
 
+### Entitäten haben Beziehungen
+
+Wer schon mit Datenbanken gearbeitet hat, kennt das Prinzip dass ein Datensatz mit Datensätzen
+aus anderen Tabellen *in Beziehung steht*. So steht eine Prüfung immer in Beziehung mit einem
+bestimmten Studierenden. Im vorigen ER Diagramm wurde bei der Störung die Person nicht als Attribut
+geführt. Dies wurde nicht vergessen, denn zwischen Person und Störung besteht ein Zusammenhang.
+Er kann sprachlich mit *"Eine Person meldet Störungen"* formuliert werden. Im ER Diagramm
+wird dies mit einer Raute gekennzeichnet:
+
+![](10_Intro_ermodel_2.png)
+
+In der Programmierung kennen wir dieses Prinzip ebenfalls, es handelt sich um die *Assotiation*.
+Die Klasse Exam könnte z. B. in Java so definiert werden:
+
+```java
+class Student {
+  private String firstname;
+  private String lastname;
+}
+
+class Exam {
+  private Student student;
+  private int grade;
+  private LocalDateTime date;
+}
+```
+
+Sie verweist auf eine Instanz der Klasse *Student*.
+
 ## Übung
 
 Verwende die Seite https://app.diagrams.net/, um ein ER Modell nach der Chen Notation für folgenden
@@ -81,4 +110,4 @@ Auftrag eines Kunden zu erstellen:
 > ein Zimmer zu. Dabei schreibe ich das Von- und Bisdatum der Vermietung auf eine Liste. Die Zimmer
 > haben 3 Kategorien (Single, Double, Appartment). Der Preis pro Monat sind vom Zimmer abhängig.
 
-
+Achte auch auf die Beziehungen zwischen den Entitäten.
