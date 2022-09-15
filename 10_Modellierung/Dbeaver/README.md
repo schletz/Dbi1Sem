@@ -23,8 +23,6 @@ muss SQL Server als Datenbanksystem ausgewählt werden:
 
 Beim ersten Verbinden wird der Treiber aus dem Netz geladen
 
-[Video dazu](dbeaver_sql_server_connect.mp4)
-
 ## Darstellung einer Datenbank als ER Diagramm
 
 Ein nettes Feature ist das automatische Erzeugen von ER Diagrammen von einem Schema aus. Dies erreicht
