@@ -21,7 +21,9 @@ muss SQL Server als Datenbanksystem ausgewählt werden:
 - **Username:** *sa*
 - **Passwort:** *SqlServer2019*
 
-Beim ersten Verbinden wird der Treiber aus dem Netz geladen
+Beim ersten Verbinden wird der Treiber aus dem Netz geladen.
+
+https://user-images.githubusercontent.com/24528171/190340375-d283ba66-c53d-4034-98d7-2daad36b48d2.mp4
 
 ## Darstellung einer Datenbank als ER Diagramm
 
