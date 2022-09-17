@@ -1,5 +1,7 @@
 ## PlantUML und VS Code als Modellierungswerkzeug
 
+## [Zum Video](https://youtu.be/h5f-jg_jM98)
+
 1. Prüfe, ob Java installiert und im PATH eingetragen ist. Der Befehl *java -version* muss erkannt werden.
    Java kann von https://jdk.java.net/18/ geladen werden. Entpacke das Archiv direkt nach *C:*, sodass
    ein Ordner *C:\jdk-18.0.2.1* entsteht. Füge *C:\jdk-18.0.2.1\bin* zur PATH Variable hinzu
