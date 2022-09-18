@@ -42,7 +42,7 @@ entity Person {
 
 ## Syntaktische Elemente eines Entity Sets in PlantUML
 
-- Ein PlantUML Diagramm beginnt imemr mit `@startuml` und endet mit `@enduml`.
+- Ein PlantUML Diagramm beginnt immer mit `@startuml` und endet mit `@enduml`.
 - Da ein ER Model eine Erweiterung des Klassendiagrammes ist, wollen wir die üblichen Kreise mit "E"
   nicht anzeigen. Deswegen verstecken wir sie mit `hide circle`.
 - Ein Entity Set wird mit `entity` und dem Namen definiert.
