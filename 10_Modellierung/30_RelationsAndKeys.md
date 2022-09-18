@@ -29,6 +29,7 @@ werden z. B. die folgenden 3 Listen häufig verwendet:
 | 3BHIF | BOM          |       |
 | 4AHIF | NIJ          | C3.08 |
 | 5CHIF | MIP          | C3.10 |
+| 5ABIF | HAS          | C3.08 |
 
 <small><i>Anm: ClassTeacher ist der Klassenvorstand, Room ist der Stammraum</i></small>
 
@@ -65,7 +66,7 @@ einen Raum verwiesen.
 
 Aus den Listen können wir 2 Zusammenhänge sprachlich beschreiben:
 
-- Ein Raum ist der Stammraum einer Klasse.
+- Ein Raum ist der Stammraum einer oder mehrerer Klassen.
 - Ein Schüler besucht eine Klasse.
 
 Formeller können wir es mit sogenannten *Kardinalitäten* ausdrücken. Es ist lediglich eine
