@@ -1,4 +1,4 @@
-# DBI für das 1. Semester des Kollegs bzw. Aufbaulehrganges
+# DBI für das 3. Semester des Kollegs bzw. Aufbaulehrganges oder den 2 und 3. Jahrgang der HIF
 
 ## Lehrinhalte
 
