@@ -146,6 +146,9 @@ Wer sich die Namensgebung im Diagramm ansieht, wird Unterschiede zur originalen 
   Schlüssel *Name* hat.
 - Fremdschlüssel werden mit `<<FK>>` annotiert.
 
+Diese Conventions sind nicht festgeschrieben. In diesem Kurs werden die Modelle nach diesen
+Gesichtspunkten erstellt.
+
 ## Übungen
 
 ### Ergänzung des diskutierten Modelles
