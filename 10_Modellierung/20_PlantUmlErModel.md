@@ -85,6 +85,18 @@ Wir werden beim Erstellen von logischen ER Modellen auch schon physische Überle
 lassen. Dies betrifft die Wahl eines effizienten Schlüssels und das Abbilden von Beziehungen
 mittels Fremdschlüssel.
 
-Die wichtigste Regel für jede Konzeptionsphase: Die verwendeten Darstellung muss vom ganzen
+Die wichtigste Regel für jede Konzeptionsphase: Die verwendete Darstellung muss vom ganzen
 Entwicklerteam verstanden und konsistent verwendet werden.
 
+## Übung
+
+Erstelle für das oben gezeigte Chen Diagramm die Entity Sets mit PlantUML. Verwende dafür die
+Namen *Person*, *Ticket* (für Störung) und *Hardawre*. Gehe dabei so vor:
+1. Erstelle mit VS Code eine neue Datei mit dem Namen *ticketsystem.puml*. Aktiviere mit
+   *Alt + D* die live Vorschau.
+2. Erstelle die Entity Sets. Überlege dir auch sinnvolle zusätzliche Attribute und welche
+   Attribute NULL sein dürfen.
+3. Überlege dir Schlüsselattribute. Falls sich kein Schlüssel findet, verwende das Attribut *Id*.
+   Wer schon mit Datenbanken gearbeitet hat, kann auch
+   die Fremdschlüssel schon einsetzen. Dies ist noch nicht erforderlich, dies wird im nächsten
+   Kapitel diskutiert.
