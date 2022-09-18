@@ -169,3 +169,64 @@ Der Stundenplan kann auch als Liste gespeichert werden. Diese Liste könnte so a
 
 Achte dabei auf die korrekten Beziehungen und die korrekte Verwendung der Symbole.
 
+### Eine Bestellverwaltung
+
+Ein kleines Unternehmen möchte einen Webshop in Betrieb nehmen. Zuerst wird überlegt, welche
+Daten benötigt werden, um die Applikation überhaupt entwickeln zu können. Der Unternehmer zeigt
+dir, wie eine Bestellbestätigung für eine Kundin (für Stefanie Musterkundin) aussehen soll:
+
+```
+Frau
+Stefanie Musterkundin 
+stefanie.musterkundin@gmail.com
+1010 Ort
+
+Bestellbestätigung                                Bestellung Nr: 123456
+                                                  Datum der Bestellung: 3. November 2021
+                                                  Kundennummer: 45678
+
+Wir danken für Ihre Bestellung in unserem Webshop. Sie haben folgende Artikel bestellt:
+
+Art. Nr.  Artikelbezeichnung        Anzahl  Einzelpreis  Gesamtpreis
+1001      Samsung Galaxy A52s            1       393,90       393,90
+1002      Samsung Galaxy Tab A7          1       178,00       178,00
+1003      SanDisk Extreme, microSD       2        70,49       140,98
+--------------------------------------------------------------------
+                                                              712,88
+```
+
+1. Erstelle mit VS Code eine neue Datei mit dem Namen *webshop.puml*.
+2. Lege die benötigten Entities an, indem du den nachfolgenden Code aus der Vorlage kopierst.
+   Es sollen die Kunden, die verfügbaren Produkte, die
+   Bestellung (*Order*) und die Bestellposition (*OrderItem*) erfasst werden können.
+3. Erstelle ein korrektes ER Diagramm mit den nötigen Beziehungen. Achte auf die korrekte Umsetzung
+   der crow's foot notation. Wenn kein vernünftiger Schlüssel aus dem Dokument abgelesen werden kann,
+   verwende das Attribut *Id*.
+4. Hinweis: Baue dein Modell mit 1:n Beziehungen auf. Prüfe wie in diesem Kapitel beschrieben, zwischen
+   Welchen Entities solche Beziehungen existieren. Überlege, ob der Kunde (*Customer*) mit *Order*
+   oder *OrderItem* verbunden werden soll.
+
+
+**Vorlage für das ER Diagramm**
+```
+@startuml
+hide circle
+
+entity Customer {
+
+}
+
+entity Product {
+
+}
+
+entity Order {
+
+}
+
+entity OrderItem {
+
+}
+
+@enduml
+```
