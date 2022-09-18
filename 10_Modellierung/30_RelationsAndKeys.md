@@ -207,8 +207,8 @@ Art. Nr.  Artikelbezeichnung        Anzahl  Einzelpreis  Gesamtpreis
    der crow's foot notation. Wenn kein vernünftiger Schlüssel aus dem Dokument abgelesen werden kann,
    verwende das Attribut *Id*.
 4. Hinweis: Baue dein Modell mit 1:n Beziehungen auf. Prüfe wie in diesem Kapitel beschrieben, zwischen
-   Welchen Entities solche Beziehungen existieren. Überlege, ob der Kunde (*Customer*) mit *Order*
-   oder *OrderItem* verbunden werden soll.
+   Welchen Entities solche Beziehungen existieren. Überlege, ob der Kunde (*Customer*) mit *Order*,
+   *OrderItem* oder beiden Entities verbunden werden soll.
 
 
 **Vorlage für das ER Diagramm**
