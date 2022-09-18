@@ -1,6 +1,7 @@
 # Einstieg in die Datenmodellierung: Das ER Diagramm
 
-Literatur: Datenmodellierung und Datenbanksysteme, https://docplayer.org/53344071-Datenmodellierung-und-datenbanksysteme.html
+Literatur: Datenmodellierung und Datenbanksysteme, https://docplayer.org/53344071-Datenmodellierung-und-datenbanksysteme.html  
+Database Design – 2nd Edition, https://opentextbc.ca/dbdesign01/, Chapter 8
 
 Die meiste Zeit verbringt jede/r von uns mit dem Suchen nach Daten. Sei es die Suche nach einem
 Problem auf Stack Overflow, das Nachsehen in WebUntis oder das Suchen einer E-Mail mit einem

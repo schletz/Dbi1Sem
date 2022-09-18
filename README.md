@@ -14,6 +14,7 @@
                 <li><a href="10_Modellierung/SqlServer/README.md">SQL Server als Docker Image (für HIF Klassen).</a></li>
                 <li><a href="10_Modellierung/Dbeaver/README.md">DBeaver als Datenbankeditor.</a></li>
                 <li><a href="10_Modellierung/10_Intro.md">Die Datenbank als strukturierter Informationsspeicher.</a></li>
+                <li><a href="10_Modellierung/20_PlantUmlErModel.md">Das erste ER Model mit PlantUML.</a></li>
             </ol>
         </td>    
         <td colspan="2" valign="top">
