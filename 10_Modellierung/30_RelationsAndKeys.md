@@ -112,12 +112,10 @@ Sachverhalte abbilden. Klicke auf den Link, um den PlantUML Quelltext anzuzeigen
 Die Linien zwischen den Entities enden manchmal mit einem "Krähenfuß" (3 Striche). Dies gibt dieser
 Notation auch ihren Namen. Die Pfeilenden sind allerdings genau definiert:
 
-| Symbol   | Bedeutung    |
-| -------  | -----------  |
-| `|o..`   | Zero or one  |
-| `||..`   | Exactly one  |
-| `o{..`   | Zero or many |
-| `|{..`   | One or many |
+- `|o..` bedeutet Zero or one 
+- `||..` bedeutet Exactly one 
+- `o{..` bedeutet Zero or many
+- `|{..` bedeutet One or many
 
 Die Aussage *1 Raum ist Stammraum von n Klassen. 1 Klasse hat 0 oder 1 Stammraum.* wird daher mit folgender Zeile realisiert:
 
