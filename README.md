@@ -8,15 +8,12 @@
     </tr>
     <tr>
         <td colspan="3" valign="top">
-            <b>1</b> Datenmodellierung
+            <b>1</b> <a href="10_Modellierung/README.md">Datenmodellierung</a>
             <ol>
-                <li>Die Datenbank als strukturierter Informationsspeicher.</li>
-                <li>Datenbanktabellen: Der Begriff Schema.</li>
-                <li>Datentypen und die NOT NULL Eigenschaft.</li>
-                <li>ER Diagramme als Modellierungs- und Darstellungstechnik.</li>
-                <li>Primärschlüssel, künstliche und natürliche Schlüssel.</li>
-                <li>Relationen zwischen Tabellen: Fremdschlüssel und referentielle Integrität.</li>
-                <li>Mehrteilige Schlüssel.</li>
+                <li><a href="10_Modellierung/plantuml.md">PlantUML und VS Code als Modellierungswerkzeug.</a></li>
+                <li><a href="10_Modellierung/SqlServer/README.md">SQL Server als Docker Image (für HIF Klassen).</a></li>
+                <li><a href="10_Modellierung/Dbeaver/README.md">DBeaver als Datenbankeditor.</a></li>
+                <li><a href="10_Modellierung/10_Intro.md">Die Datenbank als strukturierter Informationsspeicher.</a></li>
             </ol>
         </td>    
         <td colspan="2" valign="top">
