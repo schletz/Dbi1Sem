@@ -9,5 +9,5 @@
 <li><a href="10_Intro.md">Die Datenbank als strukturierter Informationsspeicher.</a></li>
 <li><a href="20_PlantUmlErModel.md">Das erste ER Model mit PlantUML.</a></li>
 <li><a href="30_RelationsAndKeys.md">Beziehungen und Schlüssel: Ein erstes Kennenlernen.</a></li>
-<li><a href="10_Modellierung/40_Keys.md">Schlüsselattribute</a></li>
+<li><a href="40_Keys.md">Schlüsselattribute</a></li>
 </ol>
