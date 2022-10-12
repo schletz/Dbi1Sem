@@ -56,16 +56,7 @@ Im Beispiel mit den Schulklassen haben wir die Frage gestellt, ob wir auch mehre
 verwalten können. Wir können mit einem sogenannten *zusammengesetztem Schlüssel* das Entityset
 *Klasse* so definieren:
 
-```
-+------------+
-|Schoolclass |
-|------------|
-|* Schoolyear|
-|* Name      |
-|------------|
-|  RoomId    |
-+------------+
-```
+![](https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuSh8J4bLICuiIiv9vKhDAyaigLG8Jix8pyz9paaiBbQevb9GKD1IY4nDB8Am_19pKq4iNLrT41MKdv_hcS9Lo-MGcfS2D0y0)
 
 Schoolyear und Name bilden nun einen zusammengesetzten Schlüssel. Die Eindeutigkeit ist dabei so
 definiert, dass zwar einzelne Teile mehrmals vorkommen dürfen (4AHIF im Jahr 2021, 4AHIF im Jahr 2022),
@@ -75,3 +66,104 @@ Auch hier ergibt sich ein Unterschied zwischen der *logischen* und *physischen* 
 sollten kurz sein. Bei mehrteiligen Schlüssel nimmt die Komplexität der Vergleichsoperation noch zu.
 Daher werden wir im physischen Modell nur mit *einteiligen* Schlüsseln arbeiten. Wir können dann
 auch über mehrere Spalten ein *UNIQUE* constraint in SQL legen.
+
+## Fremdschlüssel und Schlüsselattribute
+
+### Die nicht identifizierende Beziehung
+
+Wie bereits im Kapitel [Beziehungen und Schlüssel](30_RelationsAndKeys.md) erwähnt, wird der
+Primärschlüssel bei einer 1:n Beziehung zum *Fremdschlüssel*. Bei einem Primärschlüssel, der aus
+mehreren Teilen besteht, werden einfach alle Teile als Fremdschlüssel verwendet:
+
+![](relation_non_identifying_0852.png)
+
+Wir bezeichnen diese Beziehung auch als *nicht identifizierende Beziehung*, da der Fremdschlüssel
+ein normales Attribut ist und nicht Teil des Schlüssels von Student.
+
+In PlantUML wird die nicht identifizierende Beziehung mit Punkten abgebildet. Es wird in diesem
+Beispiel also `||...o{` für die Definition der Beziehung zwischen Schoolclass und Student verwendet.
+
+```plantuml
+@startuml
+hide circle
+left to right direction
+
+entity Schoolclass {
+   * Year
+   * Name
+   ---
+   RoomId
+}
+
+entity Student {
+   * Nr
+   ---
+   * SchoolclassYear
+   * SchoolclassName
+}
+
+Schoolclass ||...o{ Student
+@enduml
+ ```
+
+### Die identifizierende Beziehung
+
+Es gibt auch identifizierende Beziehungen. In diesem Beispiel wird eine Prüfung (ein Exam) gespeichert.
+Bei einer Prüfung prüft ein Lehrer einen Studierenden. Das Fach und andere Daten wurden zur Vereinfachung
+der Grafik weggelassen.
+
+![](relation_identifying_0902.png)
+
+Wir erkennen, dass die Schülernummer (*Nr* in *Student*) zum Teil des *Primärschlüssels* von *Exam*
+wird. Das Lehrerkürzel (*Shortname* in *Teacher*) wird ebenso zum Teil des Schlüssels von *Exam*.
+
+```plantuml
+@startuml
+hide circle
+left to right direction
+entity Schoolclass {
+   * Year
+   * Name
+   ---
+   RoomId
+}
+
+entity Student {
+   * Nr
+   ---
+   * SchoolclassYear
+   * SchoolclassName
+}
+
+entity Teacher {
+    * Shortname
+   ---
+   * Firstname
+   * Lastname
+}
+
+entity Exam {
+   * StudentNr
+   * TeacherShortname
+   ---
+   * Date
+   Grade
+}
+Student ||---o{ Exam
+Teacher ||---o{ Exam
+Schoolclass ||...o{ Student
+@enduml
+```
+
+## Übung: Prüfungsverwaltung
+
+Nach dem letzten Modell (Teacher, Student und Exam) darf ein Studierender von einem Lehrer genau
+1x geprüft werden. Überlege dir weitere Tabellen für eine sinnvollere Verwaltung von Prüfungen.
+Denke an die Wiederholungsprüfungen: Es gibt einen Prüfer, ein Fach, eine Prüfungsart
+(schriftlich + mündlich, praktisch + mündlich oder nur mündlich).
+Im Protokoll sind die Zeit des schriftlichen und des mündlichen Teiles sowie das Geburtsdatum des
+Schülers anzuführen. Der mündliche Teil findet immer statt (d. h. es gibt keine Prüfung ohne mündlichen Teil).
+Der Lehrer trägt dann eine Prüfungsnote (zwischen 1 und 5) und die neue Zeugnisnote (3, 4 oder 5) ein.
+
+Wie ändert sich dein Modell, wenn du es über mehrere Schuljahre verwenden möchtest? Müssen Änderungen
+vorgenommen werden?
