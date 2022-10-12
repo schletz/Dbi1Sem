@@ -131,8 +131,8 @@ entity Schoolclass {
 entity Student {
    * Nr
    ---
-   * SchoolclassYear
-   * SchoolclassName
+   * SchoolclassYear <<FK>>
+   * SchoolclassName <<FK>>
 }
 
 entity Teacher {
@@ -143,8 +143,8 @@ entity Teacher {
 }
 
 entity Exam {
-   * StudentNr
-   * TeacherShortname
+   * StudentNr <<FK>>
+   * TeacherShortname <<FK>>
    ---
    * Date
    Grade
