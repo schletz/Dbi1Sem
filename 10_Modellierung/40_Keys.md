@@ -57,14 +57,14 @@ verwalten können. Wir können mit einem sogenannten *zusammengesetztem Schlüss
 *Klasse* so definieren:
 
 ```
-,------------.
++------------+
 |Schoolclass |
 |------------|
 |* Schoolyear|
 |* Name      |
-|---         |
-|RoomId      |
-`------------'
+|------------|
+|  RoomId    |
++------------+
 ```
 
 Schoolyear und Name bilden nun einen zusammengesetzten Schlüssel. Die Eindeutigkeit ist dabei so
