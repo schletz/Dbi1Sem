@@ -67,6 +67,9 @@ sollten kurz sein. Bei mehrteiligen Schlüssel nimmt die Komplexität der Vergle
 Daher werden wir im physischen Modell nur mit *einteiligen* Schlüsseln arbeiten. Wir können dann
 auch über mehrere Spalten ein *UNIQUE* constraint in SQL legen.
 
+> Hinweis: Bei einem mehrteiligem Schlüssel muss jeder Teil ungleich NULL sein. Ein Schlüssel mit dem
+> Wert 4AHIF und NULL für das Schuljahr ist also ungültig.
+
 ## Fremdschlüssel und Schlüsselattribute
 
 ### Die nicht identifizierende Beziehung
