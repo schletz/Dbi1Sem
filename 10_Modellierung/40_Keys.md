@@ -56,7 +56,16 @@ Im Beispiel mit den Schulklassen haben wir die Frage gestellt, ob wir auch mehre
 verwalten können. Wir können mit einem sogenannten *zusammengesetztem Schlüssel* das Entityset
 *Klasse* so definieren:
 
-![](https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuSh8J4bLICuiIiv9vKhDAyaigLG8Jix8pyz9paaiBbQevb9GKD222bMc9XP1-7w9kQaWbgwkBeWAoi_FzKpXgkLoICrB0PeA0000)
+```
+,------------.
+|Schoolclass |
+|------------|
+|* Schoolyear|
+|* Name      |
+|---         |
+|RoomId      |
+`------------'
+```
 
 Schoolyear und Name bilden nun einen zusammengesetzten Schlüssel. Die Eindeutigkeit ist dabei so
 definiert, dass zwar einzelne Teile mehrmals vorkommen dürfen (4AHIF im Jahr 2021, 4AHIF im Jahr 2022),
