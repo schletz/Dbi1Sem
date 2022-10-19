@@ -162,11 +162,14 @@ Schoolclass ||...o{ Student
 
 Nach dem letzten Modell (Teacher, Student und Exam) darf ein Studierender von einem Lehrer genau
 1x geprüft werden. Überlege dir weitere Tabellen für eine sinnvollere Verwaltung von Prüfungen.
-Denke an die Wiederholungsprüfungen: Es gibt einen Prüfer, ein Fach, eine Prüfungsart
-(schriftlich + mündlich, praktisch + mündlich oder nur mündlich).
-Im Protokoll sind die Zeit des schriftlichen und des mündlichen Teiles sowie das Geburtsdatum des
-Schülers anzuführen. Der mündliche Teil findet immer statt (d. h. es gibt keine Prüfung ohne mündlichen Teil).
-Der Lehrer trägt dann eine Prüfungsnote (zwischen 1 und 5) und die neue Zeugnisnote (3, 4 oder 5) ein.
+Denke an die Wiederholungsprüfungen: 
+
+- Eine Wiederholungsprüfung kann aus mehreren Teilen bestehen. Ein Exam hat also mehrere *Parts*.
+  Dieser Teil kann schriftlich, praktisch oder mündlich sein. Grund: In Programmieren gibt es z. B.
+  am Vormittal die praktische Prüfung und am Nachmittag die mündliche Prüfung.
+- Im Protokoll ist auch das Geburtsdatum des Schülers anzuführen. Dieses Attribut muss also auch
+  gespeichert werden.
+- Es gibt auf das gesamte Exam 2 Noten: Eine Prüfungsnote und die neue Zeugnisnote.
 
 Wie ändert sich dein Modell, wenn du es über mehrere Schuljahre verwenden möchtest? Müssen Änderungen
 vorgenommen werden?
