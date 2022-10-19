@@ -164,6 +164,8 @@ Nach dem letzten Modell (Teacher, Student und Exam) darf ein Studierender von ei
 1x geprüft werden. Überlege dir weitere Tabellen für eine sinnvollere Verwaltung von Prüfungen.
 Denke an die Wiederholungsprüfungen: 
 
+- Eine Prüfung bezieht sich auf einen Gegenstand. Es muss daher eine Liste der Gegenstände
+  in der Datenbank gespeichert werden. Der Gegenstand ist natürlich im Exam auch zu speichern.
 - Eine Wiederholungsprüfung kann aus mehreren Teilen bestehen. Ein Exam hat also mehrere *Parts*.
   Dieser Teil kann schriftlich, praktisch oder mündlich sein. Grund: In Programmieren gibt es z. B.
   am Vormittal die praktische Prüfung und am Nachmittag die mündliche Prüfung.
