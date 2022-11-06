@@ -27,6 +27,11 @@
                 <li>OUTER JOIN Anweisungen</li>
                 <li>Gruppierungen</li>
                 <li>Having</li>
+                <li>Übungsdatenbanken dazu
+                <ul>
+                    <li><a href="01_SQL Basics/Uebungen/FilialDb">Filialen Datenbank</a></li>
+                </ul>
+                </li>
                 <li>DDL (CREATE TABLE Anweisungen)</li>
                 <li>DML (INSERT, UPDATE und DELETE Anweisungen)</li>
             </ol>
