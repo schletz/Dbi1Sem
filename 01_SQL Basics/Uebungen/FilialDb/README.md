@@ -22,7 +22,7 @@ musst du nur *Enter* drücken.
 if [ -d "/opt/oracle" ]; then DOWNLOADER="curl -s"; else DOWNLOADER="wget -q -O /dev/stdout"; fi
 $DOWNLOADER https://raw.githubusercontent.com/schletz/Dbi1Sem/master/start_dotnet.sh > /tmp/start_dotnet.sh
 chmod a+x /tmp/start_dotnet.sh
-/tmp/start_dotnet.sh https://github.com/schletz/Dbi1Sem/master/01_SQL%20Basics/Uebungen/FilialDb/FilialDb.tar
+/tmp/start_dotnet.sh https://raw.githubusercontent.com/schletz/Dbi1Sem/master/01_SQL%20Basics/Uebungen/FilialDb/FilialDb.tar
 
 ```
 
