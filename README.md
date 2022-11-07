@@ -29,19 +29,24 @@
         <td colspan="2" valign="top">
             <b>2</b> SQL
             <ol>
-                <li><a href="01_SQL Basics/02_Abfragen.md">Filterungen mit WHERE</a></li>
-                <li><a href="01_SQL Basics/03_InnerJoin.md">INNER JOIN Anweisungen</a></li>
-                <li><a href="01_SQL Basics/04_OuterJoin.md">OUTER JOIN Anweisungen</a></li>
-                <li><a href="01_SQL Basics/05_Gruppierungen.md">Gruppierungen</a></li>
-                <li><a href="01_SQL Basics/06_Having.md">Having</a></li>
-                <li>Übungsdatenbanken dazu
-                    <ul>
-                        <li><a href="01_SQL Basics/Uebungen/FilialDb">Filialen Datenbank</a></li>
-                        <li><a href="01_SQL Basics/Uebungen/TeamsDb">Abgabenverwaltung</a></li>
-                        <li><a href="01_SQL Basics/Uebungen/HaendlerDb">Händlerdatenbank</a></li>
-                        <li><a href="01_SQL Basics/Uebungen/SemesterpruefungDb">Verwaltung von Prüfungen</a></li>
-                        <li><a href="01_SQL Basics/Uebungen/SchneeDb">Schneehöhen (nur Datenbank)</a></li>
-                    </ul>
+                <li>DQL (Data Query Language)
+                    <ol>
+                        <li><a href="01_SQL Basics/02_Abfragen.md">Filterungen mit WHERE</a></li>
+                        <li><a href="01_SQL Basics/03_InnerJoin.md">INNER JOIN Anweisungen</a></li>
+                        <li><a href="01_SQL Basics/04_OuterJoin.md">OUTER JOIN Anweisungen</a></li>
+                        <li><a href="01_SQL Basics/05_Gruppierungen.md">Gruppierungen</a></li>
+                        <li><a href="01_SQL Basics/06_Having.md">Having</a></li>
+                        <li>Übungsdatenbanken dazu
+                            <ul>
+                                <li><a href="01_SQL Basics/Uebungen/FilialDb">Filialen Datenbank</a></li>
+                                <li><a href="01_SQL Basics/Uebungen/TeamsDb">Abgabenverwaltung</a></li>
+                                <li><a href="01_SQL Basics/Uebungen/HaendlerDb">Händlerdatenbank</a></li>
+                                <li><a href="01_SQL Basics/Uebungen/SemesterpruefungDb">Verwaltung von Prüfungen</a>
+                                </li>
+                                <li><a href="01_SQL Basics/Uebungen/SchneeDb">Schneehöhen (nur Datenbank)</a></li>
+                            </ul>
+                        </li>
+                    </ol>
                 </li>
                 <li>DDL (CREATE TABLE Anweisungen)
                     <ol>
@@ -52,11 +57,18 @@
                                 <li><a href="02_DDL/Uebungen/Chat">Ein kleiner Chat</a></li>
                                 <li><a href="02_DDL/Uebungen/HaltestellenDb">Haltestellen Datenbank</a></li>
                                 <li><a href="02_DDL/Uebungen/PresenceManager">Presence Manager</a></li>
-                                <li><a href="02_DDL/Uebungen/SemesterpruefungsDb">Eine Datenbank zur Prüfungsverwaltung</a></li>
+                                <li><a href="02_DDL/Uebungen/SemesterpruefungsDb">Eine Datenbank zur
+                                        Prüfungsverwaltung</a></li>
                             </ul>
                     </ol>
                 </li>
                 <li>DML (INSERT, UPDATE und DELETE Anweisungen)</li>
+                <ol>
+                    <li><a href="03_DML/01_Insert.md">INSERT INTO Anweisungen</a></li>
+                    <li><a href="03_DML/02_Update_Delete.md">Update und Delete</a></li>
+                    <li><a href="https://www.sqlite.org/foreignkeys.html">ON DELETE CASCADE und ON UPDATE CASCADE</a>
+                    </li>
+                </ol>
             </ol>
         </td>
     </tr>
