@@ -28,7 +28,9 @@ namespace SemesterpruefungDb
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Sempruef>().HasOne(s => s.SP_SchuelerNavigation).WithMany().OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Sempruef>().HasOne(s => s.SP_SchuelerNavigation)
+                .WithMany(s => s.Sempruef)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
         public void Seed()

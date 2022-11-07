@@ -21,10 +21,8 @@ namespace SemesterpruefungDb
         [StringLength(10)]
         public string S_Klasse { get; set; } = default!;
         [ForeignKey("S_Klasse")]
-        [InverseProperty("Schueler")]
         [CsvHelper.Configuration.Attributes.Ignore]
         public virtual Klasse S_KlasseNavigation { get; set; } = default!;
-        [InverseProperty("SP_SchuelerNavigation")]
         public virtual ICollection<Sempruef> Sempruef { get; set; } = default!;
     }
 }

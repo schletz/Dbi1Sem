@@ -17,9 +17,7 @@ namespace SemesterpruefungDb
         public string L_Zuname { get; set; } = default!;
         [StringLength(255)]
         public string L_Vorname { get; set; } = default!;
-        [InverseProperty("K_KVNavigation")]
         public virtual ICollection<Klasse> Klasse { get; set; } = default!;
-        [InverseProperty("SP_LehrerNavigation")]
         public virtual ICollection<Sempruef> Sempruef { get; set; } = default!;
     }
 }
