@@ -4,17 +4,32 @@ Themenbereich: JOIN Operationen (ohne Gruppierung)
 
 ## Hinweise zur Bearbeitung der Aufgaben
 
-
-1. In diesem Verzeichnis befindet sich eine SQLite Datenbank [HaendlerDb.db](HaendlerDb.db).
-   Öffnen Sie diese Datenbank mit DBeaver und erstellen Sie ein neues Abfragefenster.
-2. Kopieren Sie den untenstehenden SQL Code mit den Angaben in das
-   Abfragefenster in DBeaver und fügen Sie Ihre Lösung unter das jeweilige Beispiel ein. 
-3. Ihre Ausgabe darf von der korrekten Ausgabe bezüglich der Formatierung und
-   Sortierung abweichen (außer es ist eine spezielle Sortierung in der Angabe verlangt).
+- Kopieren Sie den untenstehenden SQL Code mit den Angaben in das
+  Abfragefenster in DBeaver und fügen Sie Ihre Lösung unter das jeweilige Beispiel ein. 
+- Ihre Ausgabe darf von der korrekten Ausgabe bezüglich der Formatierung und
+  Sortierung abweichen (außer es ist eine spezielle Sortierung in der Angabe verlangt).
 
 ## Datenmodell
 
 ![](HaendlerDb_modell.png)
+
+## Generieren der Datenbank
+
+Öffne in Docker Desktop eine Shell des Oracle oder SQL Server Containers. Kopiere danach die
+folgenden Befehle in das Fenster. Sie laden die .NET 6 SDK und den Generator der Datenbank.
+Am Ende wirst du nach dem Admin Passwort der Datenbank gefragt. Hast du den Container mit den
+Standardpasswörtern (*oracle* für Oracle bzw. *SqlServer2019* für Sql Server 2019) erstellt,
+musst du nur *Enter* drücken.
+
+```bash
+if [ -d "/opt/oracle" ]; then DOWNLOADER="curl -s"; else DOWNLOADER="wget -q -O /dev/stdout"; fi
+$DOWNLOADER https://raw.githubusercontent.com/schletz/Dbi1Sem/master/start_dotnet.sh > /tmp/start_dotnet.sh
+chmod a+x /tmp/start_dotnet.sh
+/tmp/start_dotnet.sh https://raw.githubusercontent.com/schletz/Dbi1Sem/master/01_SQL%20Basics/Uebungen/HaendlerDb/HaendlerDb.tar
+
+```
+
+Alternativ kann die Datenbank als SQLite Datei [HaendlerDb.db](HaendlerDb.db) geladen werden.
 
 ## SQL Datei
 
