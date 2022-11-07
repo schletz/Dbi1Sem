@@ -11,7 +11,7 @@ Themenbereich: JOIN Operationen (ohne Gruppierung)
 
 ## Datenmodell
 
-![](HaendlerDb_modell.png)
+![](er_model_1948.png)
 
 ## Generieren der Datenbank
 

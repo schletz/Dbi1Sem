@@ -7,7 +7,7 @@ Thema: SQL Abfragen mit JOIN und GROUP BY
 Gerade in der aktuellen Zeit werden viele Abgaben über Microsoft Teams eingefordert. Eine kleine
 Datenbank soll helfen, den Überblick zu behalten.
 
-![](datenmodell.png)
+![](er_model_1953.png)
 
 Wie Sie erkennen können gibt es eine Tabelle *Team* mit allen Klassenteams. In jedem Team sind
 Studierende eingeschrieben. Es können pro Team Aufgaben definiert werden. Diese sind einem

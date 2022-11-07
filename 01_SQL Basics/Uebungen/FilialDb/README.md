@@ -4,7 +4,7 @@ In einer kleinen Datenbank sind Filialen eines Unternehmens gespeichert. Produkt
 Filialen zu unterschiedlichen Preisen angeboten. Jedes Produkt hat einen Basispreis, in der
 Filiale wird jedoch der Preis in der Tabelle Filialpreis verrechnet.
 
-![](datenmodell.png)
+![](er_model_1951.png)
 
 Die Ausgaben müssen den angegebenen Musterausgaben entsprechen. Die Sortierung muss aber - wenn
 dies nicht angegeben ist - nicht übereinstimmen. Formatierungen von Nummern oder Datumswerten

@@ -7,7 +7,7 @@ als Kommentar über jedes Ihrer gelösten Beispiele. Die korrekten Lösungen sin
 
 In der Datenbank sind Semesterprüfungen abgebildet. Das Datenmodell sieht so aus:
 
-![](datenmodell_sempruef.png)
+![](er_model_1941.png)
 
 ## Generieren der Datenbank
 

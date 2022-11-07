@@ -2,7 +2,7 @@
 
 Diese Datenbank ist für freie Übungen im Unterricht gedacht.
 
-![](er_model_2008.png)
+![](er_model_1957.png)
 
 ## Generieren der Datenbank
 
