@@ -28,7 +28,7 @@
         </td>
         <td colspan="2" valign="top">
             <b>2</b> SQL
-            <ol>
+            <ul>
                 <li>DQL (Data Query Language)
                     <ol>
                         <li><a href="01_SQL Basics/02_Abfragen.md">Filterungen mit WHERE</a></li>
@@ -69,7 +69,7 @@
                     <li><a href="https://www.sqlite.org/foreignkeys.html">ON DELETE CASCADE und ON UPDATE CASCADE</a>
                     </li>
                 </ol>
-            </ol>
+            </ul>
         </td>
     </tr>
 </table>
