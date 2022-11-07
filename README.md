@@ -32,6 +32,7 @@
                     <li><a href="01_SQL Basics/Uebungen/FilialDb">Filialen Datenbank</a></li>
                     <li><a href="01_SQL Basics/Uebungen/TeamsDb">Abgabenverwaltung</a></li>
                     <li><a href="01_SQL Basics/Uebungen/HaendlerDb">Händlerdatenbank</a></li>
+                    <li><a href="01_SQL Basics/Uebungen/SemesterpruefungDb">Verwaltung von Prüfungen</a></li>
                     <li><a href="01_SQL Basics/Uebungen/SchneeDb">Schneehöhen (nur Datenbank)</a></li>
                 </ul>
                 </li>
