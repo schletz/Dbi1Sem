@@ -1,6 +1,6 @@
 # Filterabfragen
 
-## [Zu den Folien](02_Abfragen.pdf)
+## :link: [Zu den Folien](02_Abfragen.pdf)
 
 > Die nachfolgenden Abfragen beziehen sich auf die Schuldatenbank. Sie können die Datei
 > [hier als SQLite Datenbank](../Schule.db) laden. Wenn Sie die Datenbank in einem Oracle

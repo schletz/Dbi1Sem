@@ -1,4 +1,4 @@
 # HAVING
 
-## [Zu den Folien](06_Having.pdf)
+## :link: [Zu den Folien](06_Having.pdf)
 
