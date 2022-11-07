@@ -22,11 +22,11 @@
         <td colspan="2" valign="top">
             <b>2</b> SQL
             <ol>
-                <li>Filterungen mit WHERE</li>
-                <li>INNER JOIN Anweisungen</li>
-                <li>OUTER JOIN Anweisungen</li>
-                <li>Gruppierungen</li>
-                <li>Having</li>
+                <li><a href="01_SQL Basics/02_Abfragen.md">Filterungen mit WHERE</a></li>
+                <li><a href="01_SQL Basics/03_InnerJoin.md">INNER JOIN Anweisungen</a></li>
+                <li><a href="01_SQL Basics/04_OuterJoin.md">OUTER JOIN Anweisungen</a></li>
+                <li><a href="01_SQL Basics/05_Gruppierungen.md">Gruppierungen</a></li>
+                <li><a href="01_SQL Basics/06_Having.md">Having</a></li>
                 <li>Übungsdatenbanken dazu
                 <ul>
                     <li><a href="01_SQL Basics/Uebungen/FilialDb">Filialen Datenbank</a></li>
