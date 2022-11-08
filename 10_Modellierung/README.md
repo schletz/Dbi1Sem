@@ -10,4 +10,5 @@
 <li><a href="20_PlantUmlErModel.md">Das erste ER Model mit PlantUML.</a></li>
 <li><a href="30_RelationsAndKeys.md">Beziehungen und Schlüssel: Ein erstes Kennenlernen.</a></li>
 <li><a href="40_Keys.md">Schlüsselattribute</a></li>
+<li><a href="50_RelationsInDetail.md">n:m und 1:1 Beziehungen</a></li>
 </ol>
