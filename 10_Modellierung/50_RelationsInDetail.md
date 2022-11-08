@@ -110,19 +110,47 @@ Oftmals muss die n:m Beziehung schon auf logischer Ebene aufgelöst werden. Wir 
 speichern, wann die Vorstellung in einem bestimmten Saal nun statt findet. Die einzige Möglichkeit
 ist das Platzieren des Attributes im Entity *Screening*:
 
-![](https://www.plantuml.com/plantuml/svg/TOrDgeD0383tEKNM3-O68YuUxrLAsuLUO3eJDJ0_CCP2KUzULAgBqbMI3xulHIywoU0TT6m93IVZ21mrWX8nSTi9MavaX6C0e20iJpnfvt04HFp1qYvJARMTry7VATsQYhJqCCFkNEA3wOjKipZQrdyAYM3UjSeaei2XVQlBxz9YblsTytn5M_fWH_bN2zNirzxYuJGf5SSZ2glwYQ6WO0VlNW00)
+![](https://www.plantuml.com/plantuml/svg/TStDIiKm40NW_Jp5h8MymULo5w8MKHVj2yJaj1t83wHJGTg-kxQb5HHNoHpuphaDQekECL0l7koak00AQ9KrSv6kL_PIu5Ho8a9IqKz-iY7mHCnynvLVNsFCVhwEyHtbhQrXTQ25JlEIFmJ_e4OqOFy-8XNGShBQ5I19wWwwRbUUBvU7v-jrY_RgNzczLJHLnB7ptRXAdcTZylHJInl-6z-G_1Z35m00)
+
+Wir müssen dieses Attribut sogar als Teil des Primärschlüssels aufnehmen, da sonst nur ein mal die
+Zuordnung Film zu Saal gespeichert werden kann.
 
 > n:m Beziehungen werden meist auf logischer Ebene schon als 1:n Beziehung mit einer 
 > Auflösungstabelle modelliert, da meist zusätzliche Informationen dort untergebracht werden müssen.
+> Diese zusätzlichen Attribute können auch den Schlüssel dieser Tabelle erweitern.
+
+### Ein weiteres Beispiel: Projekte und Mitarbeiter
+
+Ein klassisches Modellierungsbeispiel ist die Situation, dass Projekte und Mitarbeiter gespeichert
+werden sollen. **1** Projekt hat **n** Mitarbeiter, **1** Mitarbeiter arbeitet in **n** Projekten.
+Beachte auch hier die Zeitachse. Selbst wenn zur selben Zeit ein Mitarbeiter nur in einem Projekt
+arbeiten darf, müssen wir für die gesamte Zeit, die der Mitarbeiter gespeichert ist, eine n:m Beziehung
+annehmen.
+
+Das Modell kann so aussehen:
+
+![](https://www.plantuml.com/plantuml/svg/bO-zgi9048NxUOefxnNs3K984o7O23v1aXtDoFx8P5A4n7VNHLT1RAnc-GvdFqurQYiwUGS3MyAUfNS4ZewA6b7uD2XQ5kgLOm2WeAmpxYMUxmWNGCGDDZPTOqmwVr474cnLXRj9QVo7AxoQjR-uE1FzNirIJxuZoVqdR2mMnNPNbW-QBM-S9IazfCdfMGUR17dDkXeJbmyFvB--nb1Hi9DtDm00)
+
+Start und Ende sind normale Attribute und erweitern nicht den Schlüssel. Es kann also nur *einen Datensatz*
+geben, der die Zuordnung Mitarbeiter A zu Projekt 1 festhält. Eine schlechte Idee wäre folgende
+Realisierung:
+
+![](https://www.plantuml.com/plantuml/svg/bP3DIiSm4CJl-nHxr4BUu4_ffO9u4No2DXdRI3vakpsKrdUNAAbIl7YQaCbl9hlTeeFe6WFDte6j5nj00Q_AcbdyD2ixBx3gSo92KgyRFqj-WrNUYPaRVdH5ZJ55xhBE41vKnO-hOhcd3ph9Fhw7l07_HsjfH1mXFppVRXCIP52ujlsLrbJYwyt3qxVPd5-uNB-KHPHZdrofhJCUXp5vlxHJ3VdJfWx9hJ5y0W00)
+
+Durch die verwendung eines autoincrement Schlüssels kann jetzt mehrmals gespeichert werden, dass
+Mitarbeiter A in Projekt 1 arbeitet. Dies verschlechtert die Datenqualität, denn wir wissen nicht,
+welcher Datensatz nun der Richtige ist.
 
 ### Übung
 
 Erweitere nun das obige Modell um folgende Sachverhalte:
 
 - Filme können auch mehrere Genres haben.
-- Filme haben mehrere Filmarten: 2D (ID *2D*), 3D (ID *3D*) und Originalfassung (ID *O*).
-  Erstelle für die Filmarten ein Entity *MovieType* und ermögliche eine korrekte Zuordnung zu den 
-  Filmen.
+- Filme werden in mehrere Filmarten eingekauft: 2D (ID *2D*), 3D (ID *3D*) und Originalfassung (ID *O*).
+  Erstelle für die Filmarten ein Entity *MovieType* mit der beschriebenen ID und einer Langbezeichnung.
+  Ermögliche eine korrekte Zuordnung dieser Typen zu den Filmen.
+- Ob ein Film in einer bestimmten Filmart vorgeführt wird, ist unabhängig zu speichern. Stelle dabei
+  eine Verbindung der Vorführung zum Filmtyp her.
 - Der Verkaufspreis der Filme richtet sich nach Film und Filmart. So wird z. B. für 3D ein
   höherer Preis verlangt. Wie kann das gespeichert werden?
 - SQL Wiederholung: Schreibe - basierend auf deinem Modell - Abfragen, die folgendes herausfinden:
