@@ -147,11 +147,12 @@ Schlüssel verwenden zu können, stellt das *UNIQUE Constraint* dar.
 Erweitere nun das obige Modell um folgende Sachverhalte:
 
 - Filme können auch mehrere Genres haben.
-- Filme werden in mehrere Filmarten eingekauft: 2D (ID *2D*), 3D (ID *3D*) und Originalfassung (ID *O*).
+- Filme werden in mehreren Filmarten eingekauft: 2D (ID *2D*), 3D (ID *3D*) und Originalfassung (ID *O*).
   Erstelle für die Filmarten ein Entity *MovieType* mit der beschriebenen ID und einer Langbezeichnung.
   Ermögliche eine korrekte Zuordnung dieser Typen zu den Filmen.
-- Ob ein Film in einer bestimmten Filmart vorgeführt wird, ist unabhängig zu speichern. Stelle dabei
-  eine Verbindung der Vorführung zum Filmtyp her.
+- Ob ein Film in einer bestimmten Filmart vorgeführt wird, ist unabhängig zu speichern. So kann z. B.
+  ein Film kurz nach der Premiere im Saal A in 3D gezeigt werden. Danach wird die 2D Version,
+  die für den Kunden preisgünstiger ist, gezeigt. Stelle dabei eine Verbindung der Vorführung zum Filmtyp her.
 - Der Verkaufspreis der Filme richtet sich nach Film und Filmart. So wird z. B. für 3D ein
   höherer Preis verlangt. Wie kann das gespeichert werden?
 - SQL Wiederholung: Schreibe - basierend auf deinem Modell - Abfragen, die folgendes herausfinden:
