@@ -153,7 +153,7 @@ Erweitere nun das obige Modell um folgende Sachverhalte:
   Ermögliche eine korrekte Zuordnung dieser Typen zu den Filmen.
 - Ob ein Film in einer bestimmten Filmart vorgeführt wird, ist unabhängig zu speichern. So kann z. B.
   ein Film kurz nach der Premiere im Saal A in Originalfassung gezeigt werden. Danach wird die
-  deutsche 2D Version, die häufiger nachgefragt ist, gezeigt. Stelle dabei eine Verbindung der
+  deutsche 2D Version, die häufiger nachgefragt wird, gezeigt. Stelle dabei eine Verbindung der
   Vorführung zum Filmtyp her.
 - Der Verkaufspreis der Filme richtet sich nach Film und Filmart. So wird z. B. für 3D ein
   höherer Preis verlangt. Wie kann das gespeichert werden?
