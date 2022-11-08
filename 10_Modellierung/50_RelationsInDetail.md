@@ -112,8 +112,8 @@ ist das Platzieren des Attributes im Entity *Screening*:
 
 ![](https://www.plantuml.com/plantuml/svg/TStDIiKm40NW_Jp5h8MymULo5w8MKHVj2yJaj1t83wHJGTg-kxQb5HHNoHpuphaDQekECL0l7koak00AQ9KrSv6kL_PIu5Ho8a9IqKz-iY7mHCnynvLVNsFCVhwEyHtbhQrXTQ25JlEIFmJ_e4OqOFy-8XNGShBQ5I19wWwwRbUUBvU7v-jrY_RgNzczLJHLnB7ptRXAdcTZylHJInl-6z-G_1Z35m00)
 
-Wir müssen dieses Attribut sogar als Teil des Primärschlüssels aufnehmen, da sonst nur ein mal die
-Zuordnung Film zu Saal gespeichert werden kann.
+Wir müssen dieses Attribut sogar als Teil des Primärschlüssels aufnehmen, da ein Film mehrmals im
+selben Saal zu unterschiedlichen Zeiten vorgeführt wird.
 
 > n:m Beziehungen werden meist auf logischer Ebene schon als 1:n Beziehung mit einer 
 > Auflösungstabelle modelliert, da meist zusätzliche Informationen dort untergebracht werden müssen.
