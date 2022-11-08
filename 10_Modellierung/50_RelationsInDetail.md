@@ -137,7 +137,7 @@ Realisierung:
 
 ![](https://www.plantuml.com/plantuml/svg/bP3DIiSm4CJl-nHxr4BUu4_ffO9u4No2DXdRI3vakpsKrdUNAAbIl7YQaCbl9hlTeeFe6WFDte6j5nj00Q_AcbdyD2ixBx3gSo92KgyRFqj-WrNUYPaRVdH5ZJ55xhBE41vKnO-hOhcd3ph9Fhw7l07_HsjfH1mXFppVRXCIP52ujlsLrbJYwyt3qxVPd5-uNB-KHPHZdrofhJCUXp5vlxHJ3VdJfWx9hJ5y0W00)
 
-Durch die verwendung eines autoincrement Schlüssels kann jetzt mehrmals gespeichert werden, dass
+Durch die Verwendung eines autoincrement Schlüssels kann jetzt mehrmals gespeichert werden, dass
 Mitarbeiter A in Projekt 1 arbeitet. Dies verschlechtert die Datenqualität, denn wir wissen nicht,
 welcher Datensatz nun der Richtige ist. Eine Alternative, um trotzdem einen einteiligen
 Schlüssel verwenden zu können, stellt das *UNIQUE Constraint* dar.
