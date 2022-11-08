@@ -139,7 +139,8 @@ Realisierung:
 
 Durch die verwendung eines autoincrement Schlüssels kann jetzt mehrmals gespeichert werden, dass
 Mitarbeiter A in Projekt 1 arbeitet. Dies verschlechtert die Datenqualität, denn wir wissen nicht,
-welcher Datensatz nun der Richtige ist.
+welcher Datensatz nun der Richtige ist. Eine Alternative, um trotzdem einen einteiligen
+Schlüssel verwenden zu können, stellt das *UNIQUE Constraint* dar.
 
 ### Übung
 
