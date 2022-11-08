@@ -158,7 +158,8 @@ Erweitere nun das obige Modell um folgende Sachverhalte:
 - Der Verkaufspreis der Filme richtet sich nach Film und Filmart. So wird z. B. für 3D ein
   höherer Preis verlangt. Wie kann das gespeichert werden?
 - SQL Wiederholung: Schreibe - basierend auf deinem Modell - Abfragen, die folgendes herausfinden:
-  - Welche Filme im Programm haben die Filmart "3D"?
+  - Welche Filme im Programm wurden in der Filmart "3D" eingekauft?
+  - Welche Filme im Programm werden in der Filmart "3D" vorgeführt (verwende EXISTS)?
   - Wie viele Filme gibt es pro Filmart?
 
 Erstelle zu Beginn eine Datei *cinema.puml* in Visual Studio Code. Mit *ALT + D* kann die
