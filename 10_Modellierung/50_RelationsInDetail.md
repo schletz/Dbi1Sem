@@ -132,8 +132,8 @@ Das Modell kann so aussehen:
 ![](https://www.plantuml.com/plantuml/svg/bO-zgi9048NxUOefxnNs3K984o7O23v1aXtDoFx8P5A4n7VNHLT1RAnc-GvdFqurQYiwUGS3MyAUfNS4ZewA6b7uD2XQ5kgLOm2WeAmpxYMUxmWNGCGDDZPTOqmwVr474cnLXRj9QVo7AxoQjR-uE1FzNirIJxuZoVqdR2mMnNPNbW-QBM-S9IazfCdfMGUR17dDkXeJbmyFvB--nb1Hi9DtDm00)
 
 Start und Ende sind normale Attribute und erweitern nicht den Schlüssel. Es kann also nur *einen Datensatz*
-geben, der die Zuordnung Mitarbeiter A zu Projekt 1 festhält. Eine schlechte Idee wäre folgende
-Realisierung:
+geben, der die Zuordnung Mitarbeiter A zu Projekt 1 festhält. Problematisch (wenn nicht weitere
+Constraints definiert werden) ist folgende Realisierung:
 
 ![](https://www.plantuml.com/plantuml/svg/bP3DIiSm4CJl-nHxr4BUu4_ffO9u4No2DXdRI3vakpsKrdUNAAbIl7YQaCbl9hlTeeFe6WFDte6j5nj00Q_AcbdyD2ixBx3gSo92KgyRFqj-WrNUYPaRVdH5ZJ55xhBE41vKnO-hOhcd3ph9Fhw7l07_HsjfH1mXFppVRXCIP52ujlsLrbJYwyt3qxVPd5-uNB-KHPHZdrofhJCUXp5vlxHJ3VdJfWx9hJ5y0W00)
 
