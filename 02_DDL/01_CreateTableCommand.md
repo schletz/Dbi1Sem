@@ -17,7 +17,7 @@ Um eine Datenbank in SQL Server über die Shell anzulegen, öffne Docker Desktop
 des SQL Server Containers. Danach kann mit folgendem Befehl die Datenbank *Lernsieg* angelegt werden:
 
 ```bash
-/opt/mssql-tools/bin/sqlcmd -U sa -P SqlServer2019 -Q "DROP DATABASE IF EXISTS Lernsieg; CREATE DATABASE Lernsieg"
+/opt/mssql-tools/bin/sqlcmd -U sa -P SqlServer2019 -Q "DROP DATABASE IF EXISTS Lernsieg; CREATE DATABASE Lernsieg;"
 
 ```
 
