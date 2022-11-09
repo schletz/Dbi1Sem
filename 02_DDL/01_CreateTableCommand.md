@@ -200,8 +200,6 @@ CREATE TABLE AppUser (
 
 ```sql
 -- Umgekehrte Reihenfolge wie bei CREATE TABLE!
--- In ORACLE ist DROP TABLE School CASCADE CONSTRAINTS;
--- möglich, um Tabellen trotz Fremdschlüsselreferenzen zu löschen.
 DROP TABLE IF EXISTS Rating;
 DROP TABLE IF EXISTS AppUser;
 DROP TABLE IF EXISTS RatingCriteria;
