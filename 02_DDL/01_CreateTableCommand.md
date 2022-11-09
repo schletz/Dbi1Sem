@@ -77,8 +77,18 @@ CREATE TABLE School (
 
 Im Modell sind manche Schlüssel mit *generated* gekennzeichnet. Das Anlegen von Auto Increment
 Werten unterscheidet sich je nach Datenbank. In SQLIte können wir mittels *AUTOINCREMENT* einen
-Primärschlüssel zu einem Auto Increment Wert machen. Der Datentyp muss natürlich *INTEGER* sein.
+Primärschlüssel zu einem Auto Increment Wert machen. In SQL Server schreiben wir *IDENTITY(1,1)*.
+Der Datentyp muss natürlich *INTEGER* sein.
 
+**SQL Server**
+```sql
+CREATE TABLE RatingCriteria (
+    Number       INTEGER IDENTITY(1,1) PRIMARY KEY,
+    -- ...
+)
+```
+
+**SQLite**
 ```sql
 CREATE TABLE RatingCriteria (
     Number       INTEGER      PRIMARY KEY AUTOINCREMENT,
@@ -106,10 +116,11 @@ Der Fremdschlüssel wird auf der "N Seite" definiert und verweist auf die "1er S
 hat eine Schule mehrere User (1 : n). Daher wird in der Tabelle *User* der Fremdschlüssel zur
 Schule definiert.
 
-Die Syntax lautet *FOREIGN KEY (FK Spalte) REFERENCES OtherTable(Pk Spalte)*:
+Die Syntax lautet *FOREIGN KEY (FK Spalte) REFERENCES OtherTable(Pk Spalte)*. Da *User* in SQL Server
+ein reserviertes Wort ist, müssen wir es in eckige Klammern schreiben.
 
 ```sql
-CREATE TABLE User (
+CREATE TABLE [User] (
 	--- ...
 	SchoolNumber  INTEGER   NOT NULL,
 	FOREIGN KEY (SchoolNumber) REFERENCES School(Number)
@@ -129,19 +140,15 @@ CREATE TABLE User (
 
 ### Das SQL Skript
 
+<details>
+	<summary>Skript für SQL Server anzeigen</summary>
+
 ```sql
--- Für SQLite aktivieren wir den Foreigen Key Check. Je nach Datenbankeditor wird die Datenbank
--- eventuell ohne diese Einstellung angelegt.
-PRAGMA foreign_keys = ON;
-
--- SQL Script für DBeaver und SQLite
-
 -- Umgekehrte Reihenfolge wie bei CREATE TABLE!
--- In ORACLE ist 
--- DROP TABLE School CASCADE CONSTRAINTS;
+-- In ORACLE ist DROP TABLE School CASCADE CONSTRAINTS;
 -- möglich, um Tabellen trotz Fremdschlüsselreferenzen zu löschen.
 DROP TABLE IF EXISTS Rating;
-DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS [User];
 DROP TABLE IF EXISTS RatingCriteria;
 DROP TABLE IF EXISTS School;
 
@@ -152,12 +159,14 @@ CREATE TABLE School (
 );
 
 CREATE TABLE RatingCriteria (
-	Id        INTEGER      PRIMARY KEY AUTOINCREMENT,   -- PK mit Autowert
-	Name      VARCHAR(100) NOT NULL UNIQUE              -- Der Name darf nicht mehrmals vorkommen.
+	Id        INTEGER IDENTITY(1,1) PRIMARY KEY,   -- PK mit Autowert
+	Name      VARCHAR(100) NOT NULL UNIQUE         -- Der Name darf nicht mehrmals vorkommen.
 );
 
-CREATE TABLE User (
-	Id        INTEGER       PRIMARY KEY AUTOINCREMENT,
+-- User ist ein reserviertes Wort, deswegen verwenden wir
+-- in SQL Server []
+CREATE TABLE [User] (
+	Id        INTEGER IDENTITY(1,1) PRIMARY KEY,
 	Firstname VARCHAR(255)  NOT NULL,
 	Lastname  VARCHAR(255)  NOT NULL,
 	PhoneNr   VARCHAR(20)   NOT NULL UNIQUE,
@@ -168,18 +177,21 @@ CREATE TABLE User (
 	FOREIGN KEY (SchoolNumber) REFERENCES School(Number)
 );
 
+-- User ist ein reserviertes Wort, deswegen verwenden wir
+-- in SQL Server []
 CREATE TABLE Rating (
-	Id           INTEGER  PRIMARY KEY AUTOINCREMENT,
+	Id           INTEGER IDENTITY(1,1) PRIMARY KEY,
 	SchoolNumber INTEGER  NOT NULL,
 	UserId       INTEGER  NOT NULL,
 	CriteriaId   INTEGER  NOT NULL, 
 	Date         DATETIME NOT NULL,
 	Value        INTEGER  NOT NULL,
 	FOREIGN KEY (SchoolNumber)   REFERENCES School(Number),
-	FOREIGN KEY (UserId)     REFERENCES User(Id),
+	FOREIGN KEY (UserId)     REFERENCES [User](Id),
 	FOREIGN KEY (CriteriaId) REFERENCES RatingCriteria(Id)
 );
 ```
+</details>
 
 ## Übung
 
@@ -202,18 +214,24 @@ Für String Felder verwenden Sie für *Shortname* und *TeacherShortname* von Tea
 https://www.plantuml.com/plantuml/uml/hP71Ji9048RFx5FipOG47e0Gma69H4LZ-m93ExOZszswEwiGuTtTnK9gou63fpR__9bl_ltdZi6ohvGeAKUPaSqKYXlvN3CP3MeYKSDQeNmpLXhBfIcYB1LfT6FXDgHhi50T1TxL-6iI0ZKJxsIAOVOj1iDbBYTogHaBj78wBL2Z1SPyDXE3qMWK72keC7WIjgIBOF6QFZp6UPALngXCWNDdWpYq6Lc9zeX9oi3NxKsdzGkohZiPFa9Vkwk0rAL3MiY4VHv-hqZsx-WKtEPARkBNxvXncv0Igx_8RKqMOjctm74IFobLA0PFi7qnfDa5TUMhDThWZuLso8k7Y1msDVGRE5b2XkFn1pCUx_SoRkeASS4vwJteVAclp1eNNRwhwUhoi1Vw5Jy9ltfozo4EehdkT7l0TwI6A-QeSr-f7m00
 <sup>
 
-**(1)** Öffnen Sie DBeaver und verbinden Sie sich zu einer SQLite Datenbank. Diese muss nicht
-   vorhanden sein, wenn Sie den Namen *Teams.db* eingeben wird sie angelegt.
+**(1)** Lege in der Shell des SQL Server Containers eine leere Datenbank *TeamsDb* an:
 
-**(2)** Vervollständigen Sie das nachfolgende CREATE TABLE Skript. Hinweis: Vermeiden Sie Leerzeilen innerhalb des CREATE TABLE Statements. Dies führt zu Fehlern bei der Ausführung in DBeaver.
+```bash
+/opt/mssql-tools/bin/sqlcmd -U sa -P SqlServer2019 -Q "DROP DATABASE IF EXISTS TeamsDb; CREATE DATABASE TeamsDb;"
 
+```
+
+Verbinden Sie sich danach in DBeaver zu Ihrem SQL Server Container. Wählen Sie dann die Datenbank
+*TeamsDb*. Achten Sie darauf, dass Sie die CREATE TABLE Befehle in dieser Datenbank ausfuhren und
+nicht in der Datenbank *master*.
+
+**(2)** Vervollständigen Sie das nachfolgende CREATE TABLE Skript. Hinweis: Vermeiden Sie Leerzeilen
+innerhalb des CREATE TABLE Statements. Dies führt zu Fehlern bei der Ausführung in DBeaver.
 
 ```sql
 -- SQL SKRIPT FÜR DIE TEAMS DATENBANK
 -- Führen Sie dieses Skript mit "Execute SQL Script" (ALT+X) in DBeaver aus.
 -- Es muss fehlerfrei durchlaufen.
-
-PRAGMA foreign_keys = ON;
 
 -- *************************************************************************************************
 -- DROP TABLE Anweisungen
@@ -229,11 +247,19 @@ PRAGMA foreign_keys = ON;
 -- *************************************************************************************************
 -- Kontrollanweisungen. Diese Statements befüllen die Datenbank.
 -- Sie sollen alle erfolgreich durchlaufen.
+-- Damit wir auto increment Werte einfügen dürfen, setzen wir diesen Parameter auf ON.
+SET IDENTITY_INSERT Student ON;
+SET IDENTITY_INSERT Teacher ON;
+SET IDENTITY_INSERT Team ON;
+SET IDENTITY_INSERT Task ON;
+SET IDENTITY_INSERT HandIn ON;
+
 INSERT INTO Student (Id, Firstname, Lastname, Email) VALUES (1,'Max','Mustermann','muster@max.at');
 INSERT INTO Teacher (Shortname, Firstname, Lastname, Email) VALUES ('FLE','Stefanie','Fleißig','fleissig@spengergasse.at');
-INSERT INTO Team (Id, Name, Schoolclass) VALUES (1, 'SJ21/22_3CAIF', NULL);
-INSERT INTO Task (Id, Subject, Title, ExpirationDate, MaxPoints, TeamId, TeacherShortname) VALUES (1, 'POS', 'Stringmethoden', '2021-10-02T22:00', NULL, 1, 'FLE');
+INSERT INTO Team (Id, [Name], Schoolclass) VALUES (1, 'SJ21/22_3CAIF', NULL);
+INSERT INTO Task (Id, [Subject], Title, ExpirationDate, MaxPoints, TeamId, TeacherShortname) VALUES (1, 'POS', 'Stringmethoden', '2021-10-02T22:00', NULL, 1, 'FLE');
 INSERT INTO HandIn (Id, TaskId, StudentId, Date, ReviewDate, Points) VALUES (1, 1, 1, '2021-10-02T21:00', NULL, NULL);
+
 ```
 
 **(3)** Führen Sie das vollständige Skript mehrmals aus. Was müssen Sie bei den DROP
