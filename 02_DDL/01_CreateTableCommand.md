@@ -21,13 +21,13 @@ zumindest versteht. SQLite deckt nicht jeden Datentyp ab, versteht aber zumindes
 
 Eine Auswahl ist in der folgenden Tabelle:
 
-| ANSI SQL              | SQL Server                     | SQLite  |
-|-----------------------|--------------------------------|---------|
-| INTEGER               | INTEGER                        | INTEGER |
-| CHAR(n), VARCHAR(n)   | CHAR, VARCHAR, NCHAR, NVARCHAR | TEXT    |
-| DECIMAL(p, s)         | DECIMAL(p, s)                  | NUMERIC |
-| REAL                  | REAL                           | REAL    |
-| DATE, TIME, TIMESTAMP | DATETIME                       | NUMERIC |
+| ANSI SQL              | SQL Server                     | SQLite  | Oracle   |
+|-----------------------|--------------------------------|---------|----------|
+| INTEGER               | INTEGER                        | INTEGER | INTEGER  |
+| CHAR(n), VARCHAR(n)   | CHAR, VARCHAR, NCHAR, NVARCHAR | TEXT    | VARCHAR2 |
+| DECIMAL(p, s)         | DECIMAL(p, s)                  | NUMERIC | DECIMAL  |
+| REAL                  | REAL                           | REAL    | REAL     |
+| DATE, TIME, TIMESTAMP | DATETIME                       | NUMERIC | DATE (alt), TIMESTAMP (neuer), TIMESTAMP WITH TIME ZONE WITH TIME ZONE |
 
 <sup>Vgl. https://support.microsoft.com/en-us/office/equivalent-ansi-sql-data-types-7a0a6bef-ef25-45f9-8a9a-3c5f21b5c65d
 und https://www.sqlite.org/datatype3.html
