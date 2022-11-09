@@ -1,9 +1,8 @@
 <!-- markdownlint-disable MD045 -->
 # Übung: Ein kleiner Chat
 
-Erstellen Sie in DBeaver eine SQLite Datenbank oder legen Sie einen User in Oracle an und verbinden
-sich unter diesem User. Bilden Sie das folgende Datenmodell mittels *CREATE TABLE* Statements
-ab:
+Erstellen Sie eine leere SQL Server oder Oracle Datenbank. Bilden Sie danach das folgende Datenmodell
+mittels *CREATE TABLE* Statements ab:
 
 ![](03_chat_modell.png)
 
