@@ -17,6 +17,17 @@ INSERT INTO Message VALUES (1, 1, 2, 'Message1', '2019-03-13T08:00:00', NULL);
 INSERT INTO Message VALUES (1, 1, 2, 'Message1', TO_DATE('2019-03-13T08:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), NULL);
 ```
 
+## Anlegen einer leeren Datenbank in SQL Server
+
+Mit folgendem Befehl die Datenbank *ChatDb* in der Shell des SQL Server Containers angelegt werden:
+
+```bash
+/opt/mssql-tools/bin/sqlcmd -U sa -P SqlServer2019 -Q "DROP DATABASE IF EXISTS ChatDb; CREATE DATABASE ChatDb;"
+
+```
+
+## SQL Skript
+
 Zur Überprüfung verwenden Sie die nachfolgende Vorlage des SQL Skriptes. Es sind nach den *CREATE TABLE*
 Anweisungen immer *INSERT* Anweisungen vorgegeben, die entweder funktionieren oder abgelehnt werden sollen.
 So können Sie die Korrektheit überprüfen.
