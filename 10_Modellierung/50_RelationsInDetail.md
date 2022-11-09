@@ -190,8 +190,8 @@ entity Movie {
 entity Screening {
    * HallId <<FK>>
    * MovieId <<FK>>
+   * DateTime
    ---
-   DateTime
 }
 
 Hall ||--o{ Screening
