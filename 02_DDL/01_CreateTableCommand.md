@@ -11,6 +11,19 @@ Ein Datenmodell, welches diese Anforderungen (minimal) abdeckt, könnte so ausse
 https://www.plantuml.com/plantuml/uml/dLB1JiCm33qlN-4RqgJj0z0qJG8c8T10R73tMjD6IvEIkeTfwx-Jfjb6ese8UagUxVVyNhge62tNXH8taCkKW7E2gZGi_2sHDb7aQYybIwDHtG9ft2g2JsF1MCvDriAWfAPgAggTr2LQB3p0-vAw9Y58i-Gzh9FS60K70UuRh-fYIzQV9vD9mB0WcCrgBRzgciz5SvvzGvOwkxEIoKfq7AFnO-fQCz9aaIbrtQEMPtI5vBqYUvAFfptQ4IobhLXZGUxyZAVZGu5IEUGrDvfM5dv8EBJprdc2jhPyyj9UiZ7JwV4O_4UMhbgvHswN-41LKoGI91pQIdY2SEz7TQaq8YZsred0bYo2-dn2b9ZiC2FOcDJ0uMndGvZaPBsVTMviYEttI8TzDK84nk7uehL2xpz_Z33zznU9imz4P_-Noi2wOJIosmy_W0F5qsiDpmtAEPK5wRGkr3S0
 </sup>
 
+## Anlegen einer leeren Datenbank in SQL Server
+
+Um eine Datenbank in SQL Server über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
+des SQL Server Containers. Danach kann mit folgendem Befehl die Datenbank *Lernsieg* angelegt werden:
+
+```bash
+/opt/mssql-tools/bin/sqlcmd -U sa -P SqlServer2019 -Q "DROP DATABASE IF EXISTS Lernsieg; CREATE DATABASE Lernsieg"
+
+```
+
+Dabei wird angenommen, dass *SqlServer2019* das sa Passwort ist, das beim Erstellen des Containers
+mit *docker run* angegeben wurde.
+
 ## CREATE TABLE Statements
 
 ### Datentypen
