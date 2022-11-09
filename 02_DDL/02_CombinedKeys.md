@@ -1,10 +1,9 @@
 # CREATE TABLE 2: Mehrteilige Schlüssel und CHECK
 
-Als der Infotag noch an der Schule stattgefunden hat, zeigten SchülerInnen oft
-Projekt her. Jedes Projektmitglied hatte eine Aufgabe (Task), die es in einer gewissen
-Zeit ausführte. Somit konnten die Mitglieder im Team die Anwesenheit einteilen.
+Beim Infotag zeigen SchülerInnen oft Projekte her. Jedes Projektmitglied hat eine Aufgabe (Task),
+die es in einer gewissen Zeit ausführt. Somit können die Mitglieder im Team die Anwesenheit einteilen.
 
-Zum Herzeigen der Projekte war oft Equipment nötig. SchülerInnen konnten unter Nennung
+Zum Herzeigen der Projekte sit oft Equipment nötig. SchülerInnen können unter Nennung
 des Projektes aus dem ZID Hardware holen und zurückbringen.
 
 ![](infotage_modell_20211205_1.svg)
@@ -31,16 +30,20 @@ Zudem sollen noch folgende Punkte berücksichtigt werden:
   werden.
 - Beim Ausborgen von Equipment gilt der selbe Sachverhalt beim Zeitpunkt der Rückgabe.
 
+## Anlegen einer leeren Datenbank in SQL Server
 
+Um eine Datenbank in SQL Server über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
+des SQL Server Containers. Danach kann mit folgendem Befehl die Datenbank *Lernsieg* angelegt werden:
+
+```bash
+/opt/mssql-tools/bin/sqlcmd -U sa -P SqlServer2019 -Q "DROP DATABASE IF EXISTS InfotagDb; CREATE DATABASE InfotagDb;"
+
+```
 
 ## CREATE TABLE Statements
 
+**SQL Server**
 ```sql
--- Für SQLite aktivieren wir den Foreigen Key Check. Je nach Datenbankeditor wird die Datenbank
--- eventuell ohne diese Einstellung angelegt.
-PRAGMA foreign_keys = ON;
-
--- SQL Script für DBeaver und SQLite
 DROP TABLE IF EXISTS Task;
 DROP TABLE IF EXISTS Equipment;
 DROP TABLE IF EXISTS Projectmember;
@@ -48,15 +51,15 @@ DROP TABLE IF EXISTS Project;
 DROP TABLE IF EXISTS Student;
 
 CREATE TABLE Student (
-	Id        INTEGER      PRIMARY KEY AUTOINCREMENT,
+	Id        INTEGER      IDENTITY(1,1) PRIMARY KEY,
 	Firstname VARCHAR(200) NOT NULL,
 	Lastname  VARCHAR(200) NOT NULL,
 	Email     VARCHAR(100) NOT NULL UNIQUE,
-	CHECK (LENGTH(Email) > 20 AND Email LIKE '%@spengergasse.at')
+	CHECK (LEN(Email) > 20 AND Email LIKE '%@spengergasse.at')
 );
 
 CREATE TABLE Project (
-	Id         INTEGER      PRIMARY KEY AUTOINCREMENT,
+	Id         INTEGER      IDENTITY(1,1) PRIMARY KEY,
 	Name       VARCHAR(100) NOT NULL,
 	Schoolyear INTEGER      NOT NULL,
 	Location   VARCHAR(16),
@@ -66,17 +69,17 @@ CREATE TABLE Project (
 CREATE TABLE Projectmember (
 	StudentId       INTEGER,
 	ProjectId       INTEGER,
-	PresenceChecked TIMESTAMP,
+	PresenceChecked DATETIME,
 	PRIMARY KEY (StudentId, ProjectId),
 	FOREIGN KEY (StudentId) REFERENCES Student(Id),
 	FOREIGN KEY (ProjectId) REFERENCES Project(Id) 
 );
 
 CREATE TABLE Task (
-	Id        INTEGER PRIMARY KEY AUTOINCREMENT,
+	Id        INTEGER      IDENTITY(1,1) PRIMARY KEY,
 	Name      VARCHAR(200) NOT NULL,
-	Started   TIMESTAMP,
-	Finished  TIMESTAMP,
+	Started   DATETIME,
+	Finished  DATETIME,
 	ProjectmemberStudentId  INTEGER NOT NULL,
 	ProjectmemberProjectId  INTEGER NOT NULL,
 	FOREIGN KEY (ProjectmemberStudentId, ProjectmemberProjectId) REFERENCES Projectmember(StudentId, ProjectId),
@@ -86,12 +89,13 @@ CREATE TABLE Task (
 CREATE TABLE Equipment (
 	InventoryNumber VARCHAR(16)  PRIMARY KEY,
 	Name      VARCHAR(200) NOT NULL,
-	Rented    TIMESTAMP,
-	Returned  TIMESTAMP,
+	Rented    DATETIME,
+	Returned  DATETIME,
 	ProjectId   INTEGER NOT NULL,
 	StudentId   INTEGER NOT NULL,	
 	FOREIGN KEY (ProjectId) REFERENCES Project(Id),
 	FOREIGN KEY (StudentId) REFERENCES Student(Id),
 	CHECK(Returned IS NULL OR Returned > Rented)
 );
+
 ```
