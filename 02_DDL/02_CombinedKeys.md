@@ -30,15 +30,40 @@ Zudem sollen noch folgende Punkte berücksichtigt werden:
   werden.
 - Beim Ausborgen von Equipment gilt der selbe Sachverhalt beim Zeitpunkt der Rückgabe.
 
-## Anlegen einer leeren Datenbank in SQL Server
+## Anlegen einer leeren Datenbank
+
+### SQL Server (HIF)
 
 Um eine Datenbank in SQL Server über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
-des SQL Server Containers. Danach kann mit folgendem Befehl die Datenbank *Lernsieg* angelegt werden:
+des SQL Server Containers. Danach kann mit folgendem Befehl die Datenbank *InfotagDb* angelegt werden:
 
 ```bash
 /opt/mssql-tools/bin/sqlcmd -U sa -P SqlServer2019 -Q "DROP DATABASE IF EXISTS InfotagDb; CREATE DATABASE InfotagDb;"
 
 ```
+
+Dabei wird angenommen, dass *SqlServer2019* das sa Passwort ist, das beim Erstellen des Containers
+mit *docker run* angegeben wurde.
+
+### Oracle User (Kolleg)
+
+Um einen User in Oracle über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
+des Oracle Containers. Danach kann mit folgendem Befehl der User *InfotagDb* mit dem
+Passwort *oracle* angelegt werden:
+
+```bash
+sqlplus system/oracle@//localhost/XEPDB1 <<< "
+    DROP USER InfotagDb CASCADE;
+    CREATE USER InfotagDb IDENTIFIED BY oracle;
+    GRANT CONNECT, RESOURCE, CREATE VIEW TO InfotagDb;
+    GRANT UNLIMITED TABLESPACE TO InfotagDb;
+"
+
+```
+
+Dabei wird angenommen, dass *oracle* das system Passwort ist, das beim Erstellen des Containers
+mit *docker run* angegeben wurde.
+
 
 ## CREATE TABLE Statements
 
