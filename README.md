@@ -4,15 +4,11 @@
 
 <table>
     <tr>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
+        <th>Modellierung (3. Semester / III. Jahrgang)</th>
+        <th>SQL Basics (3. Semester / II. Jahrgang)</th>
     </tr>
     <tr>
-        <td colspan="3" valign="top">
-            <b>1</b> <a href="10_Modellierung/README.md">Datenmodellierung</a>
+        <td valign="top">
             <ol>
                 <li><a href="10_Modellierung/plantuml.md">PlantUML und VS Code als Modellierungswerkzeug.</a></li>
                 <li><a href="10_Modellierung/SqlServer/README.md">SQL Server als Docker Image (für HIF Klassen).</a>
@@ -27,8 +23,7 @@
                 <li><a href="10_Modellierung/50_RelationsInDetail.md">n:m und 1:1 Beziehungen</a></li>
             </ol>
         </td>
-        <td colspan="2" valign="top">
-            <b>2</b> SQL
+        <td valign="top">
             <ul>
                 <li>DQL (Data Query Language)
                     <ol>
