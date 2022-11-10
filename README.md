@@ -70,6 +70,23 @@
     </tr>
 </table>
 
+## Informationen zum Start
+
+### Auf Basis von Oracle (Kollegs)
+
+- [Oracle 21 XE als Docker Image](https://github.com/schletz/Dbi2Sem/blob/master/01_OracleVM/03_Docker/README.md)
+- [Installation von DBeaver](https://github.com/schletz/Dbi2Sem/blob/master/01_OracleVM/01_Dbeaver/README.md)
+- [Anlegen der Musterdatenbank (SchulDb) in Oracle](https://github.com/schletz/Dbi2Sem/blob/master/SchulDbGenerator/README.md)
+
+### Auf Basis von SQL Server (HIF)
+- [SQL Server als Docker Image](https://github.com/schletz/Dbi2Sem/blob/master/01_SQLServer/README.md)
+- [Anlegen der Musterdatenbank (SchulDb) in SQL Server](https://github.com/schletz/Dbi2Sem/blob/master/SchulDbGenerator/README.md)
+
+### Optionale Punkte
+- [Installation von JetBrains DataGrip](01_OracleVM/02_DataGrip/README.md)
+- [Installation von PlantUML in VS Code](03_PlantUml/README.md)
+
+
 ## Synchronisieren des Repositories in einen Ordner
 
 1. Laden Sie von https://git-scm.com/downloads die Git Tools (Button *Download 2.23.0 for Windows*)
