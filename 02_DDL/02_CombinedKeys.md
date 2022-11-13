@@ -1,4 +1,4 @@
-# CREATE TABLE 2: Mehrteilige Schlüssel und CHECK
+# CREATE TABLE 2: Constraints mit mehreren Spalten und CHECK
 
 Beim Infotag zeigen SchülerInnen oft Projekte her. Jedes Projektmitglied hat eine Aufgabe (Task),
 die es in einer gewissen Zeit ausführt. Somit können die Mitglieder im Team die Anwesenheit einteilen.
@@ -6,9 +6,8 @@ die es in einer gewissen Zeit ausführt. Somit können die Mitglieder im Team di
 Zum Herzeigen der Projekte sit oft Equipment nötig. SchülerInnen können unter Nennung
 des Projektes aus dem ZID Hardware holen und zurückbringen.
 
-![](infotage_modell_20211205_1.svg)
-<sup>https://www.plantuml.com/plantuml/uml/dPBTQi9048Mliq-nU2d41oWYGgiW5H7Z2smtGx9DTZPEPWkX-kvDsX3h-aFfxPcpEUURpBncHUnjANAJWjI6T0cYBWnMYfILfK7WfWBfY7CdHALqeJAGeosvTz0iBTWte7eaFuK0PCEDJDYdWDmgqNYLoYUvGeOCI4wd6I2GOaXdCn75STmwbePgHcMXDIPC1hDMNAjhRM6LAS_2QSZhg_mnRnDyDj6vSsK3YiulHRHsMh5n-23lX_mxjISEmfUlNUgujryDXqfRWXfGmtCEke3Ezg8OziP25tgPTd9nV3pAFl3si1T_DTwhklZFUbgBHtFmqCqJLiINzQAbGLFdWJY-QFLWDu7pmQ9Qb8wX9PnCUiBXsK2vE7XJsU7oy0EG7JKRtxa6fZjti0CCuNR0dl0Et6sU03P060e67E7W_7_5733rjlm2
-</sup>
+![](https://www.plantuml.com/plantuml/svg/dLBHYjim47oslaBSOy3-W78S1-q5ZXuXrFa1LTxQMrkIiruLJ9n_hvmQfrQ22VTcPaQUcTrzxLWHUzE82WkG6aat8BeQRQj86TcW1UvRa8wuSgA1NopPISAoObaWWMPqLeXMwLgL89_sv7u7K1emFu6w9taI0YmZzp9dNuJFW2IRzq9-aU-MeGIIpyybM235KBoyY2HDqw3O8dLibO4Wp9dGbW7yKBVOcr7ON87px3T5UT1l5_qsrvLpJG-AhYz5yk6q6Xkl-FrhVd6T6aVcs--ZwsQItv1pf3r11rR3rmfq3QFics8ue87HTEbsTcaw378ol4zEu7-93wghFpEU8F4MZnv6FcT5l8oNRD5YLqNWPf5gPJQHScLGeSgbmzbbsJ0iDn3lvUteiJNp0Te_uTDHl_EZUAxso6BYM_a1DXf0WDYJZS2rUxXkL0v3chhJJMmnlGvybjtZnIlOmflcBm00)
+<sup>[PlantUML Source](https://www.plantuml.com/plantuml/uml/dPBTQi9048Mliq-nU2d41oWYGgiW5H7Z2smtGx9DTZPEPWkX-kvDsX3h-aFfxPcpEUURpBncHUnjANAJWjI6T0cYBWnMYfILfK7WfWBfY7CdHALqeJAGeosvTz0iBTWte7eaFuK0PCEDJDYdWDmgqNYLoYUvGeOCI4wd6I2GOaXdCn75STmwbePgHcMXDIPC1hDMNAjhRM6LAS_2QSZhg_mnRnDyDj6vSsK3YiulHRHsMh5n-23lX_mxjISEmfUlNUgujryDXqfRWXfGmtCEke3Ezg8OziP25tgPTd9nV3pAFl3si1T_DTwhklZFUbgBHtFmqCqJLiINzQAbGLFdWJY-QFLWDu7pmQ9Qb8wX9PnCUiBXsK2vE7XJsU7oy0EG7JKRtxa6fZjti0CCuNR0dl0Et6sU03P060e67E7W_7_5733rjlm2)</sup>
 
 Zudem sollen noch folgende Punkte berücksichtigt werden:
 
@@ -23,8 +22,7 @@ Zudem sollen noch folgende Punkte berücksichtigt werden:
   werden. Sie müssen nicht notwendigerweise im Projektteam sein. So kann z. B. der
   Klassensprecher auch Hardware holen. Deswegen ist die Tabelle nicht mit
   *Projectmember* verbunden. Es handelt sich also um keinen zusammengesetzten
-  Fremdschlüssel! Wir gehen davon aus, dass die Datenbank bei jedem Infotag
-  zurückgesetzt wird und daher ein Equipment nur 1x verliehen wird.
+  Fremdschlüssel!
 - Die Mailadresse muss eine Schuladresse sein (endet mit @spengergasse.at).
 - Das Ende des Tasks darf natürlich nur nach dem Anfang sein, und der Anfangszeitpunkt
   muss einen Wert haben. Tasks, die nie begonnen haben, können schließlich nicht abgeschlossen
@@ -71,7 +69,7 @@ CREATE TABLE Task (
 );
 ```
 
-![](ermodell_teamsdb_mit_fk_0631.png)
+![](ermodell_teamsdb_mit_fk_1003.png)
 
 
 ### Falsche Lösung: Getrenntes Anlegen
@@ -103,6 +101,56 @@ Beachte die **getrennten** Aussagen. Somit kann folgende Situation erzeugt werde
 Der Student 1002 ist nicht im Projekt B, es kann jedoch trotzdem ein Task
 mit der Zuordnung *StudentId* 1002 und *ProjectId* B angelegt werden, da beide
 Werte - getrennt gesehen - in Projectmember vorkommen.
+
+## UNIQUE mit mehreren Spalten
+
+Wir wollen sicherstellen, dass ein Projektname pro Schuljahr eindeutig ist. Würden wir getrennte
+UNIQUE Constraints definieren, hat dies zur Folge dass der Projektname Tabellenweit nur 1x
+verwendet werden kann. Wir wollen aber definieren, dass die **Kombination aus Projektname und Schuljahr**
+eindeutig sein muss. Somit darf das Projekt "Buffet" im Jahr 2021, 2022, ... angelegt werden.
+
+Somit müssen wir nach der Spaltendefinition das UNIQUE Constraint extra definieren:
+
+```sql
+CREATE TABLE Project (
+	Id         INTEGER      IDENTITY(1,1) PRIMARY KEY,
+	Name       VARCHAR(100) NOT NULL,
+	Schoolyear INTEGER      NOT NULL,
+	Location   VARCHAR(16),
+	UNIQUE(Name, Schoolyear)
+);
+```
+
+## Das CHECK Constraint
+
+In der Tabelle *Task* gibt es zwei Zeitstempel: *Started* und *Finished*. Wir wollen nun
+sicherstellen, dass ein Wert für *Finished* nur gesetzt werden kann, wenn er größer als
+Start ist.
+
+Ein *CHECK* Constraint wird wie die WHERE Bedingung einer SQL Abfrage formuliert. Wir können
+Ausdrücke, die wir auch in die *WHERE* Klausel so schreiben würden, hier einfügen. Der Zugriff
+ist aber nur auf Spalten der eigenen Tabelle möglich. Manche Datenbanksysteme wie SQL Server
+bieten hier Erweiterungen an, diese sind dann in der Doku des Datenbanksystems nachzulesen.
+
+Konkret wird *CHECK* in das *CREATE TABLE* Statement geschrieben:
+
+```sql
+CREATE TABLE Task (
+	Id        INTEGER      IDENTITY(1,1) PRIMARY KEY,
+	Name      VARCHAR(200) NOT NULL,
+	Started   DATETIME,
+	Finished  DATETIME,
+	ProjectmemberStudentId  INTEGER NOT NULL,
+	ProjectmemberProjectId  INTEGER NOT NULL,
+	FOREIGN KEY (ProjectmemberStudentId, ProjectmemberProjectId) REFERENCES Projectmember(StudentId, ProjectId),
+	CHECK(Finished IS NULL OR Finished > Started)
+);
+```
+
+Beachte den Ausdruck *Finished IS NULL OR...*. Die Spalte *Finished* ist nullable. Wenn wir nur 
+*Finished > Started* schreiben würden, würde der NULL Wert nicht dieser Bedingung entsprechen
+(NULL ist weder größer oder kleiner als ein Wert). Achte daher immer darauf, wie mit NULL Werten
+umgegangen werden soll.
 
 ## Beispiel: CREATE TABLE Skript der Infotage Datenbank
 
@@ -185,17 +233,19 @@ CREATE TABLE Task (
 	Finished  DATETIME,
 	ProjectmemberStudentId  INTEGER NOT NULL,
 	ProjectmemberProjectId  INTEGER NOT NULL,
-	FOREIGN KEY (ProjectmemberStudentId, ProjectmemberProjectId) REFERENCES Projectmember(StudentId, ProjectId),
+	FOREIGN KEY (ProjectmemberStudentId, ProjectmemberProjectId) 
+	    REFERENCES Projectmember(StudentId, ProjectId),
 	CHECK(Finished IS NULL OR Finished > Started)
 );
 
 CREATE TABLE Equipment (
-	InventoryNumber VARCHAR(16)  PRIMARY KEY,
-	Name      VARCHAR(200) NOT NULL,
-	Rented    DATETIME,
-	Returned  DATETIME,
-	ProjectId   INTEGER NOT NULL,
+	InventoryNumber VARCHAR(16),
+	ProjectId   INTEGER,
+	Name        VARCHAR(200) NOT NULL,
+	Rented      DATETIME,
+	Returned    DATETIME,
 	StudentId   INTEGER NOT NULL,	
+	PRIMARY KEY (InventoryNumber, ProjectId),
 	FOREIGN KEY (ProjectId) REFERENCES Project(Id),
 	FOREIGN KEY (StudentId) REFERENCES Student(Id),
 	CHECK(Returned IS NULL OR Returned > Rented)
@@ -205,7 +255,7 @@ CREATE TABLE Equipment (
 </details>
 
 <details>
-<summary>Skript für SQL Server anzeigen</summary>
+<summary>Skript für Oracle anzeigen</summary>
 
 ```sql
 DROP TABLE Task CASCADE CONSTRAINTS;
@@ -251,16 +301,18 @@ CREATE TABLE Task (
 );
 
 CREATE TABLE Equipment (
-	InventoryNumber VARCHAR2(16)  PRIMARY KEY,
-	Name      VARCHAR2(200) NOT NULL,
-	Rented    TIMESTAMP,
-	Returned  TIMESTAMP,
-	ProjectId   INTEGER NOT NULL,
-	StudentId   INTEGER NOT NULL,
+	InventoryNumber VARCHAR2(16),
+	ProjectId   INTEGER,
+	Name        VARCHAR2(200) NOT NULL,
+	Rented      TIMESTAMP,
+	Returned    TIMESTAMP,
+	StudentId   INTEGER NOT NULL,	
+	PRIMARY KEY (InventoryNumber, ProjectId),
 	FOREIGN KEY (ProjectId) REFERENCES Project(Id),
 	FOREIGN KEY (StudentId) REFERENCES Student(Id),
 	CHECK(Returned IS NULL OR Returned > Rented)
 );
+
 ```
 </details>
 
@@ -270,7 +322,7 @@ Es soll folgende Datenbank mittels *CREATE TABLE* Statements umgesetzt werden. S
 Filme, die mehrere Genres haben können. Die Filme werden in Kinosälen (Hall) vorgeführt.
 Zu einer Vorführung (Screening) werden die verkauften Tickets gespeichert.
 
-![](screeningsdb_model_0813.png)
+![](screeningsdb_model_0944.png)
 
 ### Arbeitsauftrag
 
@@ -289,6 +341,14 @@ sqlplus system/oracle@//localhost/XEPDB1 <<< "
 
 Kopiere danach die entsprechende Vorlage in deinen SQL Editor und erstelle die erforderlichen
 CREATE TABLE Statements. Die nachfolgenden *INSERT* Anweisungen müssen alle funktionieren.
+Erstelle zusätzliche Constraints:
+
+- Ein Ticket darf nur vor Beginn der Vorführung verkauft werden (*SalesDate*)
+- Der Name des Genres muss eindeutig sein (UNIQUE)
+- Der Titel des Movies muss eindeutig sein (UNIQUE)
+- *NumberOfSeats* in Hall muss größer als 0 sein. Beachte, dass dieses Feld auch NULL sein darf.
+
+Prüfe diese Constraints, indem du ein jeweils INSERT schreibst, dass diese Kriterien nicht erfüllt.
 
 <details>
 <summary>Vorlage für SQL Server anzeigen</summary>
@@ -333,7 +393,7 @@ CREATE TABLE Ticket (
 );
 
 INSERT INTO Hall (Id, NumberOfSeats) VALUES (1, 200);
-INSERT INTO Hall (Id, NumberOfSeats) VALUES (2, 300);
+INSERT INTO Hall (Id, NumberOfSeats) VALUES (2, NULL);
 INSERT INTO Movie (Id, Title) VALUES (1, 'Barbaria');
 INSERT INTO Movie (Id, Title) VALUES (2, 'All Quiet on the Western Front');
 INSERT INTO Movie (Id, Title) VALUES (3, 'Terrifier 2');
@@ -397,7 +457,7 @@ CREATE TABLE Ticket (
 );
 
 INSERT INTO Hall (Id, NumberOfSeats) VALUES (1, 200);
-INSERT INTO Hall (Id, NumberOfSeats) VALUES (2, 300);
+INSERT INTO Hall (Id, NumberOfSeats) VALUES (2, NULL);
 INSERT INTO Movie (Id, Title) VALUES (1, 'Barbaria');
 INSERT INTO Movie (Id, Title) VALUES (2, 'All Quiet on the Western Front');
 INSERT INTO Movie (Id, Title) VALUES (3, 'Terrifier 2');
