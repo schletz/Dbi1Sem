@@ -69,7 +69,7 @@ CREATE TABLE Task (
 );
 ```
 
-![](ermodell_teamsdb_mit_fk_1006.png)
+![](ermodell_teamsdb_mit_fk_1009.png)
 
 
 ### Falsche Lösung: Getrenntes Anlegen
