@@ -32,6 +32,7 @@
                         <li><a href="01_SQL Basics/04_OuterJoin.md">OUTER JOIN Anweisungen</a></li>
                         <li><a href="01_SQL Basics/05_Gruppierungen.md">Gruppierungen</a></li>
                         <li><a href="01_SQL Basics/06_Having.md">Having</a></li>
+                        <li><a href="01_SQL Basics/07_Null.md">NULL und dreiwertige Logik</a></li>
                         <li>Übungsdatenbanken dazu
                             <ul>
                                 <li><a href="01_SQL Basics/Uebungen/FilialDb">Filialen Datenbank</a></li>
