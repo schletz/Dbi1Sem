@@ -42,7 +42,7 @@ CREATE TABLE Patient (
     Id             INTEGER PRIMARY KEY,
     Name           VARCHAR(100) NOT NULL,
     Healthy        CHAR(1),
-    Investigations INTEGER,
+    Examinations INTEGER,
     Operations     INTEGER,
     Diseases       INTEGER
 );
@@ -78,7 +78,7 @@ CREATE TABLE Patient (
     Id             INTEGER PRIMARY KEY,
     Name           VARCHAR2(100) NOT NULL,
     Healthy        CHAR(1),
-    Investigations INTEGER,
+    Examinations INTEGER,
     Operations     INTEGER,
     Diseases       INTEGER
 );
@@ -106,7 +106,7 @@ INSERT INTO DiseasesClass VALUES (6, 4,    'VERY BAD');
 ```
 </details>
 
-Die Datenbank speichert eine Tabelle *Patient*, die die Anzahl der Untersuchungen (*Investigations*),
+Die Datenbank speichert eine Tabelle *Patient*, die die Anzahl der Untersuchungen (*Examinations*),
 Operationen (*Operations*) Erkrankungen (*Diseases*) speichert.
 Je nach Anzahl der Erkrankungen wird der Zustand (*Condition*) der Person festgelegt.
 
@@ -141,11 +141,11 @@ Fragen wir ab, wie viele Patienten gesund sind (Spalte *Healthy*), erhalten wir 
 ```sql
 SELECT * FROM Patient WHERE Healthy = 'Y';
 
--- | Id | Name | Healthy | Investigations | Operations | Diseases |
--- |----|------|---------|----------------|------------|----------|
--- | 1  | Hans | Y       | NULL           | 0          | 3        |
--- | 6  | Kurt | Y       | 2              | NULL       | 1        |
--- | 7  | Max  | Y       | NULL           | NULL       | NULL     |
+-- | Id  | Name | Healthy | Examinations | Operations | Diseases |
+-- | --- | ---- | ------- | ------------ | ---------- | -------- |
+-- | 1   | Hans | Y       | NULL         | 0          | 3        |
+-- | 6   | Kurt | Y       | 2            | NULL       | 1        |
+-- | 7   | Max  | Y       | NULL         | NULL       | NULL     |
 ```
 
 Die nächste Abfrage liefert aber ein nicht so vorhersehbares Ergebnis. Wir fragen ab,
@@ -154,10 +154,10 @@ welche Patienten *Healthy ungleich Y* haben.
 ```sql
 SELECT * FROM Patient WHERE Healthy <> 'Y';
 
--- | Id | Name   | Healthy | Investigations | Operations | Diseases |
--- |----|--------|---------|----------------|------------|----------|
--- | 3  | Thomas | N       | 0              | 0          | NULL     |
--- | 4  | Susi   | N       | NULL           | 2          | 2        |
+-- | Id  | Name   | Healthy | Examinations | Operations | Diseases |
+-- | --- | ------ | ------- | ------------ | ---------- | -------- |
+-- | 3   | Thomas | N       | 0            | 0          | NULL     |
+-- | 4   | Susi   | N       | NULL         | 2          | 2        |
 ```
 
 Wir bekommen *nur 2 Patienten* als Ergebnis, nämlich alle mit dem Wert *Healthy = N*. Dieses Verhalten
@@ -218,12 +218,12 @@ also den Wert in *Healthy*.
 ```sql
 SELECT * FROM Patient WHERE COALESCE(Healthy, '?') <> 'Y';
 
--- | Id | Name   | Healthy | Investigations | Operations | Diseases |
--- |----|--------|---------|----------------|------------|----------|
--- | 2  | Werner | NULL    | 2              | 2          | 2        |
--- | 3  | Thomas | N       | 0              | 0          | NULL     |
--- | 4  | Susi   | N       | NULL           | 2          | 2        |
--- | 5  | Alex   | NULL    | 1              | NULL       | NULL     |
+-- | Id  | Name   | Healthy | Examinations | Operations | Diseases |
+-- | --- | ------ | ------- | ------------ | ---------- | -------- |
+-- | 2   | Werner | NULL    | 2            | 2          | 2        |
+-- | 3   | Thomas | N       | 0            | 0          | NULL     |
+-- | 4   | Susi   | N       | NULL         | 2          | 2        |
+-- | 5   | Alex   | NULL    | 1            | NULL       | NULL     |
 ```
 
 Diese Abfrage liefert 4 Patienten, nämlich alle die *N* oder *NULL* in der Spalte *Healthy* haben.
@@ -316,7 +316,7 @@ sondern *NULL* liefern, erscheinen diese Werte auch nicht im Ergebnis.
 ```sql
 SELECT * FROM Patient WHERE Diseases IN (NULL, 1);
 
--- Id    Name    Healthy    Investigations    Operations    Diseases
+-- Id    Name    Healthy    Examinations    Operations    Diseases
 -- 6     Kurt    Y          2                  NULL         1
 ```
 
@@ -326,12 +326,12 @@ die NULL oder 1 in der Spalte Diseases haben:
 ```sql
 SELECT * FROM Patient WHERE COALESCE(Diseases, -1) IN (-1, 1);
 
--- | Id | Name   | Healthy | Investigations | Operations | Diseases |
--- |----|--------|---------|----------------|------------|----------|
--- | 3  | Thomas | N       | 0              | 0          | NULL     |
--- | 5  | Alex   | NULL    | 1              | NULL       | NULL     |
--- | 6  | Kurt   | Y       | 2              | NULL       | 1        |
--- | 7  | Max    | Y       | NULL           | NULL       | NULL     |
+-- | Id  | Name   | Healthy | Examinations | Operations | Diseases |
+-- | --- | ------ | ------- | ------------ | ---------- | -------- |
+-- | 3   | Thomas | N       | 0            | 0          | NULL     |
+-- | 5   | Alex   | NULL    | 1            | NULL       | NULL     |
+-- | 6   | Kurt   | Y       | 2            | NULL       | 1        |
+-- | 7   | Max    | Y       | NULL         | NULL       | NULL     |
 ```
 ## NULL in JOIN Operationen
 
@@ -361,12 +361,12 @@ mit dem Wert *NULL* in *Diseases* nicht ausgegeben werden. NULL ist schließlich
 SELECT p.Id, p.Name, p.Diseases, d.Condition
 FROM Patient p INNER JOIN DiseasesClass d ON (p.Diseases = d.DiseasesCount);
 
--- | Id | Name   | Diseases | Condition |
--- |----|--------|----------|-----------|
--- | 1  | Hans   | 3        | BAD       |
--- | 2  | Werner | 2        | POOR      |
--- | 4  | Susi   | 2        | POOR      |
--- | 6  | Kurt   | 1        | OK        |
+-- | Id  | Name   | Diseases | Condition |
+-- | --- | ------ | -------- | --------- |
+-- | 1   | Hans   | 3        | BAD       |
+-- | 2   | Werner | 2        | POOR      |
+-- | 4   | Susi   | 2        | POOR      |
+-- | 6   | Kurt   | 1        | OK        |
 ```
 
 Wenn wir also die NULL Spalten verknüpfen wollen, können wir mittels *COALESCE* diesen NULL Werten
@@ -376,15 +376,15 @@ für den Vergleich z. B. den Wert -1 zuordnen. Danach kann verglichen werden:
 SELECT p.Id, p.Name, p.Diseases, d.Condition
 FROM Patient p INNER JOIN DiseasesClass d ON (COALESCE(Diseases,-1) = COALESCE(DiseasesCount,-1));
 
--- | Id | Name   | Diseases | Condition      |
--- |----|--------|----------|----------------|
--- | 1  | Hans   | 3        | BAD            |
--- | 2  | Werner | 2        | POOR           |
--- | 3  | Thomas | NULL     | NOT APPLICABLE |
--- | 4  | Susi   | 2        | POOR           |
--- | 5  | Alex   | NULL     | NOT APPLICABLE |
--- | 6  | Kurt   | 1        | OK             |
--- | 7  | Max    | NULL     | NOT APPLICABLE |
+-- | Id  | Name   | Diseases | Condition      |
+-- | --- | ------ | -------- | -------------- |
+-- | 1   | Hans   | 3        | BAD            |
+-- | 2   | Werner | 2        | POOR           |
+-- | 3   | Thomas | NULL     | NOT APPLICABLE |
+-- | 4   | Susi   | 2        | POOR           |
+-- | 5   | Alex   | NULL     | NOT APPLICABLE |
+-- | 6   | Kurt   | 1        | OK             |
+-- | 7   | Max    | NULL     | NOT APPLICABLE |
 ```
 
 Eine bessere Lösung ist allerdings die, dass wir in *DiseasesClass* keine Kategorie mit NULL
@@ -397,15 +397,15 @@ SELECT p.Id, p.Name, p.Diseases,
 FROM Patient p LEFT JOIN DiseasesClass d ON (p.Diseases = d.DiseasesCount);
 
 
--- | Id | Name   | Diseases | Condition      |
--- |----|--------|----------|----------------|
--- | 1  | Hans   | 3        | BAD            |
--- | 2  | Werner | 2        | POOR           |
--- | 3  | Thomas | NULL     | NOT APPLICABLE |
--- | 4  | Susi   | 2        | POOR           |
--- | 5  | Alex   | NULL     | NOT APPLICABLE |
--- | 6  | Kurt   | 1        | OK             |
--- | 7  | Max    | NULL     | NOT APPLICABLE |
+-- | Id  | Name   | Diseases | Condition      |
+-- | --- | ------ | -------- | -------------- |
+-- | 1   | Hans   | 3        | BAD            |
+-- | 2   | Werner | 2        | POOR           |
+-- | 3   | Thomas | NULL     | NOT APPLICABLE |
+-- | 4   | Susi   | 2        | POOR           |
+-- | 5   | Alex   | NULL     | NOT APPLICABLE |
+-- | 6   | Kurt   | 1        | OK             |
+-- | 7   | Max    | NULL     | NOT APPLICABLE |
 ```
 
 ## NULL und String Concatenation
