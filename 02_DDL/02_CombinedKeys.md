@@ -69,7 +69,7 @@ CREATE TABLE Task (
 );
 ```
 
-![](ermodell_teamsdb_mit_fk_1003.png)
+![](ermodell_teamsdb_mit_fk_1006.png)
 
 
 ### Falsche Lösung: Getrenntes Anlegen
@@ -105,7 +105,7 @@ Werte - getrennt gesehen - in Projectmember vorkommen.
 ## UNIQUE mit mehreren Spalten
 
 Wir wollen sicherstellen, dass ein Projektname pro Schuljahr eindeutig ist. Würden wir getrennte
-UNIQUE Constraints definieren, hat dies zur Folge dass der Projektname Tabellenweit nur 1x
+UNIQUE Constraints definieren, hat dies zur Folge dass der Projektname tabellenweit nur 1x
 verwendet werden kann. Wir wollen aber definieren, dass die **Kombination aus Projektname und Schuljahr**
 eindeutig sein muss. Somit darf das Projekt "Buffet" im Jahr 2021, 2022, ... angelegt werden.
 
