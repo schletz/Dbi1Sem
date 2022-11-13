@@ -23,12 +23,69 @@ Zudem sollen noch folgende Punkte berücksichtigt werden:
   werden. Sie müssen nicht notwendigerweise im Projektteam sein. So kann z. B. der
   Klassensprecher auch Hardware holen. Deswegen ist die Tabelle nicht mit
   *Projectmember* verbunden. Es handelt sich also um keinen zusammengesetzten
-  Fremdschlüssel!
+  Fremdschlüssel! Wir gehen davon aus, dass die Datenbank bei jedem Infotag
+  zurückgesetzt wird und daher ein Equipment nur 1x verliehen wird.
 - Die Mailadresse muss eine Schuladresse sein (endet mit @spengergasse.at).
 - Das Ende des Tasks darf natürlich nur nach dem Anfang sein, und der Anfangszeitpunkt
   muss einen Wert haben. Tasks, die nie begonnen haben, können schließlich nicht abgeschlossen
   werden.
 - Beim Ausborgen von Equipment gilt der selbe Sachverhalt beim Zeitpunkt der Rückgabe.
+
+
+## FOREIGN KEY mit mehreren Spalten
+
+Die Tabelle *Task* besitzt einen Fremdschlüssel der Tabelle *Projectmember*,
+da eine 1:n Beziehung vorliegt (**1** Projectmember hat **n** Tasks). Der
+Primärschlüssel der Tabelle *Projectmember* besteht aus 2 Teilen (*StudentId* und
+*ProjectId*), die beide in die Tabelle Task als Fremdschlüssel übertragen werden.
+
+Daher brauchen wir eine *FOREIGN KEY* Constraint, das beide Spalten umfasst:
+
+```sql
+CREATE TABLE Task (
+	Id        INTEGER      IDENTITY(1,1) PRIMARY KEY,
+	Name      VARCHAR(200) NOT NULL,
+	Started   DATETIME,
+	Finished  DATETIME,
+	ProjectmemberStudentId  INTEGER NOT NULL,
+	ProjectmemberProjectId  INTEGER NOT NULL,
+	FOREIGN KEY (ProjectmemberStudentId, ProjectmemberProjectId)
+	    REFERENCES Projectmember(StudentId, ProjectId)
+);
+```
+
+![](ermodell_teamsdb_mit_fk_0631.png)
+
+
+### Falsche Lösung: Getrenntes Anlegen
+
+Das folgende Create Table Skript zeigt einen **falsch angelegten Fremdschlüssel**:
+```sql
+CREATE TABLE Task (
+	Id        INTEGER      IDENTITY(1,1) PRIMARY KEY,
+	Name      VARCHAR(200) NOT NULL,
+	Started   DATETIME,
+	Finished  DATETIME,
+	ProjectmemberStudentId  INTEGER NOT NULL,
+	ProjectmemberProjectId  INTEGER NOT NULL,
+	FOREIGN KEY (ProjectmemberStudentId) REFERENCES Projectmember(StudentId)
+	FOREIGN KEY (ProjectmemberProjectId) REFERENCES Projectmember(ProjectId)
+);
+```
+
+Das *CREATE TABLE* Statement ist syntaktisch korrekt und lässt sich daher auch
+ausführen. Es bedeutet aber folgendes:
+
+- Der Wert von *ProjectmemberStudentId* muss in Projectmember als *StudentId* vorkommen.
+- Der Wert von *ProjectmemberProjectId* muss in Projectmember als *ProjectId* vorkommen.
+
+Beachte die **getrennten** Aussagen. Somit kann folgende Situation erzeugt werden:
+
+![](projectmember_task_wrong_fk_0645.png)
+
+Der Student 1002 ist nicht im Projekt B, es kann jedoch trotzdem ein Task
+mit der Zuordnung *StudentId* 1002 und *ProjectId* B angelegt werden, da beide
+Werte - getrennt gesehen - in Projectmember vorkommen.
 
 ## Anlegen einer leeren Datenbank
 
