@@ -117,7 +117,7 @@ Je nach Anzahl der Erkrankungen wird der Zustand (*Condition*) der Person festge
 Betrachten wir eine Tabelle *Measurements*, die z. B. Messwerte der Temperatur speichert.
 Am 11.11.2022 um 12:00 UTC wurden 0° gemessen. Um 13:00 fiel aber der Sensor aus, d. h. es
 konnte kein Messwert übertragen werden. Wir wissen daher nicht, wie hoch die Temperatur um diese
-Zeit gesesen ist. Daher können wir nur den Wert *NULL* speichern.
+Zeit gewesen ist. Daher können wir nur den Wert *NULL* speichern.
 
 **Tabelle Measurements**
 
