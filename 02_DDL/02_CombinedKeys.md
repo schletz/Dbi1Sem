@@ -332,31 +332,31 @@ CREATE TABLE Ticket (
 	-- TODO: Your definition
 );
 
-INSERT Hall (Id, NumberOfSeats) VALUES (1, 200);
-INSERT Hall (Id, NumberOfSeats) VALUES (2, 300);
-INSERT Movie (Id, Title) VALUES (1, 'Barbaria');
-INSERT Movie (Id, Title) VALUES (2, 'All Quiet on the Western Front');
-INSERT Movie (Id, Title) VALUES (3, 'Terrifier 2');
-INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (1, 1, '2020-11-13T20:00:00', 14);
-INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (1, 2, '2020-11-14T20:00:00', 12);
-INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (2, 1, '2020-11-13T20:00:00', 14);
-INSERT Genre (Id, Name) VALUES (1, 'Action');
-INSERT Genre (Id, Name) VALUES (2, 'Horror');
-INSERT Genre (Id, Name) VALUES (3, 'Thriller');
-INSERT Genre (Id, Name) VALUES (4, 'Drama');
-INSERT Genre (Id, Name) VALUES (5, 'War');
-INSERT MovieGenre (GenreId, MovieId) VALUES (1, 2);
-INSERT MovieGenre (GenreId, MovieId) VALUES (2, 1);
-INSERT MovieGenre (GenreId, MovieId) VALUES (2, 3);
-INSERT MovieGenre (GenreId, MovieId) VALUES (3, 1);
-INSERT MovieGenre (GenreId, MovieId) VALUES (4, 2);
-INSERT MovieGenre (GenreId, MovieId) VALUES (5, 2);
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (1, 1, 1, '2020-11-13T20:00:00', '2020-11-13T18:55:00');
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (2, 2, 1, '2020-11-13T20:00:00', '2020-11-13T18:25:00');
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (3, 1, 2, '2020-11-14T20:00:00', '2020-11-14T18:02:00');
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (4, 1, 1, '2020-11-13T20:00:00', '2020-11-13T18:59:00');
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (5, 2, 1, '2020-11-13T20:00:00', '2020-11-13T18:25:00');
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (6, 1, 2, '2020-11-14T20:00:00', '2020-11-14T18:12:00');
+INSERT INTO Hall (Id, NumberOfSeats) VALUES (1, 200);
+INSERT INTO Hall (Id, NumberOfSeats) VALUES (2, 300);
+INSERT INTO Movie (Id, Title) VALUES (1, 'Barbaria');
+INSERT INTO Movie (Id, Title) VALUES (2, 'All Quiet on the Western Front');
+INSERT INTO Movie (Id, Title) VALUES (3, 'Terrifier 2');
+INSERT INTO Screening (HallId, MovieId, DateTime, Price) VALUES (1, 1, '2020-11-13T20:00:00', 14);
+INSERT INTO Screening (HallId, MovieId, DateTime, Price) VALUES (1, 2, '2020-11-14T20:00:00', 12);
+INSERT INTO Screening (HallId, MovieId, DateTime, Price) VALUES (2, 1, '2020-11-13T20:00:00', 14);
+INSERT INTO Genre (Id, Name) VALUES (1, 'Action');
+INSERT INTO Genre (Id, Name) VALUES (2, 'Horror');
+INSERT INTO Genre (Id, Name) VALUES (3, 'Thriller');
+INSERT INTO Genre (Id, Name) VALUES (4, 'Drama');
+INSERT INTO Genre (Id, Name) VALUES (5, 'War');
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (1, 2);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (2, 1);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (2, 3);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (3, 1);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (4, 2);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (5, 2);
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (1, 1, 1, '2020-11-13T20:00:00', '2020-11-13T18:55:00');
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (2, 2, 1, '2020-11-13T20:00:00', '2020-11-13T18:25:00');
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (3, 1, 2, '2020-11-14T20:00:00', '2020-11-14T18:02:00');
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (4, 1, 1, '2020-11-13T20:00:00', '2020-11-13T18:59:00');
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (5, 2, 1, '2020-11-13T20:00:00', '2020-11-13T18:25:00');
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (6, 1, 2, '2020-11-14T20:00:00', '2020-11-14T18:12:00');
 
 ```
 </details>
@@ -396,36 +396,36 @@ CREATE TABLE Ticket (
 	-- TODO: Your definition
 );
 
-INSERT Hall (Id, NumberOfSeats) VALUES (1, 200);
-INSERT Hall (Id, NumberOfSeats) VALUES (2, 300);
-INSERT Movie (Id, Title) VALUES (1, 'Barbaria');
-INSERT Movie (Id, Title) VALUES (2, 'All Quiet on the Western Front');
-INSERT Movie (Id, Title) VALUES (3, 'Terrifier 2');
-INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (1, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 14);
-INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (1, 2, TO_TIMESTAMP('2020-11-14T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 12);
-INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (2, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 14);
-INSERT Genre (Id, Name) VALUES (1, 'Action');
-INSERT Genre (Id, Name) VALUES (2, 'Horror');
-INSERT Genre (Id, Name) VALUES (3, 'Thriller');
-INSERT Genre (Id, Name) VALUES (4, 'Drama');
-INSERT Genre (Id, Name) VALUES (5, 'War');
-INSERT MovieGenre (GenreId, MovieId) VALUES (1, 2);
-INSERT MovieGenre (GenreId, MovieId) VALUES (2, 1);
-INSERT MovieGenre (GenreId, MovieId) VALUES (2, 3);
-INSERT MovieGenre (GenreId, MovieId) VALUES (3, 1);
-INSERT MovieGenre (GenreId, MovieId) VALUES (4, 2);
-INSERT MovieGenre (GenreId, MovieId) VALUES (5, 2);
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+INSERT INTO Hall (Id, NumberOfSeats) VALUES (1, 200);
+INSERT INTO Hall (Id, NumberOfSeats) VALUES (2, 300);
+INSERT INTO Movie (Id, Title) VALUES (1, 'Barbaria');
+INSERT INTO Movie (Id, Title) VALUES (2, 'All Quiet on the Western Front');
+INSERT INTO Movie (Id, Title) VALUES (3, 'Terrifier 2');
+INSERT INTO Screening (HallId, MovieId, DateTime, Price) VALUES (1, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 14);
+INSERT INTO Screening (HallId, MovieId, DateTime, Price) VALUES (1, 2, TO_TIMESTAMP('2020-11-14T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 12);
+INSERT INTO Screening (HallId, MovieId, DateTime, Price) VALUES (2, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 14);
+INSERT INTO Genre (Id, Name) VALUES (1, 'Action');
+INSERT INTO Genre (Id, Name) VALUES (2, 'Horror');
+INSERT INTO Genre (Id, Name) VALUES (3, 'Thriller');
+INSERT INTO Genre (Id, Name) VALUES (4, 'Drama');
+INSERT INTO Genre (Id, Name) VALUES (5, 'War');
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (1, 2);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (2, 1);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (2, 3);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (3, 1);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (4, 2);
+INSERT INTO MovieGenre (GenreId, MovieId) VALUES (5, 2);
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
     VALUES (1, 1, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-13T18:55:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
     VALUES (2, 2, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-13T18:25:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
     VALUES (3, 1, 2, TO_TIMESTAMP('2020-11-14T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-14T18:02:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
     VALUES (4, 1, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-13T18:59:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
     VALUES (5, 2, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-13T18:25:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
-INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+INSERT INTO Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
     VALUES (6, 1, 2, TO_TIMESTAMP('2020-11-14T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-14T18:12:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
 
 ```
