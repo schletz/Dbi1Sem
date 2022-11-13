@@ -110,7 +110,7 @@ Die Datenbank speichert eine Tabelle *Patient*, die die Anzahl der Untersuchunge
 Operationen (*Operations*) Erkrankungen (*Diseases*) speichert.
 Je nach Anzahl der Erkrankungen wird der Zustand (*Condition*) der Person festgelegt.
 
-![](patient_diseases_1442.png)
+![](patient_diseases_1741.png)
 
 ## NULL ist nicht 0
 
@@ -355,7 +355,7 @@ Die Join Bedingung ist dann *Patient.Diseases = DiseasesClass.DiseasesCount*. Da
 Bedingung wie eine *WHERE* Klausel zu behandeln ist, können wir schon vermuten, dass die Patienten
 mit dem Wert *NULL* in *Diseases* nicht ausgegeben werden. NULL ist schließlich mit nichts gleich.
 
-![](patient_diseases_join_1440.png)
+![](patient_diseases_join_1741.png)
 
 ```sql
 SELECT p.Id, p.Name, p.Diseases, d.Condition
