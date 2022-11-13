@@ -262,7 +262,7 @@ CREATE TABLE Equipment (
 	CHECK(Returned IS NULL OR Returned > Rented)
 );
 ```
-</summary>
+</details>
 
 ## Übung
 
