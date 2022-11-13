@@ -104,9 +104,11 @@ Der Student 1002 ist nicht im Projekt B, es kann jedoch trotzdem ein Task
 mit der Zuordnung *StudentId* 1002 und *ProjectId* B angelegt werden, da beide
 Werte - getrennt gesehen - in Projectmember vorkommen.
 
-## Anlegen einer leeren Datenbank
+## Beispiel: CREATE TABLE Skript der Infotage Datenbank
 
-### SQL Server (HIF)
+### Anlegen einer leeren Datenbank
+
+#### SQL Server (HIF)
 
 Um eine Datenbank in SQL Server über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
 des SQL Server Containers. Danach kann mit folgendem Befehl die Datenbank *InfotagDb* angelegt werden:
@@ -119,7 +121,7 @@ des SQL Server Containers. Danach kann mit folgendem Befehl die Datenbank *Infot
 Dabei wird angenommen, dass *SqlServer2019* das sa Passwort ist, das beim Erstellen des Containers
 mit *docker run* angegeben wurde.
 
-### Oracle User (Kolleg)
+#### Oracle User (Kolleg)
 
 Um einen User in Oracle über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
 des Oracle Containers. Danach kann mit folgendem Befehl der User *InfotagDb* mit dem
@@ -139,9 +141,11 @@ Dabei wird angenommen, dass *oracle* das system Passwort ist, das beim Erstellen
 mit *docker run* angegeben wurde.
 
 
-## CREATE TABLE Statements
+### CREATE TABLE Statements
 
-**SQL Server**
+<details>
+<summary>Skript für SQL Server anzeigen</summary>
+
 ```sql
 DROP TABLE IF EXISTS Task;
 DROP TABLE IF EXISTS Equipment;
@@ -198,8 +202,11 @@ CREATE TABLE Equipment (
 );
 
 ```
+</details>
 
-**Oracle**
+<details>
+<summary>Skript für SQL Server anzeigen</summary>
+
 ```sql
 DROP TABLE Task CASCADE CONSTRAINTS;
 DROP TABLE Equipment  CASCADE CONSTRAINTS;
@@ -254,8 +261,8 @@ CREATE TABLE Equipment (
 	FOREIGN KEY (StudentId) REFERENCES Student(Id),
 	CHECK(Returned IS NULL OR Returned > Rented)
 );
-
 ```
+</summary>
 
 ## Übung
 
