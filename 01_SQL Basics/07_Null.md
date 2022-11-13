@@ -42,7 +42,7 @@ CREATE TABLE Patient (
     Id             INTEGER PRIMARY KEY,
     Name           VARCHAR(100) NOT NULL,
     Healthy        CHAR(1),
-    Examinations INTEGER,
+    Examinations   INTEGER,
     Operations     INTEGER,
     Diseases       INTEGER
 );
@@ -78,7 +78,7 @@ CREATE TABLE Patient (
     Id             INTEGER PRIMARY KEY,
     Name           VARCHAR2(100) NOT NULL,
     Healthy        CHAR(1),
-    Examinations INTEGER,
+    Examinations  INTEGER,
     Operations     INTEGER,
     Diseases       INTEGER
 );
