@@ -270,7 +270,7 @@ Es soll folgende Datenbank mittels *CREATE TABLE* Statements umgesetzt werden. S
 Filme, die mehrere Genres haben können. Die Filme werden in Kinosälen (Hall) vorgeführt.
 Zu einer Vorführung (Screening) werden die verkauften Tickets gespeichert.
 
-![](screeningsdb_model_0812.png)
+![](screeningsdb_model_0813.png)
 
 ### Arbeitsauftrag
 
