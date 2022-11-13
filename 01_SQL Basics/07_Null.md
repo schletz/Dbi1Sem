@@ -166,23 +166,28 @@ sorgt oft für Verwirrung. Vergleichen wir dafür folgendes Snippet in Java:
 ```java
 String x = "x", y = null;
 
-if (!x.equals(y))
-    System.out.println("x is not equal to y.");
-else
+if (x.equals(y))
     System.out.println("x is equal to y.");
+else
+    System.out.println("x is not equal to y.");
 ```
 
-Die Ausgabe ist *x is not equal to y*. Der Compiler sagt also x und y sind ungleich, wenn
-x den Wert "x" und y den Wert *null* hat. Datenbanken haben eine *dreiwertige Logik*. Das bedeutet, dass neben
-*true* und *false* noch der Wert *nulll* existiert.
+Die Ausgabe ist *x is not equal to y*.
+Programmiersprachen wie Java oder C# setzen eine *zweiwertige Logik* um. Ein Vergleich liefert
+den Typ *Boolean*, der *true* oder *false* sein kann. Wenn
+x den Wert "x" und y den Wert *null* hat, sind die Ausdrücke nicht gleich. Daher ist das Ergebnis
+des Vergleiches *false* und der *else* Zweig wird aufgerufen. Datenbanken haben eine *dreiwertige Logik*.
+Das bedeutet, dass neben *true* und *false* noch der Wert *null* als Ergebnis existiert.
 
-> Merke: In Datenbanken liefern Vergleiche mit *NULL* auch als Ergebnis den Wert *NULL*.
+> Merke: In Datenbanken liefern Vergleiche mit *NULL* - anders als in Programmiersprachen -
+> auch als Ergebnis den Wert *NULL*.
 
 So liefert der Ausdruck *HEALTHY <> 'Y'* für alle Spalten, die den Wert NULL in *Healthy* haben,
 auch den Wert *NULL* als Ergebnis.
 
 > Die WHERE Bedingung liefert nur Datensätze, wo das Kriterium *true* liefert und nicht *null*
-> oder *false*.
+> oder *false*. NULL bedeutet schließlich "kann alles sein", und die WHERE Klausel soll nur Daten liefern,
+> die das Kriterium sicher erfüllen.
 
 Möchten wir also auch die Patienten ausgeben, die für *Healthy* den Wert *NULL* haben, müssen
 wir folgende Abfrage schreiben:
@@ -234,6 +239,7 @@ SELECT p.Id, p.Name, COALESCE(CAST(p.Diseases AS VARCHAR), '?') FROM Patient p;
 -- Oracle
 SELECT p.Id, p.Name, COALESCE(TO_CHAR(p.Diseases), '?') FROM Patient p;
 ```
+
 ## NULL in Berechnungen
 
 In Berechnungen ist das Ergebnis *NULL*, wenn ein Operand *NULL* ist:
