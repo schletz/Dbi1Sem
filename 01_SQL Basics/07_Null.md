@@ -412,9 +412,10 @@ auf jedem Datenbanksystem das selbe Ergebnis.
 ```sql
 -- SQL Server
 SELECT 'A' + NULL AS Text         -- liefert NULL
-SELECT CONCAT('A',NULL) AS Text   -- liefert A
+SELECT CONCAT('A', NULL) AS Text   -- liefert A
 
--- Oracle
+-- Oracle; da bei einem Select immer eine Tabelle angegeben werden muss, verwenden wir die
+--         dummy Tabelle DUAL
 SELECT 'A' || NULL AS Text FROM DUAL       -- liefert A
 SELECT CONCAT('A', NULL) AS Text FROM DUAL -- liefert A
 ```
