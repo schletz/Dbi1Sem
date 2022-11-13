@@ -32,6 +32,23 @@ Zudem sollen noch folgende Punkte berücksichtigt werden:
 - Beim Ausborgen von Equipment gilt der selbe Sachverhalt beim Zeitpunkt der Rückgabe.
 
 
+## PRIMARY KEY mit mehreren Spalten
+
+Bis jetzt haben wir den Primary Key als Constraint direkt in der Spaltendefinition festgelegt.
+Wenn wir einen Primary Key, der aus mehreren Spalten besteht, anlegen möchten, müssen wir das
+nachträglich mit der *PRIMARY KEY (Col1, Col2, ...)* Anweisung machen:
+
+```sql
+CREATE TABLE Projectmember (
+	StudentId       INTEGER,
+	ProjectId       INTEGER,
+	PresenceChecked DATETIME,
+	PRIMARY KEY (StudentId, ProjectId),
+	FOREIGN KEY (StudentId) REFERENCES Student(Id),
+	FOREIGN KEY (ProjectId) REFERENCES Project(Id) 
+);
+```
+
 ## FOREIGN KEY mit mehreren Spalten
 
 Die Tabelle *Task* besitzt einen Fremdschlüssel der Tabelle *Projectmember*,
@@ -239,3 +256,170 @@ CREATE TABLE Equipment (
 );
 
 ```
+
+## Übung
+
+Es soll folgende Datenbank mittels *CREATE TABLE* Statements umgesetzt werden. Sie speichert
+Filme, die mehrere Genres haben können. Die Filme werden in Kinosälen (Hall) vorgeführt.
+Zu einer Vorführung (Screening) werden die verkauften Tickets gespeichert.
+
+![](screeningsdb_model_0748.png)
+
+### Arbeitsauftrag
+
+Stelle in deinem SQL Editor eine Verbindung zum SQL Server oder Oracle Container her. Arbeitest du
+in *Oracle* (Kolleg), erstelle zuerst einen User *ScreeningDb* in der Shell des Containers:
+
+```bash
+sqlplus system/oracle@//localhost/XEPDB1 <<< "
+    DROP USER ScreeningDb CASCADE;
+    CREATE USER ScreeningDb IDENTIFIED BY oracle;
+    GRANT CONNECT, RESOURCE, CREATE VIEW TO ScreeningDb;
+    GRANT UNLIMITED TABLESPACE TO ScreeningDb;
+"
+
+```
+
+Kopiere danach die entsprechende Vorlage in deinen SQL Editor und erstelle die erforderlichen
+CREATE TABLE Statements. Die nachfolgenden *INSERT* Anweisungen müssen alle funktionieren.
+
+<details>
+<summary>Vorlage für SQL Server anzeigen</summary>
+
+```sql
+USE master
+GO
+-- Prevent 'database is in use' error when deleting.
+IF EXISTS (SELECT 1 FROM sys.databases WHERE [name] = N'ScreeningDb')
+BEGIN
+    ALTER DATABASE ScreeningDb SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE ScreeningDb;
+END;
+GO
+CREATE DATABASE ScreeningDb
+GO
+USE ScreeningDb
+GO
+
+CREATE TABLE Hall (
+	-- TODO: Your definition
+);
+
+CREATE TABLE Genre (
+	-- TODO: Your definition
+);
+
+CREATE TABLE Movie (
+	-- TODO: Your definition
+);
+
+CREATE TABLE MovieGenre (
+	-- TODO: Your definition
+);
+
+CREATE TABLE Screening (
+	-- TODO: Your definition
+);
+
+CREATE TABLE Ticket (
+	-- TODO: Your definition
+);
+
+INSERT Hall (Id, NumberOfSeats) VALUES (1, 200);
+INSERT Hall (Id, NumberOfSeats) VALUES (2, 300);
+INSERT Movie (Id, Title) VALUES (1, 'Barbaria');
+INSERT Movie (Id, Title) VALUES (2, 'All Quiet on the Western Front');
+INSERT Movie (Id, Title) VALUES (3, 'Terrifier 2');
+INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (1, 1, '2020-11-13T20:00:00', 14);
+INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (1, 2, '2020-11-14T20:00:00', 12);
+INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (2, 1, '2020-11-13T20:00:00', 14);
+INSERT Genre (Id, Name) VALUES (1, 'Action');
+INSERT Genre (Id, Name) VALUES (2, 'Horror');
+INSERT Genre (Id, Name) VALUES (3, 'Thriller');
+INSERT Genre (Id, Name) VALUES (4, 'Drama');
+INSERT Genre (Id, Name) VALUES (5, 'War');
+INSERT MovieGenre (GenreId, MovieId) VALUES (1, 2);
+INSERT MovieGenre (GenreId, MovieId) VALUES (2, 1);
+INSERT MovieGenre (GenreId, MovieId) VALUES (2, 3);
+INSERT MovieGenre (GenreId, MovieId) VALUES (3, 1);
+INSERT MovieGenre (GenreId, MovieId) VALUES (4, 2);
+INSERT MovieGenre (GenreId, MovieId) VALUES (5, 2);
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (1, 1, 1, '2020-11-13T20:00:00', '2020-11-13T18:55:00');
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (2, 2, 1, '2020-11-13T20:00:00', '2020-11-13T18:25:00');
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (3, 1, 2, '2020-11-14T20:00:00', '2020-11-14T18:02:00');
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (4, 1, 1, '2020-11-13T20:00:00', '2020-11-13T18:59:00');
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (5, 2, 1, '2020-11-13T20:00:00', '2020-11-13T18:25:00');
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate) VALUES (6, 1, 2, '2020-11-14T20:00:00', '2020-11-14T18:12:00');
+
+```
+</details>
+
+<details>
+<summary>Vorlage für Oracle anzeigen</summary>
+
+```sql
+DROP TABLE Ticket CASCADE CONSTRAINTS;
+DROP TABLE MovieGenre CASCADE CONSTRAINTS;
+DROP TABLE Genre CASCADE CONSTRAINTS;
+DROP TABLE Screening CASCADE CONSTRAINTS;
+DROP TABLE Movie CASCADE CONSTRAINTS;
+DROP TABLE Hall CASCADE CONSTRAINTS;
+
+CREATE TABLE Hall (
+	-- TODO: Your definition
+);
+
+CREATE TABLE Genre (
+	-- TODO: Your definition
+);
+
+CREATE TABLE Movie (
+	-- TODO: Your definition
+);
+
+CREATE TABLE MovieGenre (
+	-- TODO: Your definition
+);
+
+CREATE TABLE Screening (
+	-- TODO: Your definition
+);
+
+CREATE TABLE Ticket (
+	-- TODO: Your definition
+);
+
+INSERT Hall (Id, NumberOfSeats) VALUES (1, 200);
+INSERT Hall (Id, NumberOfSeats) VALUES (2, 300);
+INSERT Movie (Id, Title) VALUES (1, 'Barbaria');
+INSERT Movie (Id, Title) VALUES (2, 'All Quiet on the Western Front');
+INSERT Movie (Id, Title) VALUES (3, 'Terrifier 2');
+INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (1, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 14);
+INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (1, 2, TO_TIMESTAMP('2020-11-14T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 12);
+INSERT Screening (HallId, MovieId, DateTime, Price) VALUES (2, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), 14);
+INSERT Genre (Id, Name) VALUES (1, 'Action');
+INSERT Genre (Id, Name) VALUES (2, 'Horror');
+INSERT Genre (Id, Name) VALUES (3, 'Thriller');
+INSERT Genre (Id, Name) VALUES (4, 'Drama');
+INSERT Genre (Id, Name) VALUES (5, 'War');
+INSERT MovieGenre (GenreId, MovieId) VALUES (1, 2);
+INSERT MovieGenre (GenreId, MovieId) VALUES (2, 1);
+INSERT MovieGenre (GenreId, MovieId) VALUES (2, 3);
+INSERT MovieGenre (GenreId, MovieId) VALUES (3, 1);
+INSERT MovieGenre (GenreId, MovieId) VALUES (4, 2);
+INSERT MovieGenre (GenreId, MovieId) VALUES (5, 2);
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+    VALUES (1, 1, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-13T18:55:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+    VALUES (2, 2, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-13T18:25:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+    VALUES (3, 1, 2, TO_TIMESTAMP('2020-11-14T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-14T18:02:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+    VALUES (4, 1, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-13T18:59:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+    VALUES (5, 2, 1, TO_TIMESTAMP('2020-11-13T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-13T18:25:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
+INSERT Ticket (Id, ScreeningHallId, ScreeningMovieId, ScreeningDateTime, SalesDate)
+    VALUES (6, 1, 2, TO_TIMESTAMP('2020-11-14T20:00:00', 'YYYY-MM-DD"T"HH24:MI:SS'), TO_TIMESTAMP('2020-11-14T18:12:00', 'YYYY-MM-DD"T"HH24:MI:SS'));
+
+```
+</details>
