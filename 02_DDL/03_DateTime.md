@@ -376,7 +376,16 @@ SELECT * FROM OPENINGHOURS;
 | MO      | 0 8:0:0.0 |
 ```
 
-### Herstellerspezifische Typen beachten
+## Übersicht der Datums- und Zeittypen
+
+| **Plattform**       | Ohne Zeitzone | Mit Zeitzone             |
+| ------------------- | ------------- | ------------------------ |
+| SQL Server          | DATETIME      | DATETIMEOFFSET           |
+| Oracle              | TIMESTAMP     | TIMESTAMP WITH TIME ZONE |
+| Java (ab Version 8) | LocalDateTime | ZonedDateTime            |
+| .NET                | DateTime      | DateTimeOffset           |
+
+## Herstellerspezifische Typen beachten
 
 Gerade das letzte Beispiel hat gezeigt, dass die Verarbeitung von Datum und Zeit in den
 verschiedenen Datenbanksystemen unterschiedlich ist. Deswegen muss gerade bei diesem Thema
