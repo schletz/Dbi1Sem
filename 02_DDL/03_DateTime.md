@@ -334,5 +334,5 @@ Sekundenwert leicht zum entsprechenden Tag dazu zählen um z. B. einen Kalender 
 
 > **Clientsoftware und Datenbank müssen Datums- und Zeitwerte durchgängig korrekt verarbeiten.
 > Dabei ist die gute Kommunikation im Team wichtig, damit es nicht zu falschen Konvertierungen
-> kommt.**
-
+> kommt. Server in der Cloud laufen in der Zeitzone UTC und weichen damit von deinem
+> Entwicklungsrechner, der ME(S)Z verwendet, ab!**
