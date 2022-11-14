@@ -325,12 +325,63 @@ die UTC Zeitzone an, und ruft ein User in New York die Liste auf, wird daraus
 *2022-11-13T19:00:00*. Zeigt der Client dann nur den Datumsteil an, wird nun der falsche Tag
 angezeigt!
 
+SQL Server bietet mit dem Typ *DATE* einen eigenen Datentyp, der nur die Datumskomponente
+speichern kann. Daher ist dieser Typ für Geburtsdaten zu bevorzugen. Vorsicht in Oracle:
+der Typ *DATE* ist Variante von *TIMESTAMP* ohne Sekundenbruchteilen und speichert - auch wenn
+der Name anderes vermuten lässt - auch eine Zeitkomponente.
+
 ### Nur Zeitwerte
 
-Es gibt auch Werte, die nur eine Uhrzeit speichern wollen. Die Öffnungszeiten eines Shops sind
-das bekannteste Beispiel. Eine Möglichkeit ist das Speichern der Sekunden seit 0:00. So können wir
-8:00 als 8 x 3600 = 28800 in einer *INTEGER* Spalte speichern. Der Client kann dann diesen
-Sekundenwert leicht zum entsprechenden Tag dazu zählen um z. B. einen Kalender anzuzeigen.
+Die Speicherung von Werten, die nur eine Zeitkomponente haben, ist sicher am Schwierigsten.
+Wir wollen z. B. die Öffnungszeiten von Shops speichern. In SQL Server gibt es mit *TIME*
+einen Typ, der hierfür verwendet werden kann:
+
+```sql
+CREATE TABLE OpeningHours (
+	Weekday VARCHAR(2) NOT NULL,
+	Time    TIME       NOT NULL
+);
+
+INSERT INTO OPENINGHOURS VALUES ('MO', '08:00');
+SELECT * FROM OpeningHours;
+```
+
+```
+| Weekday | Time     |
+| ------- | -------- |
+| MO      | 08:00:00 |
+```
+
+In Oracle ist die Sache anders. Es gibt keinen Typ für Werte, die nur eine Zeitkomponente
+haben. Es gibt aber einen Typ für Zeitintervalle: *INTERVAL*. Er ist dafür gedacht, eine Zeitdauer
+in Tagen und Sekunden zu speichern. Wir können daher ein Intervall definieren, und die Zeitkomponente
+als Dauer nach 0 Uhr auffassen. Die Genauigkeit setzen wir auf 0 (keine Kommastellen) bei der
+Tages- und Sekundenkomponente.
+
+```sql
+CREATE TABLE OpeningHours (
+	Weekday VARCHAR(2) NOT NULL,
+	Time    INTERVAL DAY (0) TO SECOND (0) NOT NULL
+);
+
+INSERT INTO OPENINGHOURS VALUES ('MO', TO_DSINTERVAL('0 08:00:00'));
+SELECT * FROM OPENINGHOURS;
+```
+
+```
+| WEEKDAY | TIME      |
+| ------- | --------- |
+| MO      | 0 8:0:0.0 |
+```
+
+### Herstellerspezifische Typen beachten
+
+Gerade das letzte Beispiel hat gezeigt, dass die Verarbeitung von Datum und Zeit in den
+verschiedenen Datenbanksystemen unterschiedlich ist. Deswegen muss gerade bei diesem Thema
+die herstellerspezifische Doku gelesen werden.
+
+- Datum und Zeit in SQL Server: https://learn.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql
+- Datentypen in Oracle: https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Data-Types.html
 
 > **Clientsoftware und Datenbank müssen Datums- und Zeitwerte durchgängig korrekt verarbeiten.
 > Dabei ist die gute Kommunikation im Team wichtig, damit es nicht zu falschen Konvertierungen
