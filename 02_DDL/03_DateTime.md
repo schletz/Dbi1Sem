@@ -330,7 +330,7 @@ speichern kann. Daher ist dieser Typ für Geburtsdaten zu bevorzugen. Vorsicht i
 der Typ *DATE* ist Variante von *TIMESTAMP* ohne Sekundenbruchteilen und speichert - auch wenn
 der Name anderes vermuten lässt - auch eine Zeitkomponente.
 
-### Nur Zeitwerte
+### Zeitwerte ohne Datumskomponente
 
 Die Speicherung von Werten, die nur eine Zeitkomponente haben, ist sicher am Schwierigsten.
 Wir wollen z. B. die Öffnungszeiten von Shops speichern. In SQL Server gibt es mit *TIME*
