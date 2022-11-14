@@ -337,6 +337,7 @@ Wir wollen z. B. die Öffnungszeiten von Shops speichern. In SQL Server gibt es 
 einen Typ, der hierfür verwendet werden kann:
 
 ```sql
+-- SQL Server
 CREATE TABLE OpeningHours (
 	Weekday VARCHAR(2) NOT NULL,
 	Time    TIME       NOT NULL
@@ -359,6 +360,7 @@ als Dauer nach 0 Uhr auffassen. Die Genauigkeit setzen wir auf 0 (keine Kommaste
 Tages- und Sekundenkomponente.
 
 ```sql
+-- Oracle
 CREATE TABLE OpeningHours (
 	Weekday VARCHAR(2) NOT NULL,
 	Time    INTERVAL DAY (0) TO SECOND (0) NOT NULL
