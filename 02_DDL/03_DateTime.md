@@ -378,12 +378,12 @@ SELECT * FROM OPENINGHOURS;
 
 ## Übersicht der Datums- und Zeittypen
 
-| Plattform           | Ohne Zeitzone                              | Mit Zeitzone                                 |
-| ------------------- | ------------------------------------------ | -------------------------------------------- |
-| SQL Server          | DATETIME (DATE: nur Datum, TIME: nur Zeit) | DATETIMEOFFSET (INTERVAL für Zeitintervalle) |
-| Oracle              | TIMESTAMP                                  | TIMESTAMP WITH TIME ZONE                     |
-| Java (ab Version 8) | LocalDateTime                              | ZonedDateTime                                |
-| .NET                | DateTime                                   | DateTimeOffset                               |
+| Plattform           | Ohne Zeitzone                              | Mit Zeitzone             |
+| ------------------- | ------------------------------------------ | ------------------------ |
+| SQL Server          | DATETIME (DATE: nur Datum, TIME: nur Zeit) | DATETIMEOFFSET           |
+| Oracle              | TIMESTAMP   (INTERVAL für Zeitintervalle)  | TIMESTAMP WITH TIME ZONE |
+| Java (ab Version 8) | LocalDateTime                              | ZonedDateTime            |
+| .NET                | DateTime                                   | DateTimeOffset           |
 
 ## Herstellerspezifische Typen beachten
 
