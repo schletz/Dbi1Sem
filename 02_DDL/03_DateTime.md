@@ -383,7 +383,7 @@ SELECT * FROM OPENINGHOURS;
 | SQL Server          | DATETIME (DATE: nur Datum, TIME: nur Zeit) | DATETIMEOFFSET           |
 | Oracle              | TIMESTAMP   (INTERVAL für Zeitintervalle)  | TIMESTAMP WITH TIME ZONE |
 | Java (ab Version 8) | LocalDateTime                              | ZonedDateTime            |
-| .NET                | DateTime                                   | DateTimeOffset           |
+| .NET                | DateTime (mit Flags für Local oder UTC)    | DateTimeOffset           |
 
 ## Herstellerspezifische Typen beachten
 
