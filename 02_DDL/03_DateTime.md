@@ -334,7 +334,7 @@ der Name anderes vermuten lässt - auch eine Zeitkomponente.
 
 ### Zeitwerte ohne Datumskomponente
 
-Die Speicherung von Werten, die nur eine Zeitkomponente haben, ist sicher am Schwierigsten.
+Die Speicherung von Werten, die nur eine Zeitkomponente haben, ist sicher am schwierigsten.
 Wir wollen z. B. die Öffnungszeiten von Shops speichern. In SQL Server gibt es mit *TIME*
 einen Typ, der hierfür verwendet werden kann:
 
