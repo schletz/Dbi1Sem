@@ -227,9 +227,9 @@ Der 1. Request wurde um 2:59:58 gesendet, der zweite Request um 2:00:03. Der Gru
 Am 30. Oktober 2022 wurde von 3 Uhr Sommerzeit die Uhren auf 2 Uhr Normalzeit zurückgestellt.
 Auch in Software, die nicht international verwendet wird, müssen wir uns wegen der
 Umstellung von Sommer auf Winterzeit auch um das Thema Zeitzone kümmern.
-
 Besser wäre es gewesen, die Software würde alle Zeitwerte in UTC abrufen
-(z. B. *DateTime.UtcNow* in .NET) speichern. Dann würde unsere Tabelle so aussehen:
+(z. B. *DateTime.UtcNow* in .NET) und zum speichern an die Datenbank senden.
+Dann würde unsere Tabelle so aussehen:
 
 ```
 | Id   | Text                     | DateTimeUtc         |
