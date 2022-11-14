@@ -11,19 +11,19 @@ uns das SI Einheitensystem an, das die Grundeinheiten definiert. Dort findet man
 der Sekunde:
 
 > Die Sekunde, Einheitenzeichen s, ist die SI-Einheit der Zeit. Sie ist definiert, indem für die
-> Cäsium-frequenz Δν, der Frequenz des ungestörten Hyperfeinübergangs des Grundzustands des
+> Cäsiumfrequenz Δν, der Frequenz des ungestörten Hyperfeinübergangs des Grundzustands des
 > Cäsiumatoms 133, der Zahlenwert **9&#8239;192&#8239;631&#8239;770** festgelegt wird, ausgedrückt in der Einheit
 >  Hz, die gleich s<sup>−1</sup> ist.
 > <sup>https://www.ptb.de/cms/ptb/fachabteilungen/abt4/fb-44/fragenzurzeit/fragenzurzeit14.html</sup>
 
 Diese etwas komplizierte Definition sagt aber nur Folgendes aus: Eine Atomuhr zählt einfach,
 wie oft das Cäsiumatom geschwungen hat. Nach 9&#8239;192&#8239;631&#8239;770 Schwingungen wird
-einfach ein Zähler um 1 hochgezählt.
+einfach der Sekundenzähler um 1 hochgezählt.
 
-Eine normale Wanduhr arbeitet auch als Zähler. Intern schwingt ein Quarzkristall. Nach 32&#8239;768
-Schwingungen (2<sup>15</sup>) wird der Sekundenzeiger um 1 weitergeschoben. Ein PC besitzt
-mit der "Real Time Clock" auch eine kleine Uhr, die durch eine Batterie immer die Sekunden weiter
-zählt. Auch sie ist nur ein Zähler.
+Eine normale Wanduhr arbeitet auch so, allerdings ohne Cäsiumatome. Intern schwingt ein
+Quarzkristall. Nach 32&#8239;768 Schwingungen (2<sup>15</sup>) wird der Sekundenzeiger um 1
+weitergeschoben. Ein PC besitzt mit der "Real Time Clock" auch eine kleine Uhr, die durch eine
+Batterie immer die Sekunden weiter zählt. Auch sie ist nur ein Zähler.
 
 > Die Zeit, die vergeht, wird technisch als Zählerschaltung realisiert. Es braucht nur eine stabile
 > Grundschwingung durch einen Quarz oder ein Atom und einen Frequenzteiler.
