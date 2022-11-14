@@ -1,12 +1,12 @@
 # Datum und Zeit
 
 Wir haben im *CRETE TABLE* Statement Spalten angelegt, die Datums- und Zeitangaben speichern
-können. Das Thema Datum und Zeit ist allerdings komplexer als es auf den ersten Blich scheint.
+können. Das Thema Datum und Zeit ist allerdings komplexer als es auf den ersten Blick scheint.
 
 ## Die Sekunde als normierte Grundeinheit
 
 Bevor wir uns mit der Speicherung von Datums- und Zeitwerten beschäftigen, müssen wir uns einmal
-Gedanken machen was Zeit im technischen Sinne ist und wie sie gemessen wird. Dafür sehen wir
+Gedanken machen, was Zeit im technischen Sinne ist und wie sie gemessen wird. Dafür sehen wir
 uns das SI Einheitensystem an, das die Grundeinheiten definiert. Dort findet man eine Definition
 der Sekunde:
 
@@ -20,7 +20,7 @@ Diese etwas komplizierte Definition sagt aber nur Folgendes aus: Eine Atomuhr z�
 wie oft das Cäsiumatom geschwungen hat. Nach 9&#8239;192&#8239;631&#8239;770 Schwingungen wird
 einfach der Sekundenzähler um 1 hochgezählt.
 
-Eine normale Wanduhr arbeitet auch so, allerdings ohne Cäsiumatome. Intern schwingt ein
+Eine normale Wanduhr arbeitet auch so, allerdings ohne Cäsiumatome. Im Uhrwerk schwingt ein
 Quarzkristall. Nach 32&#8239;768 Schwingungen (2<sup>15</sup>) wird der Sekundenzeiger um 1
 weitergeschoben. Ein PC besitzt mit der "Real Time Clock" auch eine kleine Uhr, die durch eine
 Batterie immer die Sekunden weiter zählt. Auch sie ist nur ein Zähler.
@@ -35,7 +35,7 @@ Die anderen Einheiten, die wir im Umgang mit Datumswerten brauchen, leiten sich 
 Die Umrechnung in Monate und Jahre lässt sich nicht aus einem Sekundenwert ableiten, da sie nicht
 immer gleich lang sind (30 oder 31 Tage, Schaltjahre).
 
-## Aus der Sekunde wird ein Datum: Epoch
+## Aus dem Sekundenzähler wird ein Datum: Epoch
 
 Nachdem die Sekunde also durch einen Zählvorgang gewonnen wird, brauchen wir - um ein Datum oder
 die Zeit anzeigen zu können - einen Bezugspunkt. Der bekannteste Bezugspunkt kommt aus der frühen
@@ -224,11 +224,11 @@ Bei einer Analyse stellen wir seltsame Werte am 30. Oktober 2022 fest:
 ```
 
 Der 1. Request wurde um 2:59:58 gesendet, der zweite Request um 2:00:03. Der Grund:
-Am 30. Oktober 2022 wurde von 3 Uhr Sommerzeit die Uhren auf 2 Uhr Normalzeit zurückgestellt.
+Am 30. Oktober 2022 um 3 Uhr Sommerzeit wurden die Uhren auf 2 Uhr Normalzeit zurückgestellt.
 Auch in Software, die nicht international verwendet wird, müssen wir uns wegen der
-Umstellung von Sommer auf Winterzeit auch um das Thema Zeitzone kümmern.
+Umstellung von Sommer- auf Winterzeit auch um das Thema Zeitzone kümmern.
 Besser wäre es gewesen, die Software würde alle Zeitwerte in UTC abrufen
-(z. B. *DateTime.UtcNow* in .NET) und zum speichern an die Datenbank senden.
+(z. B. *DateTime.UtcNow* in .NET) und zum Speichern an die Datenbank senden.
 Dann würde unsere Tabelle so aussehen:
 
 ```
@@ -271,7 +271,7 @@ CREATE TABLE EventLog (
 );
 
 INSERT INTO EventLog (Text, DateTime) VALUES ('Request GET /', '2022-10-30T02:59:58+02:00');
-INSERT INTO EventLog (Text, DateTime) VALUES ('Request GET/favicon.ico', '2022-10-30T02:59:58+01:00');
+INSERT INTO EventLog (Text, DateTime) VALUES ('Request GET/favicon.ico', '2022-10-30T02:00:03+01:00');
 SELECT * FROM EventLog;
 ```
 
@@ -279,7 +279,7 @@ SELECT * FROM EventLog;
 | Id  | Text                    | DateTime                   |
 | --- | ----------------------- | -------------------------- |
 | 1   | Request GET /           | 2022-10-30 02:59:58 +02:00 |
-| 2   | Request GET/favicon.ico | 2022-10-30 02:59:58 +01:00 |
+| 2   | Request GET/favicon.ico | 2022-10-30 02:00:03 +01:00 |
 ```
 
 ### Speicherung in Lokalzeit
@@ -296,14 +296,16 @@ werden zum Test gehen, wenn ihre Uhr 10:45 anzeigt. Wir haben daher 2 Möglichke
 
 Bei einem Test, wo alle KandidatInnen in der selben Zeitzone sind, wird die letzte Lösung wohl die
 Beste sein. Bei einem online Meeting über Teams, wo auch internationale Kollegen teilnehmen,
-werden wir die erste Variante wählen und die Zeitzone am Client extra ausgeben.
+werden wir die erste Variante oder den Typ *DATETIMEOFFSET* wählen und die Zeitzone des Meetings
+sowie die lokale Zeit am Client extra ausgeben.
 
 ### Datumswerte ohne Zeitkomponente
 
 Ein weiteres Problem ist Angeben von "nur Datums" Werten. Der bekannteste Fall
 ist sicher das Geburtsdatum. In der Datenbank wird immer indirekt 0:00 angenommen.
 Das kann aber zu Problemen führen. Wir wollen z. B. alle Prüfungen bis inklusive 17. November 2022
-ausgeben. Die Umsetzung erfolgt mit folgendem SELECT:
+ausgeben. Die Prüfung besitzt eine Spalte *DateTime* mit einer Zeitkomponente, da die Prüfung
+zu einer bestimmten Zeit am Tag statt findet. Die Umsetzung erfolgt mit folgendem SELECT:
 
 ```sql
 SELECT * FROM Exam WHERE DateTime <= '2022-11-17'
@@ -327,7 +329,7 @@ angezeigt!
 
 SQL Server bietet mit dem Typ *DATE* einen eigenen Datentyp, der nur die Datumskomponente
 speichern kann. Daher ist dieser Typ für Geburtsdaten zu bevorzugen. Vorsicht in Oracle:
-der Typ *DATE* ist Variante von *TIMESTAMP* ohne Sekundenbruchteilen und speichert - auch wenn
+der Typ *DATE* ist eine Variante von *TIMESTAMP* ohne Sekundenbruchteilen und speichert - auch wenn
 der Name anderes vermuten lässt - auch eine Zeitkomponente.
 
 ### Zeitwerte ohne Datumskomponente
