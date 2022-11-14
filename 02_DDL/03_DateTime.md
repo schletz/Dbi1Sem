@@ -378,7 +378,7 @@ SELECT * FROM OPENINGHOURS;
 
 ## Übersicht der Datums- und Zeittypen
 
-| **Plattform**       | Ohne Zeitzone | Mit Zeitzone             |
+| Plattform           | Ohne Zeitzone | Mit Zeitzone             |
 | ------------------- | ------------- | ------------------------ |
 | SQL Server          | DATETIME      | DATETIMEOFFSET           |
 | Oracle              | TIMESTAMP     | TIMESTAMP WITH TIME ZONE |
