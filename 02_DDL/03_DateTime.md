@@ -142,7 +142,7 @@ Die Speicherung eines Datums als fortlaufende Nummer scheint zwar umständlich, 
 Vorteile. So können arithmetische Operationen wie Vergleiche oder Differenzen sehr schnell
 ausgeführt werden. Die Berechnung deines Alters in Sekunden ist dann eine einfache Subtraktion.
 
-## Ein Zeitwert und 14 Zeiten: Die Zeitzonen
+## Ein Zeitwert und 26 Zeiten: Die Zeitzonen
 
 Die ersten Uhren waren Sonnenuhren, und 12:00 ist der Zeitpunkt wo die Sonne am höchsten steht.
 Da die Erde rund ist, ist es immer an einem Ort Mittag und an einem anderen Ort Mitternacht. Das
@@ -386,6 +386,316 @@ SELECT * FROM OPENINGHOURS;
 | Oracle              | TIMESTAMP   (INTERVAL für Zeitintervalle)  | TIMESTAMP WITH TIME ZONE |
 | Java (ab Version 8) | LocalDateTime                              | ZonedDateTime            |
 | .NET                | DateTime (mit Flags für Local oder UTC)    | DateTimeOffset           |
+
+## Rechnen mit Datum und Zeit: Funktionen
+
+Wir können auch mit gespeicherten Datums- und Zeitwerten Berechnungen durchführen. Dafür stellen
+die Datenbankhersteller verschiedene Funktionen bereit. Wir legen dafür eine Tabelle *Exam* an und
+fügen ein paar Werte ein:
+
+<details>
+<summary>Skript für SQL Server anzeigen</summary>
+
+```sql
+CREATE TABLE Exam (
+	Id                INTEGER        PRIMARY KEY,
+	Subject           VARCHAR(8)     NOT NULL,
+	DatePlanned       DATETIMEOFFSET NOT NULL,
+	Duration          TIME           NOT NULL,
+	DateGradedUtc     DATETIME
+);
+
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (1, 'POS', '2022-11-16T10:00:00+01:00', '00:50:00', '2022-11-16T11:54:00Z');
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (2, 'DBI', '2022-11-17T08:50:00+01:00', '01:40:00', '2022-11-17T08:31:14Z');
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (3, 'POS', '2022-12-04T14:25:00+01:00', '02:00:00', NULL);
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (4, 'AM', '2022-10-31T16:05:00+02:00', '01:00:00', '2022-12-05T13:32:28Z');
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (5, 'POS', '2022-10-28T09:55:00+02:00', '03:00:00', '2022-10-31T08:07:54Z');
+```
+</details>
+
+<details>
+<summary>Skript für Oracle anzeigen</summary>
+
+```sql
+CREATE TABLE Exam (
+	Id                INTEGER     PRIMARY KEY,
+	Subject           VARCHAR(8)  NOT NULL,
+	DatePlanned       TIMESTAMP WITH TIME ZONE        NOT NULL,
+	Duration          INTERVAL DAY (0) TO SECOND (0)  NOT NULL,
+	DateGradedUtc     TIMESTAMP
+);
+
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (1, 'POS', 
+	TO_TIMESTAMP_TZ('2022-11-16T10:00:00+01:00', 'YYYY-MM-DD"T"HH24:MI:SSTZH:TZM'),
+	TO_DSINTERVAL('0 00:50:00'),
+	TO_TIMESTAMP('2022-12-16T09:30:00Z', 'YYYY-MM-DD"T"HH24:MI:SS"Z"'));
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (2, 'DBI',
+	TO_TIMESTAMP_TZ('2022-11-17T08:50:00+01:00', 'YYYY-MM-DD"T"HH24:MI:SSTZH:TZM'),
+	TO_DSINTERVAL('0 01:40:00'),
+	TO_TIMESTAMP('2022-11-17T08:31:14Z', 'YYYY-MM-DD"T"HH24:MI:SS"Z"'));
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (3, 'POS',
+	TO_TIMESTAMP_TZ('2022-12-04T14:25:00+01:00', 'YYYY-MM-DD"T"HH24:MI:SSTZH:TZM'),
+	TO_DSINTERVAL('0 02:00:00'),
+	NULL);
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (4, 'AM',
+	TO_TIMESTAMP_TZ('2022-10-31T16:05:00+02:00', 'YYYY-MM-DD"T"HH24:MI:SSTZH:TZM'),
+	TO_DSINTERVAL('0 01:00:00'),
+	TO_TIMESTAMP('2022-12-05T13:32:28Z', 'YYYY-MM-DD"T"HH24:MI:SS"Z"'));
+INSERT INTO Exam (Id, Subject, DatePlanned, Duration, DateGradedUtc) VALUES (5, 'POS',
+	TO_TIMESTAMP_TZ('2022-10-28T09:55:00+02:00', 'YYYY-MM-DD"T"HH24:MI:SSTZH:TZM'),
+	TO_DSINTERVAL('0 03:00:00'),
+	TO_TIMESTAMP('2022-10-31T08:07:54Z', 'YYYY-MM-DD"T"HH24:MI:SS"Z"'));
+```
+</details>
+
+Die Tabelle *Exam* zeigt ein paar Besonderheiten:
+
+- Die Spalte *DatePlanned* verwendet einen Datentyp mit Zeitzone (*DATETIMEOFFSET* oder
+  *TIMESTAMP WITH TIME ZONE*). Es ist das geplante Datum samt Zeit der Prüfung.
+- Die *Duration* gibt die Dauer der Prüfung an. Dabei verwenden wir in SQL Server den Typ
+  *TIME*, in Oracle den Typ *INTERVAL*. Wir könnten auch die Dauer in Minuten als *INTEGER*
+  speichern, vor allem in Oracle ist aber *INTERVAL* zu bevorzugen, denn dafür wurde es
+  ja gemacht.
+- Die Spalte *DateGrededUtc* ist ein Datums/Zeitwert ohne Zeitzone. Wie im Spaltennamen
+  schon angegeben, wird dort der Zeitstempel in UTC gespeichert. Er entsteht, wann der Lehrer
+  die Note eingegeben und auf Speichern gedrückt hat. Es ist ein vergangenes oder aktuell gemessenes
+  Ereignis, deswegen ist UTC zu verwenden.
+
+### Extrahieren von Teilen eines Datums
+
+Oft wollen wir den Jahres- Monats oder Tagesteil aus einem Datum extrahieren, um z. B. danach zu
+gruppieren. Achtung beim Wochentag: In Amerika ist der Sonntag der erste Tag,
+bei uns ist es der Montag. Das Bestimmen des Wochentages erfordert in den Datenbanksystemen also
+ein Festlegen des ersten Wochentages. Die Funktion zur Bestimmung des Wochentages ist
+der Vollständigkeit halber angeführt, für die Darstellung sollte der Client die Bestimmung des
+Wochentages vornehmen. Datenbankseitig wird sie manchmal für Gruppierungen verwendet.
+
+#### SQL Server
+
+In SQL Server gibt es die Funktion *DATEPART()*. Sie liefert einen Integer Wert, der den
+entsprechenden Datumsteil darstellt. Mit *SET DATEFIRST* kann der erste Wochentag für die
+Session eingestellt werden. Hier ist es der Montag (1).
+
+```sql
+SET DATEFIRST 1  -- 1: MO, 7: SO
+SELECT e.Id, e.Subject, e.DatePlanned,
+	DATEPART(year, e.DatePlanned) AS ExamYear,
+	DATEPART(month, e.DatePlanned) AS ExamMonth,
+	DATEPART(day, e.DatePlanned) AS ExamDay,
+	DATEPART(hour, e.DatePlanned) AS ExamHour,
+	DATEPART(minute, e.DatePlanned) AS ExamMinute,
+	DATEPART(second, e.DatePlanned) AS ExamSecond,
+	DATEPART(weekday, e.DatePlanned) AS ExamWeekday
+FROM Exam e;
+```
+
+#### Oracle
+
+In Oracle gibt es die Funktion *EXTRACT()*, die Datumsteile zurückgeben kann. Auch hier müssen
+wir eine Einstellung für den ersten Wochentag festlegen. In Oracle geben wir das Land an, und
+das Ergebnis richtet sich dann nach der dortigen Zählweise.
+
+```sql
+	
+ALTER SESSION SET NLS_TERRITORY = 'AUSTRIA';
+SELECT e.Id, e.Subject, e.DatePlanned,
+	EXTRACT(YEAR FROM e.DatePlanned) AS ExamYear,
+	EXTRACT(MONTH FROM e.DatePlanned) AS ExamMonth,
+	EXTRACT(DAY FROM e.DatePlanned) AS ExamDay,
+	EXTRACT(HOUR FROM e.DatePlanned) AS ExamHour,
+	EXTRACT(MINUTE FROM e.DatePlanned) AS ExamMinute,
+	EXTRACT(SECOND FROM e.DatePlanned) AS ExamSecond,
+	TO_CHAR(e.DatePlanned, 'D') AS ExamWeekday
+FROM Exam e;
+```
+
+```
+| Id  | Subject | DatePlanned                | ExamYear | ExamMonth | ExamDay | ExamHour | ExamMinute | ExamSecond | ExamWeekday |
+| --- | ------- | -------------------------- | -------- | --------- | ------- | -------- | ---------- | ---------- | ----------- |
+| 1   | POS     | 2022-11-16 10:00:00 +01:00 | 2022     | 11        | 16      | 10       | 0          | 0          | 3           |
+| 2   | DBI     | 2022-11-17 08:50:00 +01:00 | 2022     | 11        | 17      | 8        | 50         | 0          | 4           |
+| 3   | POS     | 2022-12-04 14:25:00 +01:00 | 2022     | 12        | 4       | 14       | 25         | 0          | 7           |
+| 4   | AM      | 2022-10-31 16:05:00 +02:00 | 2022     | 10        | 31      | 16       | 5          | 0          | 1           |
+| 5   | POS     | 2022-10-28 09:55:00 +02:00 | 2022     | 10        | 28      | 9        | 55         | 0          | 5           |
+
+```
+
+### Differenzen von Datumswerten
+
+
+#### SQL Server
+
+In SQL Server liefert die Funktion *DATEDIFF(unit, start, end)* die Differenz in der angegebenen
+Einheit. Vorsicht: Die Funktion liefert einen Integer Wert. Möchte man die Differenz mit Kommastellen
+ermitteln, berechnet man am Besten die Differenz in Sekunden und dividiert dann durch die entsprechende
+Grundeinheit. Auch in SQL Server ergibt *int : int* den Typ int, somit schreiben wir *3600.0*.
+
+Beachte den impliziten Cast der Spalte *DateGradedUtc* von DATETIME nach DATETIMEOFFSET. Es wird
+automatisch die Zeitzone +0:00 (also UTC) gesetzt. Daher muss im Feld *DateGradedUtc* ein UTC
+Wert stehen, sonst wäre das Ergebnis falsch!
+
+```sql
+SELECT e.Id, e.Subject, e.DatePlanned, e.DateGradedUtc,
+	DATEDIFF(day, e.DatePlanned, e.DateGradedUtc) AS DiffDays,
+	DATEDIFF(second, e.DatePlanned, e.DateGradedUtc) AS DiffSeconds,
+	DATEDIFF(second, e.DatePlanned, e.DateGradedUtc)/3600.0 AS DiffHours
+FROM Exam e;
+```
+
+#### Oracle
+
+In Oracle können wir durch eine Subtraktion die Differenz von Datumswerten gewinnen. Verwenden
+wir zwei Werte vom Typ *TIMESTAMP* wird der Typ *INTERVAL* zurückgegeben. Wandeln wir aber
+den Typ *TIMESTAMP* mit einer *CAST* Anweisung in den Typ *DATE* um, so wird die Anzahl der Tage
+mit Kommastellen zurückgegeben.
+
+Da ein Tag 24 Stunden oder 86400 Sekunden hat, gewinnen wir durch eine Multiplikation die gewünschte
+Einheit. Achte auf die Klausel *AT TIME ZONE 'UTC'* bei der Spalte *DatePlanned*. Zuerst müssen wir
+nämlich in UTC konvertieren, da *DateGradedUtc* einen UTC Zeitwert beinhaltet. *TRUNC()* schneidet
+das Ergebnis auf eine ganze Zahl ab.
+
+```sql
+SELECT e.Id, e.Subject, e.DatePlanned, e.DateGradedUtc,
+	TRUNC(CAST (e.DatePlanned AT TIME ZONE 'UTC' AS DATE) - CAST(e.DateGradedUtc AS DATE)) AS DiffDays,
+	TRUNC(86400*(CAST (e.DatePlanned AT TIME ZONE 'UTC' AS DATE) - CAST(e.DateGradedUtc AS DATE))) AS DiffSeconds,
+	24*(CAST (e.DatePlanned AT TIME ZONE 'UTC' AS DATE) - CAST(e.DateGradedUtc AS DATE)) AS DiffHours	
+FROM Exam e;
+```
+
+```
+| Id  | Subject | DatePlanned                | DateGradedUtc           | DiffDays | DiffSeconds | DiffHours  |
+| --- | ------- | -------------------------- | ----------------------- | -------- | ----------- | ---------- |
+| 1   | POS     | 2022-11-16 10:00:00 +01:00 | 2022-12-16 09:30:00.000 | 30       | 2593800     | 720.500000 |
+| 2   | DBI     | 2022-11-17 08:50:00 +01:00 | 2022-11-17 08:31:14.000 | 0        | 2474        | 0.687222   |
+| 3   | POS     | 2022-12-04 14:25:00 +01:00 |                         |          |             |            |
+| 4   | AM      | 2022-10-31 16:05:00 +02:00 | 2022-12-05 13:32:28.000 | 35       | 3022048     | 839.457777 |
+| 5   | POS     | 2022-10-28 09:55:00 +02:00 | 2022-10-31 08:07:54.000 | 3        | 259974      | 72.215000  |
+
+```
+
+### Addieren von Datummswerten
+
+Manchmal möchten wir zu einem Datum einen Wert dazuaddieren. Vor allem bei Monaten oder Jahren
+brauchen wir spezielle Funktionen, da ein Monat nicht immer die gleiche Anzahl an Sekunden hat.
+1 Monat bedeutet,
+dass der selbe Tag nur eben 1 Monat später gemeint ist. Ob der Monat 28, 30 oder 31 Tage hat ist
+egal. Das klingt allerdings einfacher als es ist. Stellen wir uns den 31.10.2022 vor. Was ist
+"1 Monat später"? Den 31.11. gibt es nämlich nicht. Auch beim Addieren von Jahren können
+Probleme entstehen. Der 29.2.2004 existiert (Schaltjahr), zählen wir 1 Jahr dazu bekommen wir aber
+den ungültigen Wert 29.2.2005.
+
+Das folgende Beispiel prüft, ob die Prüfung innerhalb von 1 Monat beurteilt wurde.
+
+#### SQL Server
+
+Wir müssen zum Feld *DatePlanned* 1 Monat dazuaddieren. Achte auf die erste Prüfung.
+Sie hat am 16.11.2022 um 10 Uhr MEZ (UTC+1h) statt gefunden. Die Beurteilung wurde am 16.12.2022
+um 9:30 UTC eingetragen. Das entspricht 10:30 UTC und ist somit schon zu spät!
+
+Zählen wir zum 31.10. ein Monat dazu, gibt SQL Server den letzten Tag des Monats (also den 30.11.)
+zurück.
+
+#### SQL Server
+
+```sql
+SELECT e.Id, e.Subject, e.DateGradedUtc,
+	DATEADD(month, 1, e.DatePlanned) AS MaxGradingDate,
+	CASE WHEN e.DateGradedUtc IS NULL
+	THEN NULL
+	ELSE
+		CASE WHEN e.DateGradedUtc <= DATEADD(month, 1, e.DatePlanned)
+			THEN 1
+			ELSE 0
+		END
+	END AS GradedInTime
+FROM Exam e;
+
+```
+
+#### Oracle
+
+Wollen wir das selbe Verhalten von SQL Server (also 31.10. + 1 Monat = 30.11.) haben, wählen
+wir die alte *ADD_MONTH()* Funktion. Da sie für den älteren *DATE* Typ geschrieben wurde, wandeln
+wir zuerst das Datum in UTC um, damit wir ein korrektes Ergebnis bei allen Prüfungen haben.
+
+```sql
+SELECT e.Id, e.Subject, e.DateGradedUtc,
+	ADD_MONTHS(e.DatePlanned AT TIME ZONE 'UTC', 1) AS MaxGradingDate,
+	CASE WHEN e.DateGradedUtc IS NULL
+	THEN NULL
+	ELSE
+		CASE WHEN e.DateGradedUtc <= ADD_MONTHS(e.DatePlanned AT TIME ZONE 'UTC', 1)
+			THEN 1
+			ELSE 0
+		END
+	END AS GradedInTime
+FROM Exam e;
+```
+
+Die modernere Herangehensweise sind Intervalle. Oracle liefert aber einen Fehler, wenn wir zum
+31.10. ein Intervall von 1 Monat addieren wollen. Dieser Code würde also einen Fehler liefern.
+
+```sql
+SELECT e.Id, e.Subject, e.DateGradedUtc,
+	e.DatePlanned + INTERVAL '1' MONTH AS MaxDate,
+	CASE WHEN e.DateGradedUtc IS NULL
+	THEN NULL
+	ELSE
+		CASE WHEN e.DateGradedUtc <= e.DatePlanned + INTERVAL '1' MONTH
+			THEN 1
+			ELSE 0
+		END
+	END AS GradedInTime
+FROM Exam e;
+```
+
+```
+| Id  | Subject | DatePlanned                | DateGradedUtc           | MaxGradingDate             | GradedInTime |
+| --- | ------- | -------------------------- | ----------------------- | -------------------------- | ------------ |
+| 1   | POS     | 2022-11-16 10:00:00 +01:00 | 2022-12-16 09:30:00.000 | 2022-12-16 10:00:00 +01:00 | 0            |
+| 2   | DBI     | 2022-11-17 08:50:00 +01:00 | 2022-11-17 08:31:14.000 | 2022-12-17 08:50:00 +01:00 | 1            |
+| 3   | POS     | 2022-12-04 14:25:00 +01:00 |                         | 2023-01-04 14:25:00 +01:00 |              |
+| 4   | AM      | 2022-10-31 16:05:00 +02:00 | 2022-12-05 13:32:28.000 | 2022-11-30 16:05:00 +02:00 | 0            |
+| 5   | POS     | 2022-10-28 09:55:00 +02:00 | 2022-10-31 08:07:54.000 | 2022-11-28 09:55:00 +02:00 | 1            |
+
+```
+
+Nun wollen wir bestimmen, wann die Prüfung voraussichtlich zu Ende sein wird.
+
+#### SQL Server
+
+In der Spalte *Duration* ist die Dauer der Prüfung als *TIME* Wert gespeichert. Jetzt wollen wir
+ermitteln, wann die Prüfung zu Ende sein wird. Dafür müssen wir zuerst aus dem *TIME* Wert
+(der ja eine Uhrzeit darstellt) einen Sekundenwert machen. Wir
+ermitteln mit *DATEDIFF()* die Sekunden seit Mitternacht, der Startwert ist daher 0 Uhr. Diesen Wert
+zählen wir zur Spalte *DatePlanned* mit der Funktion *DATEADD()* dazu:
+
+```sql
+SELECT e.Id, e.Subject, e.DatePlanned,
+	DATEADD(second, DATEDIFF(second, 0, e.Duration), e.DatePlanned) AS PlannedEnd
+FROM Exam e;
+```
+
+#### Oracle
+
+In Oracle ist die Spalte *Duration* vom Typ *INTERVAL*, deswegen können wir einfach addieren:
+
+```sql
+SELECT e.Id, e.Subject, e.DatePlanned,
+	e.DatePlanned + e.Duration AS PlannedEnd
+FROM Exam e;
+```
+
+```
+| Id  | Subject | DatePlanned                | PlannedEnd                 |
+| --- | ------- | -------------------------- | -------------------------- |
+| 1   | POS     | 2022-11-16 10:00:00 +01:00 | 2022-11-16 10:50:00 +01:00 |
+| 2   | DBI     | 2022-11-17 08:50:00 +01:00 | 2022-11-17 10:30:00 +01:00 |
+| 3   | POS     | 2022-12-04 14:25:00 +01:00 | 2022-12-04 16:25:00 +01:00 |
+| 4   | AM      | 2022-10-04 16:05:00 +02:00 | 2022-10-04 17:05:00 +02:00 |
+| 5   | POS     | 2022-10-28 09:55:00 +02:00 | 2022-10-28 12:55:00 +02:00 |
+
+```
 
 ## Herstellerspezifische Typen beachten
 
