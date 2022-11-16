@@ -56,17 +56,18 @@ zumindest versteht. SQLite z. B. deckt nicht jeden Datentyp ab, versteht aber zu
 
 Eine Auswahl ist in der folgenden Tabelle:
 
-| ANSI SQL              | SQL Server                     | SQLite  | Oracle   |
-|-----------------------|--------------------------------|---------|----------|
-| INTEGER               | INTEGER                        | INTEGER | INTEGER  |
-| CHAR(n), VARCHAR(n)   | CHAR, VARCHAR, NCHAR, NVARCHAR | TEXT    | VARCHAR2 |
-| DECIMAL(p, s)         | DECIMAL(p, s)                  | NUMERIC | DECIMAL  |
-| REAL                  | REAL                           | REAL    | REAL     |
-| DATE, TIME, TIMESTAMP | DATETIME                       | NUMERIC | DATE (alt, speichert auch die Zeit), TIMESTAMP (neuer), TIMESTAMP WITH TIME ZONE |
+| ANSI SQL              | SQL Server                                 | SQLite  | Oracle                                                                           |
+| --------------------- | ------------------------------------------ | ------- | -------------------------------------------------------------------------------- |
+| INTEGER               | INTEGER                                    | INTEGER | INTEGER                                                                          |
+| CHAR(n), VARCHAR(n)   | CHAR(n), VARCHAR(n), NCHAR(n), NVARCHAR(n) | TEXT    | VARCHAR2(n)                                                                      |
+| DECIMAL(p, s)         | DECIMAL(p, s)                              | NUMERIC | DECIMAL (p, s)                                                                   |
+| REAL                  | REAL                                       | REAL    | REAL                                                                             |
+| DATE, TIME, TIMESTAMP | DATETIME, DATETIMEOFFSET (mit Zeitzone)    | NUMERIC | DATE (alt, speichert auch die Zeit), TIMESTAMP (neuer), TIMESTAMP WITH TIME ZONE |
 
-<sup>Vgl. https://support.microsoft.com/en-us/office/equivalent-ansi-sql-data-types-7a0a6bef-ef25-45f9-8a9a-3c5f21b5c65d
-und https://www.sqlite.org/datatype3.html
-</sup>
+Eine Übersicht ist in der jeweiligen Doku des Herstellers zu finden:
+
+- SQL Server:https://learn.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver16
+- Oracle: https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Data-Types.html#GUID-7B72E154-677A-4342-A1EA-C74C1EA928E6
 
 #### DECIMAL(p, s)
 
@@ -75,7 +76,7 @@ und https://www.sqlite.org/datatype3.html
 jedoch und verläuft nicht kontinuierlich. Deswegen ist *DECIMAL(9,s)* häufig anzutreffen.
 
 | Precision | Storage bytes |
-|-----------|---------------|
+| --------- | ------------- |
 | 1 - 9     | 5             |
 | 10-19     | 9             |
 | 20-28     | 13            |
