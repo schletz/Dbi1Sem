@@ -11,41 +11,6 @@ Ein Datenmodell, welches diese Anforderungen (minimal) abdeckt, könnte so ausse
 [PlantUML Source](https://www.plantuml.com/plantuml/uml/dLB1JiCm33qlNv4RqgJj0z0qJG8c8T10CBYRrZJHqgIaxc5Y-tUSDjregGfYboNFzdj-BrsL19wgt8WBgNIAaXJAid0awbkYVMAGQmy5QMV1N4gqy6PGlZildIVbiW1BeosMSr7kj2t0Gru3j2-mQH82BMdQo-T4EMVafv3ycsvy_J-RpU8TSfIBHMNrHuNBfJYUvfw0jCskl2Rq6dX-ChrDkJL3Ynu8K-wU19x92CbBYJvA_vmEQ4EmrhuaoonyleVsU9E3DemyAcTnu-Kt2KORNm5cV7rNozPoHpUV7mxHTy_Eg8scvPf1lho2gN18Xh4WmoIdUpUgS-KecaftfHuOo7fGbq-80f8TP2YtBdNieBMqHKXKo3UigPoFiVqUwN1u8lAD1jWk5Nl_-Ld4wJ-yIUyr-ib7efFxSsLWtJZQizkDFe83nVQjXkS6vLXbXJQjSlC5)
 </sup>
 
-## Anlegen einer leeren Datenbank
-
-### SQL Server (HIF)
-
-Um eine Datenbank in SQL Server über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
-des SQL Server Containers. Danach kann mit folgendem Befehl die Datenbank *Lernsieg* angelegt werden:
-
-```bash
-/opt/mssql-tools/bin/sqlcmd -U sa -P SqlServer2019 -Q "DROP DATABASE IF EXISTS Lernsieg; CREATE DATABASE Lernsieg;"
-
-```
-
-Dabei wird angenommen, dass *SqlServer2019* das sa Passwort ist, das beim Erstellen des Containers
-mit *docker run* angegeben wurde.
-
-### Oracle User (Kolleg)
-
-Um einen User in Oracle über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
-des Oracle Containers. Danach kann mit folgendem Befehl der User *Lernsieg* mit dem
-Passwort *oracle* angelegt werden:
-
-```bash
-sqlplus system/oracle@//localhost/XEPDB1 <<< "
-    DROP USER Lernsieg CASCADE;
-    CREATE USER Lernsieg IDENTIFIED BY oracle;
-    GRANT CONNECT, RESOURCE, CREATE VIEW TO Lernsieg;
-    GRANT UNLIMITED TABLESPACE TO Lernsieg;
-"
-
-```
-
-Dabei wird angenommen, dass *oracle* das system Passwort ist, das beim Erstellen des Containers
-mit *docker run* angegeben wurde.
-
-
 ## CREATE TABLE Statements
 
 ### Datentypen
@@ -230,11 +195,19 @@ CREATE TABLE AppUser (
 	<summary>Skript für SQL Server anzeigen (HIF)</summary>
 
 ```sql
--- Umgekehrte Reihenfolge wie bei CREATE TABLE!
-DROP TABLE IF EXISTS Rating;
-DROP TABLE IF EXISTS AppUser;
-DROP TABLE IF EXISTS RatingCriteria;
-DROP TABLE IF EXISTS School;
+USE master
+GO
+-- Prevent 'database is in use' error when deleting.
+IF EXISTS (SELECT 1 FROM sys.databases WHERE [name] = N'LernsiegDb')
+BEGIN
+    ALTER DATABASE LernsiegDb SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE LernsiegDb;
+END;
+GO
+CREATE DATABASE LernsiegDb
+GO
+USE LernsiegDb
+GO
 
 CREATE TABLE School (
 --  SPALTENNAME  DATENTYP     CONSTRAINT/S
@@ -275,6 +248,23 @@ CREATE TABLE Rating (
 
 <details>
 	<summary>Skript für Oracle anzeigen (Kolleg)</summary>
+
+Um einen User in Oracle über die Shell anzulegen, öffne Docker Desktop und öffne die Shell
+des Oracle Containers. Danach kann mit folgendem Befehl der User *Lernsieg* mit dem
+Passwort *oracle* angelegt werden:
+
+```bash
+sqlplus system/oracle@//localhost/XEPDB1 <<< "
+    DROP USER Lernsieg CASCADE;
+    CREATE USER Lernsieg IDENTIFIED BY oracle;
+    GRANT CONNECT, RESOURCE, CREATE VIEW TO Lernsieg;
+    GRANT UNLIMITED TABLESPACE TO Lernsieg;
+"
+
+```
+
+Dabei wird angenommen, dass *oracle* das system Passwort ist, das beim Erstellen des Containers
+mit *docker run* angegeben wurde.
 
 ```sql
 -- In ORACLE ist CASCADE CONSTRAINTS möglich,
