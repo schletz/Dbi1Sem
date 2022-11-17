@@ -9,8 +9,9 @@
 
 ![](../schuldb20200209.png)
 
-**(1)** Zeigen Sie aus der Tabelle *Lehrer* den Lehrernamen mit dem Text aus *Ges_Lehrerlehrerin* (Tabelle *Geschlecht*) an. Setzen Sie diese Aufgabe mit INNER oder OUTER JOIN um. Gibt es Unterschiede bei der Ausgabe
-   zwischen den Abfragen? Begründen Sie warum (oder warum nicht)?
+**(1)** Zeigen Sie aus der Tabelle *Klasse* die Klassen der Abteilung *HIF* mit dem
+Namen des Klassensprechers an. Setzen Sie diese Aufgabe mit INNER oder OUTER JOIN um. Gibt es Unterschiede bei der Ausgabe
+zwischen den Abfragen? Begründen Sie warum (oder warum nicht)?
 
 **(2)** Welche Klassen haben keine Schüler? Geben Sie *K_Nr* und *K_Jahrsem* aus.
 
