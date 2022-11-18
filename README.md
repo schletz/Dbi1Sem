@@ -85,7 +85,7 @@
 - [Anlegen der Musterdatenbank (SchulDb) in SQL Server](https://github.com/schletz/Dbi2Sem/blob/master/SchulDbGenerator/README.md)
 
 ### Optionale Punkte
-- [Installation von JetBrains DataGrip](01_OracleVM/02_DataGrip/README.md)
+- [Installation von JetBrains DataGrip](https://github.com/schletz/Dbi2Sem/blob/master/01_OracleVM/02_DataGrip/README.md)
 - [Installation von PlantUML in VS Code](03_PlantUml/README.md)
 
 
