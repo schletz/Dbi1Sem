@@ -133,3 +133,117 @@ den weiblichen Schülerinnen ist es umgekehrt. Somit liefert uns die Summenfunkt
 > Hinweis: Ob die Abfrage langsamer als die *GROUP BY* und *COUNT* Variante ist, kann nicht allgemein
 > angegeben werden. Es kommt auf die Indexierungen der Felder, also ob die Werte der Spalte sortiert 
 > in einem Index vorliegen, an.
+
+## Übungen
+
+**(1)** Gib alle Räume mit der Zusatzinfo *GanzeKlasse* aus. Die Spalte *GanzeKlasse* wird gesetzt,
+wenn der Raum 24 oder mehr Plätze (*R_Plaetze*) hat.
+
+```
+Ausgabe (erste 5 Datensätze nach R_ID sortiert):
+
+| R_ID  | R_Plaetze | R_Art         | GanzeKlasse |
+| ----- | --------- | ------------- | ----------- |
+| A1.03 | 12        | Jugencoaching | 0           |
+| A1.05 | 35        | Klassenraum   | 1           |
+| A1.06 | 28        | Klassenraum   | 1           |
+| A1.14 | 30        | Klassenraum   | 1           |
+| A1.15 | 24        | Klassenraum   | 1           |
+```
+
+**(2)** Ermittle für alle Lehrenden eine Spalte *Alterszuschlag*. Für Geburtsjahre vor 1960 ist
+dieser 10% des Gehaltes in *L_Gehalt*. Im Jahr 1960 - 1969 geborene bekommen 5%. Ansonsten ist
+der Zuschlag 0. Ist kein Geburtsdatum oder Gehalt gespeichert, so ist dieser Wert ebenfalls 0.
+Hinweis: Mit *DATEPART(year, L_Gebdat)* (SQL Server) oder *EXTRACT(YEAR FROM L_GEBDAT)*
+(Oracle) kann das Jahr aus dem Geburtsdatum ermittelt werden.
+
+```
+Ausgabe (erste 37 Datensätze nach L_Nr sortiert):
+
+| L_Nr | L_Name       | L_Vorname      | L_Gebdat   | L_Gehalt | L_Chef | L_Eintrittsjahr | L_Sprechstunde | Alterszuschlag |
+| ---- | ------------ | -------------- | ---------- | -------- | ------ | --------------- | -------------- | -------------- |
+| AF   | Akyildiz     | Fatma          | 1971-01-26 | 3425     | HEB    |                 | DI2            | 0              |
+| AGU  | Augustin     | Susanne        |            | 3326     | PRW    |                 | MO5            | 0              |
+| AH   | Auinger      | Harald         | 1962-07-17 | 2083     | ZLA    | 2020            | DI7            | 104.150000     |
+| ALS  | Almesberger  | Silke          | 1972-06-29 | 3560     | HEB    | 2008            | MI5            | 0              |
+| AMA  | Amcha        | Alfred         | 1973-12-06 |          | ZLA    | 2005            | MO5            | 0              |
+| AT   | Antonescu    | Margareth      |            | 3062     | STH    | 2011            | MO3            | 0              |
+| BAB  | Bauer        | Beatrice       | 1981-02-11 | 3569     | ZLA    | 2005            |                | 0              |
+| BAE  | Blaschke     | Waltraude      | 1989-10-11 |          | STH    | 2021            |                | 0              |
+| BAM  | Balluch      | Manfred        |            | 2615     | PRW    | 2015            | DO10           | 0              |
+| BAN  | Bankuti      | Judit          | 1989-07-13 | 2596     | PRW    | 2016            | MO4            | 0              |
+| BAR  | Bartl-Binder | Petra          | 1979-08-17 | 1980     | PRW    |                 | DI5            | 0              |
+| BEC  | Beyer        | Catherine      | 1990-03-23 | 2352     | ZLA    | 2017            | MI6            | 0              |
+| BEP  | Benkö        | Patrick        | 1979-04-21 |          | STH    | 2003            | MI3            | 0              |
+| BES  | Beil         | Sabine         | 1978-08-03 | 3126     | HEB    | 2010            | MO2            | 0              |
+| BH   | Berger       | Hans-Peter     | 1992-05-05 | 2532     | STH    | 2016            | DO4            | 0              |
+| BI   | Binder       | Florian        | 1993-04-21 | 2225     | HEB    | 2020            | DO9            | 0              |
+| BIE  | Bierbamer    | Peter          | 1976-05-13 |          | STH    | 2015            | DI4            | 0              |
+| BIG  | Binder       | Georg          | 1966-04-08 | 4259     | HEB    | 1998            | DO3            | 212.950000     |
+| BIM  | Bierbamer    | Michael        |            | 2680     | STH    | 2015            | DO5            | 0              |
+| BIN  | Binder       | Florian        | 1967-02-27 | 2155     | JEL    | 2021            | MO12           | 107.750000     |
+| BIT  | Bitterer     | Marcus Wilhelm | 1976-10-10 | 3771     | STH    |                 | FR4            | 0              |
+| BLJ  | Blöch        | Julia          | 1977-02-06 | 2756     | STH    | 2015            | DO7            | 0              |
+| BOA  | Bohn         | Adele          | 1977-12-22 | 3498     | JEL    | 2006            |                | 0              |
+| BOB  | Bogensperger | Brigitte       |            | 2724     | STH    |                 | DO3            | 0              |
+| BOK  | Boyer        | Katharina      | 1985-06-24 | 3216     | JEL    | 2010            | DI2            | 0              |
+| BOM  | Boltz        | Michael        | 1960-07-12 | 3636     | PRW    | 2005            | FR5            | 181.800000     |
+| BR   | Brandtner    | Thomas         | 1965-06-21 | 3787     | PRW    | 2004            |                | 189.350000     |
+| BRA  | Bramkamp     | Heiko          | 1984-09-22 | 2865     | PRW    |                 | MO7            | 0              |
+| BRC  | Bruckner     | Caroline       | 1958-09-27 | 2988     | PRW    | 2012            | MI4            | 298.800000     |
+| BRS  | Breiteneder  | Stefan         | 1982-08-13 |          | PRW    | 2020            | DO11           | 0              |
+| BV   | Bregar       | Volker         |            | 2669     | ZLA    | 2014            | DO3            | 0              |
+| BW   | Bergmann     | Wolfgang       | 1995-04-07 | 1965     | STH    | 2021            | DO8            | 0              |
+| CAM  | Camrda       | Christian      | 1979-03-18 | 2349     | PRW    | 2018            | MO4            | 0              |
+| CEC  | Celeda       | Claus          | 1991-07-21 | 1995     | STH    | 2021            |                | 0              |
+| CES  | Cejka        | Stephan        | 1965-08-31 | 4390     | HEB    | 1998            | FR11           | 219.500000     |
+| CHA  | Chwatal      | Andreas        | 1958-08-20 | 2620     | STH    |                 | DO11           | 262            |
+| CO   | Coufal       | Klaus          | 1967-12-24 | 3937     | PRW    | 2001            | MI12           | 196.850000     |
+```
+
+**(3)** Für die Sprachreise der 4AHIF soll ermittelt werden, ob die SchülerInnen der 4AHIF ein
+Visum für Großbritannien benötigen. Erstelle dafür eine Spalte *Einreiseinfo* nach folgenden Regeln:
+
+- Ist keine Staatsbürgerschaft gespeichert, soll *?* zurückgegeben werden.
+- Ist die Staatsbürgerschaft "A" (Österreich), soll *AUT* zurückgegeben werden.
+- Ist die Staatsbürgerschaft eine EU Staatsbürgerschaft, soll *EU* zurückgegeben werden. Die Info,
+  ob ein Staat in der EU ist, kannst du in der Tabelle *Staat* nachsehen. Überlege dir den richtigen
+  Join.
+- Für nicht EU Staatsbürger soll *NICHT EU* zurückgegeben werden.
+
+```
+Ausgabe:
+
+| S_Nr | S_Zuname   | S_Vorname | S_Staatsb | Einreiseinfo |
+| ---- | ---------- | --------- | --------- | ------------ |
+| 2907 | Schiller   | Constance |           | ?            |
+| 2908 | Pacocha    | Bill      | A         | AUT          |
+| 2909 | Gleason    | Don       | A         | AUT          |
+| 2910 | Pfeffer    | Marc      |           | ?            |
+| 2911 | Marks      | Felicia   |           | ?            |
+| 2912 | Bailey     | Darin     |           | ?            |
+| 2913 | Carter     | Caleb     | A         | AUT          |
+| 2914 | Rogahn     | Gilbert   | TR        | NICHT EU     |
+| 2915 | Schumm     | Wilson    |           | ?            |
+| 2916 | Rutherford | Gilbert   | A         | AUT          |
+| 2917 | Ritchie    | Everett   | A         | AUT          |
+| 2918 | Nicolas    | Winston   | TR        | NICHT EU     |
+| 2919 | Nader      | Darryl    | A         | AUT          |
+| 2920 | Gaylord    | Curtis    | TR        | NICHT EU     |
+| 2921 | Rau        | Don       |           | ?            |
+| 2922 | Sauer      | Byron     |           | ?            |
+| 2923 | Fisher     | Loren     | CRO       | EU           |
+| 2924 | Orn        | Jody      | A         | AUT          |
+| 2925 | Rath       | Sammy     | TR        | NICHT EU     |
+| 2926 | Treutel    | Javier    | A         | AUT          |
+| 2927 | Lehner     | Al        |           | ?            |
+| 2928 | Bayer      | Clay      |           | ?            |
+| 2929 | Murray     | Ricky     | A         | AUT          |
+| 2930 | Kohler     | Shane     | A         | AUT          |
+| 2931 | Hagenes    | Rudolph   |           | ?            |
+| 2932 | Kuhn       | Allison   | A         | AUT          |
+| 2933 | Doyle      | Jon       | A         | AUT          |
+| 2934 | Dare       | Marc      | TR        | NICHT EU     |
+
+```
+
