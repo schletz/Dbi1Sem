@@ -105,8 +105,8 @@ ergeben, beschleunigen sogar unsere Abfragen:
   Komplexere Funktionen sind für die Datenbank und die Optimierung schwieriger zu bearbeiten.
 - Gerade die beweglichen Feiertage, die an Ostern gebunden sind, erfordern viel Ablauflogik
   (Berechnung des Osterdatums). SQL (und relationale Datenbanken) sind mengenorientiert.
-  Implementierung von Ablauflogik ist schwieriger, die prozeduralen Erweiterungen in SQL sind weit
-  weg von der Eleganz und den Möglichkeiten gängiger Programmiersprachen wie C# oder Java.
+  Implementierung von Ablauflogik ist schwieriger, die prozeduralen Erweiterungen und Funktionen in
+  SQL sind weit weg von der Eleganz und den Möglichkeiten gängiger Programmiersprachen wie C# oder Java.
 - Feiertage oder Ferien können sich in der Zukunft ändern. So wurden z. B. 2020 die Herbstferien
   eingeführt, dafür ist der DI nach Ostern und Pfingsten nicht mehr schulfrei. Um korrekte Werte
   auch aus der Vergangenheit ermitteln zu können, brauchen wir eine Tabellierung.
