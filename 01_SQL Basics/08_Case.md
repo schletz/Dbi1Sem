@@ -251,9 +251,9 @@ Ausgabe:
 in der Spalte *L_Eintrittsjahr*. *L_Eintrittsjahr* ist eine INTEGER Spalte mit dem Jahr,
 kein Datumswert.
 
-- Ist ein Lehrender vor 2000 eingetreten, kommt er in die Kategorie *Master*.
-- Ist ein Lehrender 2000 (inklusive) - 2009 (inklusive) eingetreten, kommt er in die Kategorie *Experienced*.
-- Ist ein Lehrender 2010 oder später eingetreten, kommt er in die Kategorie *Junior*.
+- Ist ein Lehrender vor 2015 eingetreten, kommt er in die Kategorie *Master*.
+- Ist ein Lehrender 2015 (inklusive) - 2019 (inklusive) eingetreten, kommt er in die Kategorie *Experienced*.
+- Ist ein Lehrender 2020 oder später eingetreten, kommt er in die Kategorie *Junior*.
 - Ist das Eintrittsjahr NULL, wird er der Kategorie *Unknown* zugerechnet.
 
 ```
@@ -261,5 +261,5 @@ Ausgabe (darf nur 1 Zeile enthalten):
 
 | Master | Experienced | Junior | Unknown |
 | ------ | ----------- | ------ | ------- |
-| 38     | 57          | 136    | 50      |
+| 142    | 56          | 33     | 50      |
 ```
