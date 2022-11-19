@@ -51,6 +51,7 @@
                         <li><a href="02_DDL/01_CreateTableCommand.md">Das CREATE TABLE Kommando</a></li>
                         <li><a href="02_DDL/02_CombinedKeys.md">Constraints mit mehreren Spalten und CHECK</a></li>
                         <li><a href="02_DDL/03_DateTime.md">Umgang mit Datum und Zeit</a></li>
+                        <li><a href="HolidayCalendar/README.md">Spezialwissen: Die Kalendertabelle für Profis</a></li>
                         <li>Übungen dazu
                             <ul>
                                 <li><a href="02_DDL/Uebungen/Chat">Ein kleiner Chat</a></li>
