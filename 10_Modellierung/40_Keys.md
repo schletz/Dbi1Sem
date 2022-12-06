@@ -168,7 +168,7 @@ Denke an die Wiederholungsprüfungen:
   in der Datenbank gespeichert werden. Der Gegenstand ist natürlich im Exam auch zu speichern.
 - Eine Wiederholungsprüfung kann aus mehreren Teilen bestehen. Ein Exam hat also mehrere *Parts*.
   Dieser Teil kann schriftlich, praktisch oder mündlich sein. Grund: In Programmieren gibt es z. B.
-  am Vormittal die praktische Prüfung und am Nachmittag die mündliche Prüfung.
+  am Vormittag die praktische Prüfung und am Nachmittag die mündliche Prüfung.
 - Im Protokoll ist auch das Geburtsdatum des Schülers anzuführen. Dieses Attribut muss also auch
   gespeichert werden.
 - Es gibt auf das gesamte Exam 2 Noten: Eine Prüfungsnote und die neue Zeugnisnote.
