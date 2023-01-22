@@ -1,0 +1,60 @@
+ID	NAME
+01	Immaterielle Vermögensgegenstände
+02	Grundstücke, grundstücksgleiche Rechte und Bauten, einschließlich der Bauten auf fremdem Grund
+03	Grundstücke, grundstücksgleiche Rechte und Bauten, einschließlich der Bauten auf fremdem Grund
+04	Technische Anlagen und Maschinen
+05	Technische Anlagen und Maschinen
+06	Andere Anlagen, Betriebs- und Geschäftsausstattung
+07	Geleistete Anzahlungen und Anlagen in Bau
+08	Finanzanlagen
+09	Finanzanlagen
+20	Forderungen aus Lieferungen und Leistungen
+21	Forderungen aus Lieferungen und Leistungen
+22	Forderungen gegenüber verbundenen Unternehmen und Unternehmen, mit denen ein Beteiligungsverhältnis besteht
+23	Sonstige Forderungen und Vermögensgegenstände
+24	Sonstige Forderungen und Vermögensgegenstände
+25	Forderungen aus der Abgabenverrechnung
+26	Wertpapiere und Anteile
+27	Kassenbestand, Schecks, Guthaben bei Kreditinstituten
+28	Kassenbestand, Schecks, Guthaben bei Kreditinstituten
+29	Aktive Rechnungsabgrenzungsposten, aktive latente Steuern
+30	Rückstellungen
+31	Anleihen, Verbindlichkeiten gegenüber Kreditinstituten
+32	Erhaltene Anzahlungen auf Bestellungen
+33	Verbindlichkeiten aus Lieferungen und Leistungen, Verbindlichkeiten aus der Annahme gezogener und der Ausstellung eigener Wechsel
+34	Verbindlichkeiten gegenüber verbundenen Unternehmen, gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht, und gegenüber Gesellschaftern
+35	Sonstige Verbindlichkeiten
+36	Sonstige Verbindlichkeiten
+37	Sonstige Verbindlichkeiten
+38	Sonstige Verbindlichkeiten
+39	Passive Rechnungsabgrenzungsposten
+40	Umsatzerlöse und Erlösschmälerungen
+41	Umsatzerlöse und Erlösschmälerungen
+42	Umsatzerlöse und Erlösschmälerungen
+43	Umsatzerlöse und Erlösschmälerungen
+44	Umsatzerlöse und Erlösschmälerungen
+45	Bestandsveränderungen und aktivierte Eigenleistungen
+46	Sonstige betriebliche Erträge
+47	Sonstige betriebliche Erträge
+48	Sonstige betriebliche Erträge
+49	Sonstige betriebliche Erträge
+70	Abschreibungen
+71	Sonstige Steuern
+72	Instandhaltung und Betriebskosten
+73	Transport-, Reise- und Fahrtaufwand, Nachrichtenaufwand
+74	Miet-, Pacht- , Leasing- und Lizenzaufwand
+75	Aufwand für beigestelltes Personal, Provisionen an Dritte, Aufsichtsratsvergütungen, Geschäftsführerentgelte an Konzerngesellschaften/Komplementär-GmbH
+76	Büro-, Werbe- und Repräsentationsaufwand
+77	Versicherungen, übrige Aufwendungen
+78	Versicherungen, übrige Aufwendungen
+79	Konten für das Umsatzkostenverfahren
+80	Finanzerträge und Finanzaufwendungen
+81	Finanzerträge und Finanzaufwendungen
+82	Finanzerträge und Finanzaufwendungen
+83	Finanzerträge und Finanzaufwendungen
+84	Steuern vom Einkommen und vom Ertrag
+85	Rücklagenbewegung, Ergebnisüberrechnung
+86	Rücklagenbewegung, Ergebnisüberrechnung
+87	Rücklagenbewegung, Ergebnisüberrechnung
+88	Rücklagenbewegung, Ergebnisüberrechnung
+89	Rücklagenbewegung, Ergebnisüberrechnung

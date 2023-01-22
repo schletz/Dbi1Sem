@@ -1,0 +1,272 @@
+FROM	TO	NAME
+010		Konzessionen 
+011		Patentrechte und Lizenzen 
+012		Datenverarbeitungsprogramme 
+013		Marken, Warenzeichen und Musterschutzrechte, sonstige Urheberrechte 
+014		Pacht-und Mietrechte 
+015		Bezugs- und ähnliche Rechte 
+016		Geschäfts-/Firmenwert 
+017		Umgründungsmehrwert 
+018		Geleistete Anzahlungen auf immaterielle Vermögensgegenstände des Anlagemögens 
+019		Kumulierte Abschreibungen zu immateriellen Vermögensgegenständen des Anlagevermögens 
+020		Unbebaute Grundstücke, soweit nicht landwirtschaftlich genutzt 
+021		Bebaute Grundstücke (Grundwert) 
+022		Landwirtschaftlich genutzte Grundstücke 
+023		Grundstücksgleiche Rechte 
+030		Betriebs- und Geschäftsgebäude auf eigenem Grund 
+031		Wohn- und Sozialgebäude auf eigenem Grund 
+032		Betriebs- und Geschäftsgebäude auf fremdem Grund 
+033		Wohn- und Sozialgebäude auf fremdem Grund 
+034		Grundstückseinrichtungen auf eigenem Grund 
+035		Grundstückseinrichtungen auf fremdem Grund 
+036		Bauliche Investitionen in fremden Betriebs-und Geschäftsgebäuden 
+037		Bauliche Investitionen in fremden Wohn- und Sozialgebäuden 
+039		Kumulierte Abschreibungen zu Grundstücken, grundstücksgleichen Rechten und Bauten einschließlich der Bauten auf fremdem Grund 
+040	049	Maschinen und maschinelle Anlagen 
+050		Maschinenwerkzeuge 
+051		Allgemeine Werkzeuge und Handwerkzeuge 
+052		Vorrichtungen, Formen und Modelle 
+053		Andere Erzeugungshilfsmittel 
+054		Hebezeuge und Montageanlagen 
+055		Geringwertige Vermögensgegenstände, soweit im Erzeugungsprozess verwendet 
+056		Festwerte technische Anlagen und Maschinen 
+059		Kumulierte Abschreibungen zu technischen Anlagen und Maschinen 
+060		Betriebs-und Geschäftsausstattung, soweit nicht gesondert angeführt 
+061		Andere Anlagen, soweit nicht gesondert angeführt 
+062		Büromaschinen, EDV-Anlagen 
+063		PKW und Kombis 
+064		LKW 
+065		Andere Beförderungsmittel 
+066		Gebinde 
+067		Geringwertige Vermögensgegenstände, soweit nicht im Erzeugungsprozess verwendet 
+068		Festwerte außer technische Anlagen und Maschinen 
+069		Kumulierte Abschreibungen zu anderen Anlagen, Betriebs- und Geschäftsausstattung 
+070		Geleistete Anzahlungen auf Sachanlagen 
+071		Anlagen in Bau 
+079		Kumulierte Abschreibungen zu geleisteten Anzahlungen auf Sachanlagen und Anlagen in Bau 
+080		Anteile an verbundenen Unternehmen außer an Mutterunternehmen 
+081		Beteiligungen an Gemeinschaftsunternehmen 
+082		Beteiligungen an assoziierten Unternehmen 
+083		Anteile an Mutterunternehmen 
+084		Sonstige Beteiligungen 
+085		Ausleihungen an verbundene Unternehmen 
+086		Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht 
+087		Ausleihungen an Gesellschafter 
+088		Sonstige Ausleihungen 
+089		Sonstige Anteile an Kapitalgesellschaften ohne Beteiligungscharakter 
+090		Sonstige Anteile an Personengesellschaften ohne Beteiligungscharakter 
+091		Sonstige Genossenschaftsanteile ohne Beteiligungscharakter 
+092		Sonstige Anteile an Investmentfonds 
+093		Festverzinsliche Wertpapiere des Anlagevermögens 
+094	097	Sonstige Finanzanlagen, Wertrechte 
+098		Geleistete Anzahlungen auf Finanzanlagen 
+099		Kumulierte Abschreibungen zu Finanzanlagen 
+100	109	Bezugsverrechnung für den Produktionsprozess/für Verwaltung und Vertrieb 
+110	119	Rohstoffe 
+120	129	Bezogene Teile 
+130	134	Hilfsstoffe 
+135	139	Betriebsstoffe 
+140	149	Unfertige Erzeugnisse 
+150	159	Fertige Erzeugnisse 
+160	169	Waren 
+170	179	Noch nicht abrechenbare Leistungen 
+180		Geleistete Anzahlungen auf Vorräte 
+190	199	Wertberichtigungen zu Vorräten 
+200		Forderungen aus Lieferungen und Leistungen Inland (0% USt, umsatzsteuerfrei) 
+201		Forderungen aus Lieferungen und Leistungen Inland (10% USt) 
+202		Forderungen aus Lieferungen und Leistungen Inland (20% USt) 
+203	207	Forderungen aus Lieferungen und Leistungen Inland (sonstiger USt-Satz) 
+208		Einzelwertberichtigungen zu Forderungen aus Lieferungen und Leistungen Inland 
+209		Pauschalwertberichtigungen zu Forderungen aus Lieferungen und Leistungen Inland 
+210	212	Forderungen aus Lieferungen und Leistungen Ausland (Euro) 
+213		Einzelwertberichtigungen zu Forderungen aus Lieferungen und Leistungen Ausland (Euro) 
+214		Pauschalwertberichtigungen zu Forderungen aus Lieferungen und Leistungen Ausland (Euro) 
+215	217	Forderungen aus Lieferungen und Leistungen sonstiges Ausland (Fremdwährungen) 
+218		Einzelwertberichtigungen zu Forderungen aus Lieferungen und Leistungen sonstiges Ausland (Fremdwährungen) 
+219		Pauschalwertberichtigungen zu Forderungen aus Lieferungen und Leistungen sonstiges Ausland (Fremdwährungen) 
+220	221	Forderungen aus Lieferungen und Leistungen gegenüber verbundenen Unternehmen 
+222		Sonstige Forderungen gegenüber verbundenen Unternehmen 
+223		Einzelwertberichtigungen zu Forderungen gegenüber verbundenen Unternehmen 
+224		Pauschalwertberichtigungen zu Forderungen gegenüber verbundenen Unternehmen 
+225	226	Forderungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht 
+227		Einzelwertberichtigungen zu Forderungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht 
+228		Pauschalwertberichtigungen zu Forderungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht 
+230	245	Sonstige Forderungen und Vermögensgegenstände (z.B. Darlehensforderungen, soweit nicht Anlagevermögen, z.B. gegenüber Gesellschaftern oder Mitarbeiter(inne)n, Verrechnungskonto Gesellschafter, Forderungen gegenüber Mitgliedern (Verein), Forderungen gegenüber Organmitgliedern, sonstige Forderungen gegenüber Mitarbeiter(inne)n, Kostenvorschüsse, Kautionen, Depotzahlungen, Ansprüche aus Rückdeckungsversicherungen, soweit nicht Anlagevermögen, Ansprüche gegenüber Versicherungsunternehmen aus Schadenersätzen usw.) 
+246		Eingeforderte, aber noch nicht eingezahlte Einlagen 
+247		Einzelwertberichtigungen zu sonstigen Forderungen und Vermögensgegenständen 
+248		Pauschalwertberichtigungen zu sonstigen Forderungen und Vermögensgegenständen 
+249		Geleistete Anzahlungen (außer auf Anlagen und auf Vorräte) 
+250	259	Forderungen aus der Abgabenverrechnung (Vorsteuer, noch nicht verrechenbare Vorsteuer, Vorsteuer aus innergemeinschaftlichen Erwerben, Einfuhrumsatzsteuer, Umsatzsteuer-Evidenzkonto für erhaltene Anzahlungen auf Bestellungen, aktivierte Körperschaftsteuer, aktivierte Kapitalertragsteuer usw.) 
+260		Anteile an verbundenen Unternehmen außer an Mutterunternehmen 
+261		Anteile an Mutterunternehmen 
+262	264	Sonstige Anteile des Umlaufvermögens 
+265	267	Sonstige Wertpapiere des Umlaufvermögens 
+268		Besitzwechsel, soweit dem Unternehmen nicht die der Ausstellung zugrunde liegenden Forderungen zustehen 
+269		Wertberichtigungen zu Wertpapieren und Anteilen (des Umlaufvermögens) 
+270	273	Kassenbestände in Euro 
+274		Postwertzeichen 
+275	277	Kassenbestände in Fremdwährungen 
+278		Schecks in Euro 
+279		Schecks in Fremdwährungen 
+280	288	Guthaben bei Kreditinstituten 
+289		Schwebende Geldbewegungen 
+290	292	Aktive Rechnungsabgrenzungsposten 
+293		Mietvorauszahlungen 
+294		Leasing-Vorauszahlungen 
+295		Disagio 
+298		Aktive latente Steuern 
+299		Eventualforderungen (Hilfskonto) 
+300		Rückstellungen für Abfertigungen 
+301		Rückstellungen für Pensionen 
+302		Steuerrückstellungen 
+303		Rückstellungen für latente Steuern 
+304	309	Sonstige Rückstellungen 
+310	311	Anleihen (einschließlich konvertibler) 
+312	314	Verbindlichkeiten gegenüber Kreditinstituten (kurzfristig, z.B. Überziehungsrahmen) 
+315	319	Verbindlichkeiten gegenüber Kreditinstituten (langfristig, Darlehen oder Kredit) 
+320		Erhaltene Anzahlungen auf Bestellungen 
+329		Nicht von Vorräten absetzbare Anzahlungen 
+330	335	Verbindlichkeiten aus Lieferungen und Leistungen Inland 
+336		Verbindlichkeiten aus Lieferungen und Leistungen Ausland (Euro) 
+337		Verbindlichkeiten aus Lieferungen und Leistungen sonstiges Ausland (Fremdwährungen) 
+338		Verbindlichkeiten aus der Annahme gezogener Wechsel und der Ausstellung eigener Wechsel 
+339		Verrechnungskonto Telebanking 
+340	342	Verbindlichkeiten aus Lieferungen und Leistungen gegenüber verbundenen Unternehmen, Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht 
+343	345	sonstige Verbindlichkeiten gegenüber verbundenen Unternehmen, sonstige Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht 
+346		Verbindlichkeiten gegenüber Gesellschaftern 
+347		Einlagen stiller Gesellschafter 
+350	359	Verbindlichkeiten aus Steuern  (Umsatzsteuer, noch nicht geschuldete Umsatzsteuer, Umsatzsteuer aus innergemeinschaftlichen Erwerben, Umsatzsteuer-Zahllast, Verbindlichkeiten gegenüber Finanzamt, einbehaltene Kapitalertragsteuer, Verbindlichkeiten gegenüber Gemeinde/Stadtkasse usw.)
+360	369	Verbindlichkeiten im Rahmen der sozialen Sicherheit (z.B. Verbindlichkeiten gegenüber Krankenkasse) 
+370	389	Übrige sonstige Verbindlichkeiten 
+390	398	Passive Rechnungsabgrenzungsposten 
+399		Eventualverbindlichkeiten (Hilfskonto) 
+400	439	Umsatzerlöse (Untergliederung nach USt-Satz, Währung usw.) 
+440	449	Erlösschmälerungen (Untergliederung wie Umsatzerlöse) 
+450	457	Veränderungen des Bestandes an fertigen und unfertigen Erzeugnissen sowie an noch nicht abrechenbaren Leistungen 
+458	459	Aktivierte Eigenleistungen 
+460	462	Erlöse aus dem Abgang von Anlagevermögen, ausgenommen Finanzanlagen 
+463	465	Erträge aus dem Abgang von Anlagevermögen, ausgenommen Finanzanlagen (Abgänge mit Gewinn) 
+466	467	Erträge aus der Zuschreibung zum Anlagevermögen, ausgenommen Finanzanlagen 
+470	479	Erträge aus der Auflösung von Rückstellungen 
+480	499	Übrige sonstige betriebliche Erträge 
+500	509	Wareneinsatz 
+510	519	Verbrauch von Rohstoffen 
+520	529	Verbrauch von bezogenen Teilen 
+530	539	Verbrauch von Hilfsstoffen 
+540	549	Verbrauch von Betriebsstoffen 
+550	559	Verbrauch von Werkzeugen und anderen Erzeugungshilfsmitteln 
+560	569	Betriebskosten 
+570	579	Bezogene Herstellungsleistungen 
+580		Skontoerträge auf Materialaufwand 
+581		Skontoerträge auf bezogene Herstellungsleistungen 
+586		Fremdwährungskursdifferenzen (soweit Kontenklasse 5 eindeutig zuordenbar) 
+590	599	Aufwandsstellenrechnung 
+600	619	Löhne 
+620	639	Gehälter 
+640	641	Aufwendungen für Abfertigungen Arbeiter (gesetzliche/freiwillige) 
+642	643	Aufwendungen für Abfertigungen Angestellte (gesetzliche/freiwillige) 
+644		Aufwendungen für Betriebliche Vorsorgekassen 
+645	649	Aufwendungen für Altersversorgung 
+650	655	Gesetzlicher Sozialaufwand Arbeiter 
+656	659	Gesetzlicher Sozialaufwand Angestellte 
+660	665	Lohnabhängige Abgaben und Pflichtbeiträge 
+666	669	Gehaltsabhängige Abgaben und Pflichtbeiträge 
+670	689	Sonstige Sozialaufwendungen 
+690	699	Aufwandsstellenrechnung 
+700	705	Abschreibungen auf das Anlagevermögen, ausgenommen Finanzanlagen 
+706		Sofortabschreibung geringwertiger Vermögensgegenstände 
+707		Abschreibungen auf das Umlaufvermögen, soweit sie die im Unternehmen üblichen Abschreibungen übersteigen 
+709		Aufwandsstellenrechnung 
+710	714	Mit den Umsatzerlösen verbundene Steuern 
+715	718	Sonstige Steuern und mit Steuern in Zusammenhang stehende Aufwendungen 
+719		Aufwandsstellenrechnung 
+720	728	Instandhaltung und Betriebskosten, Reinigung durch Dritte, Entsorgung, Strom, Heizung, Gas, Energie 
+729		Aufwandsstellenrechnung 
+730	731	Transporte durch Dritte 
+732		Kfz-Aufwand (PKW und Kombis) 
+733		Kfz-Aufwand (LKW) 
+734	735	Reise- und Fahrtaufwand 
+736	737	Tag- und Nächtigungsgelder 
+738		Nachrichtenaufwand 
+739		Aufwandsstellenrechnung 
+740	743	Miet- und Pachtaufwand 
+744	747	Leasingaufwand 
+748		Lizenzaufwand 
+749		Aufwandsstellenrechnung 
+750	753	Aufwand für beigestelltes Personal 
+754	757	Provisionen an Dritte 
+758		Aufsichtsratsvergütungen, Geschäftsführerentgelte an Konzerngesellschaften/Komplementär-GmbH 
+759		Aufwandsstellenrechnung 
+760		Büromaterial und Drucksorten 
+761	762	Druckerzeugnisse und Vervielfältigungen 
+763	764	Fachliteratur und Zeitungen 
+765	767	Werbung und Repräsentation 
+768		Spenden und Trinkgelder 
+769		Aufwandsstellenrechnung 
+770	774	Versicherungen 
+775	776	Beratung und Prüfung 
+777		Aus- und Fortbildung 
+778		Mitgliedsbeiträge 
+779		Spesen des Geldverkehrs 
+780	781	Forderungsverluste, Zuführung Wertberichtigungen zu Forderungen, sonstige Schadensfälle 
+782		Buchwert abgegangener Anlagen, ausgenommen Finanzanlagen 
+783		Verluste aus dem Abgang von Anlagevermögen, ausgenommen Finanzanlagen 
+784	787	Verschiedene betriebliche Aufwendungen 
+788		Skontoerträge auf sonstige betriebliche Aufwendungen 
+789		Aufwandsstellenrechnung 
+790		Aufwandsstellenrechnung 
+791	795	Aufwandsstellen der Herstellung 
+796		Herstellungskosten der zur Erzielung der Umsatzerlöse erbrachten Leistungen 
+797		Vertriebskosten 
+798		Verwaltungskosten 
+799		Sonstige betriebliche Aufwendungen 
+800		Erträge aus Anteilen an verbundenen Unternehmen 
+801		Erträge aus Beteiligungen 
+802		Erträge aus anderen Wertpapieren des Anlagevermögens und Ausleihungen (verbundene Unternehmen) 
+803		Erträge aus anderen Wertpapieren des Anlagevermögens und Ausleihungen (andere) 
+804		Sonstige Zinsen und ähnliche Erträge aus verbundenen Unternehmen 
+805		Sonstige Zinsen und ähnliche Erträge (andere) 
+806		Erlöse aus dem Abgang von Anteilen an verbundenen Unternehmen 
+807		Erlöse aus dem Abgang von Beteiligungen 
+808		Erlöse aus dem Abgang von sonstigen Finanzanlagen 
+809		Erlöse aus dem Abgang von Wertpapieren des Umlaufvermögens 
+810		Buchwert abgegangener Anteile an verbundenen Unternehmen 
+811		Buchwert abgegangener Beteiligungen 
+812		Buchwert abgegangener sonstiger Finanzanlagen 
+813		Buchwert abgegangener Wertpapiere des Umlaufvermögens 
+814		Erträge aus dem Abgang von Finanzanlagen und Wertpapieren des Umlaufvermögens (Abgänge mit Gewinn) 
+815		Erträge aus der Zuschreibung zu Anteilen an verbundenen Unternehmen 
+816		Erträge aus der Zuschreibung zu Beteiligungen 
+817		Erträge aus der Zuschreibung zu sonstigen Finanzanlagen 
+818		Erträge aus der Zuschreibung zu Wertpapieren des Umlaufvermögens 
+819		Abschreibungen auf Anteile an verbundenen Unternehmen 
+820		Abschreibungen auf Beteiligungen 
+821		Verlustabdeckung für verbundene Unternehmen 
+822		Verlustabdeckung für Beteiligungsunternehmen 
+823	824	Andere Aufwendungen aus Anteilen an verbundenen Unternehmen 
+825	826	Andere Aufwendungen aus Beteiligungen 
+827		Abschreibungen auf sonstige Finanzanlagen und Wertpapiere des Umlaufvermögens 
+828	829	Andere Aufwendungen aus sonstigen Finanzanlagen und Wertpapieren des Umlaufvermögens 
+830		Zinsen und ähnliche Aufwendungen aus verbundenen Unternehmen 
+831	832	Zinsen und ähnliche Aufwendungen (andere) 
+833	834	Kursänderungen bei Fremdwährungsforderungen/-verbindlichkeiten 
+835		Nicht ausgenützte Lieferantenskonti 
+836		Gewinnüberrechnung verbundener Unternehmen aufgrund von Ergebnisabführungsverträgen 
+837		Verlustübernahme verbundener Unternehmen aufgrund von Ergebnisabführungsverträgen 
+840	849	Steuern vom Einkommen und vom Ertrag 
+850	859	Auflösung von Kapitalrücklagen 
+860	869	Auflösung von Gewinnrücklagen 
+870	889	Zuweisung zu Gewinnrücklagen 
+890		Gewinnabfuhr bzw. Verlustüberrechnung aus Ergebnisabführungsverträgen (eigene Ergebnisse) 
+900	918	Gezeichnetes bzw. gewidmetes Kapital (Stammkapital, Grundkapital, ...) Vereinbarte/Bedungene Einlagen (bei Personengesellschaften) 
+919		Nicht eingeforderte ausstehende Einlagen; genehmigte und berechtigte Entnahmen von Gesellschaftern (bei Personengesellschaften) 
+920		Eigene Anteile 
+930	939	Kapitalrücklagen 
+940	949	Gewinnrücklagen 
+950	951	Rücklagen für Anteile an Mutterunternehmen und für eigene Anteile 
+960	969	Privat- und Verrechnungskonten (bei Einzelunternehmen und Personengesellschaften) 
+970	979	Einlagen und Verrechnungskonten unechter stiller Gesellschafter 
+980		Eröffnungsbilanz 
+988		Gewinn- und Verlustvortrag 
+989		Jahresergebnis laut Gewinn- und Verlustrechnung 
+990	999	Evidenzkonten 

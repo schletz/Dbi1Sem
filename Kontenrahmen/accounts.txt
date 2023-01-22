@@ -1,0 +1,159 @@
+CLASS	SUBCLASS	SUBSUBCLASS	NUMBER	NAME	COMMENT
+0	01	012	0120	Datenverarbeitungsprogramme 
+0	01	018	0180	Geleistete Anzahlungen für immaterielle Vermögensgegenstände 
+0	02	020	0200	Unbebaute Grundstücke 
+0	02	021	0210	Bebaute Grundstücke	Grundwert 
+0	03	030	0300	Gebäude 
+0	04	040	0400	Maschinen 
+0	05	050	0500	Werkzeuge 
+0	06	060	0600	Betriebs- und Geschäftsausstattung 
+0	06	062	0620	Büromaschinen, EDV-Anlagen 
+0	06	063	0630	Pkw und Kombis 
+0	06	064	0640	Lkw 
+0	08	080	0800	Beteiligungen 
+1	10	100	1000	Bezugsverrechnung 
+1	11	110	1100	Rohstoffvorrat 
+1	12	125	1250	Vorrat Ersatzteile 
+1	13	130	1300	Hilfsstoffvorrat 
+1	13	134	1340	Vorrat Verpackungsmaterial 
+1	13	135	1350	Vorrat Betriebsstoffe 
+1	13	136	1360	Vorrat Heizöl 
+1	13	136	1365	Vorrat Schmiermittel 
+1	13	137	1370	Vorrat Reinigungsmaterial 
+1	13	139	1390	Vorrat Büromaterial 
+1	14	140	1400	Unfertige Erzeugnisse 
+1	15	150	1500	Fertige Erzeugnisse 
+1	16	160	1600	Handelswarenvorrat 
+2	20	200	2000	Lieferforderungen	Forderungen aus Lieferungen und Leistungen Inland, Kundensammelkonto 
+2	23	230	2300	Sonstige Forderungen 
+2	23	232	2320	Gegebene Darlehen 
+2	23	238	2380	Guthaben bei Lieferanten	nicht aus Anzahlungen 
+2	24	240	2400	Lohn- und Gehaltsvorschüsse 
+2	25	250	2500	Vorsteuer 
+2	27	270	2700	Kassa 
+2	28	280	2800	Bank	Guthaben bei Kreditinstituten 
+2	28	281	2810	PSK 
+2	28	287	2870	Barverkehr mit Banken 
+2	28	288	2880	Forderungen Kreditkartenunternehmen 
+2	28	288	2885	Forderungen Bankomatkarten 
+3	31	312	3120	Bank	Bankschuld, Verbindlichkeiten gegenüber Kreditinstituten 
+3	31	315	3150	Darlehen	von einer Bank 
+3	31	318	3180	Verbindlichkeiten Kreditkartenunternehmen 
+3	31	319	3190	Verbindlichkeiten Bankomatkarten 
+3	33	330	3300	Lieferverbindlichkeiten	Verbindlichkeiten aus Lieferungen und Leistungen Inland, Lieferantensammelkonto 
+3	35	350	3500	Umsatzsteuer 
+3	35	352	3520	USt-Zahllast 
+3	35	354	3540	Verbindlichkeiten Finanzamt	Verrechnungskonto Finanzamt 
+3	36	360	3600	Verbindlichkeiten Krankenkasse 
+3	36	361	3610	Verbindlichkeiten Gemeinde	Stadtkasse 
+3	38	380	3800	Sonstige Verbindlichkeiten 
+3	38	385	3850	Verbindlichkeiten gegen Mitarbeiter aus der Bezugsverrechnung 
+4	40	400	4000	Handelswarenerlöse20%	Fertigerzeugniserlöse oder andere Erlöse oder Erträge aus der Hauptleistung des Unternehmens 
+4	40	400	4001	Handelswarenerlöse 10 % 
+4	40	400	4002	Handelswarenerlöse 13 % 
+4	41	410	4100	Fertigerzeugniserlöse 
+4	44	440	4400	Erlösberichtigungen 
+4	44	441	4410	Kundenskonti 
+4	45	450	4500	Bestandsveränderungen 
+4	48	481	4810	Mieterträge	Pachterträge
+4	48	482	4820	Provisionserträge* 
+4	48	488	4880	Übrige betriebliche Erträge 
+4	48	489	4890	Mahnspesenvergütungen 
+4	49	490	4900	Eigenverbrauch 20 % 
+4	49	490	4901	Eigenverbrauch 10 % 
+4	49	490	4902	Eigenverbrauch 13% 
+4	49	490	4903	Eigenverbrauch 0 % 
+5	50	500	5000	Handelswareneinsatz 20 % 
+5	50	500	5001	Handelswareneinsatz 10 % 
+5	50	500	5002	Handelswareneinsatz 13 % 
+5	51	510	5100	Rohstoffverbrauch	-einsatz 
+5	53	530	5300	Hilfsstoffverbrauch 
+5	53	534	5340	Verpackungsmaterialverbrauch 
+5	54	540	5400	Betriebsstoffverbrauch 
+5	54	541	5410	Schmiermittelverbrauch 
+5	54	542	5420	Reparaturmaterialverbrauch 
+5	54	545	5450	Reinigungsmaterialverbrauch 
+5	55	550	5500	Verbrauch von Werkzeugen, Erzeugungshilfsmitteln 
+5	55	551	5510	Ersatzteileverbrauch 
+5	56	560	5600	Bezugskosten 
+5	58	588	5880	Lieferantenskonti auf Wareneinkauf	Materialaufwand 
+5	58	589	5890	Umsatzbonus auf Wareneinkauf 
+6	60	600	6000	Fertigungslöhne 
+6	60	601	6010	Hilfslöhne 
+6	61	610	6100	Lehrlingsentschädigungen Arbeiter 
+6	62	620	6200	Gehälter 
+6	63	630	6300	Lehrlingsentschädigungen Angestellte 
+6	65	650	6500	Gesetzlicher Sozialaufwand Arbeiter 
+6	65	656	6560	Gesetzlicher Sozialaufwand Angestellte 
+6	66	660	6600	Dienstgeberbeitrag Arbeiter 
+6	66	661	6610	Zuschlag zum DB Arbeiter 
+6	66	662	6620	Kommunalsteuer Arbeiter 
+6	66	663	6630	Wiener Dienstgeberabgabe Arbeiter 
+6	66	666	6660	Dienstgeberbeitrag Angestellte 
+6	66	667	6670	Zuschlag zum DB Angestellte 
+6	66	668	6680	Kommunalsteuer Angestellte 
+6	66	669	6690	Wiener Dienstgeberabgabe Angestellte 
+6	67	670	6700	Freiwilliger Sozialaufwand 
+7	71	710	7100	Grundsteuer 
+7	71	715	7150	Tourismusabgabe	Interessentenbeitrag 
+7	71	718	7180	Gebühren 
+7	71	719	7190	Sonstige Abgaben 
+7	72	720	7200	Instandhaltung durch Dritte 
+7	72	721	7210	Reinigung durch Dritte 
+7	72	722	7220	Entsorgungsaufwand 
+7	72	724	7240	Heizölverbrauch 
+7	72	725	7250	Treibstoffverbrauch 
+7	72	726	7260	Gasverbrauch 
+7	72	727	7270	Stromverbrauch 
+7	72	728	7280	Heizmaterialverbrauch	feste Brennstoffe 
+7	73	730	7300	Ausgangsfrachten	Transporte durch Dritte 
+7	73	731	7310	Paketgebühren 20 % 
+7	73	731	7311	Paketgebühren 0 % 
+7	73	732	7320	Pkw- und Kombi-Betriebsaufwand 
+7	73	732	7321	Motorbezogene Versicherungssteuer Pkw und Kombis 
+7	73	732	7325	Versicherungsaufwand Pkw und Kombis 
+7	73	732	7326	Parkgebühren, Straßenmaut Pkw und Kombis 
+7	73	733	7330	Lkw-Betriebsaufwand 
+7	73	733	7331	Motorbezogene Versicherungssteuer Lkw 
+7	73	733	7332	Kraftfahrzeugsteuer Lkw 
+7	73	733	7335	Versicherungsaufwand Lkw 
+7	73	733	7336	Parkgebühren, Straßenmaut Lkw 
+7	73	738	7380	Telefongebühren	Telefaxgebühren 
+7	73	738	7381	Internetgebühren 
+7	73	738	7385	Portogebühren 
+7	74	740	7400	Mietaufwand	Pachtaufwand 
+7	75	754	7540	Provisionen an Dritte	Nicht-Arbeitnehmer 
+7	76	760	7600	Büromaterial	Büroaufwand, Bürobedarf 
+7	76	761	7610	Kopien und sonstige Druckkosten 
+7	76	763	7630	Fachliteratur und Zeitungen 
+7	76	765	7650	Werbeaufwand 
+7	76	768	7680	Spenden und Trinkgelder 
+7	77	770	7700	Versicherungsaufwand 
+7	77	774	7740	Versicherungsbeiträge an die Sozialversicherungsanstalt der gewerblichen Wirtschaft 
+7	77	775	7750	Rechts- und Beratungsaufwand 
+7	77	778	7780	Kammerumlage 
+7	77	779	7790	Spesen des Geldverkehrs 
+7	77	779	7791	Sonstige Bankspesen 
+7	77	779	7792	Provisionen, Gebühren Kredit- und Bankomatkarten 
+7	78	781	7811	Konventionalstrafen 
+7	78	781	7819	Sonstige Schadensfälle 
+7	78	785	7850	Übrige betriebliche Aufwendungen 
+7	78	789	7890	Lieferantenskonti auf sonstige betriebliche Aufwendungen 
+8	80	805	8050	Zinsenerträge aus Bankguthaben 
+8	80	805	8051	Zinsenerträge aus gewährten Darlehen 
+8	80	805	8055	Verzugszinsenerträge 
+8	80	805	8056	Sonstige Zinsenerträge 20% 
+8	80	805	8057	Sonstige Zinsenerträge 10% 
+8	83	831	8310	Zinsenaufwand für Bankkredite 
+8	83	831	8311	Sonstiger Aufwand für Bankkredite	Bereitstellungsprovision, Überziehungsprovision 
+8	83	831	8315	Zinsenaufwand für Darlehen 
+8	83	832	8320	Verzugszinsenaufwand 
+8	83	832	8321	Mahnspesen 
+8	83	832	8325	Zinsenaufwand für Lieferantenkredite 20% 
+8	83	832	8326	Zinsenaufwand für Lieferantenkredite 10% 
+9	90	900	9000	Kapital 
+9	96	960	9600	Privat 
+9	96	961	9610	Privatsteuern 
+9	98	980	9800	Eröffnungsbilanzkonto	EBK 
+9	98	985	9850	Schlussbilanzkonto	SBK 
+9	98	989	9890	Gewinn- und Verlustkonto	GuV 

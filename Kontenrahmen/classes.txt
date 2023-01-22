@@ -1,0 +1,11 @@
+ID	NAME
+0	Anlagevermögen
+1	Vorräte
+2	Sonstiges Umlaufvermögen, aktive Rechnungsabgrenzungsposten, aktive latente Steuern
+3	Rückstellungen, Verbindlichkeiten, passive Rechnungsabgrenzungsposten
+4	Betriebliche Erträge
+5	Materialaufwand und sonstige bezogene Herstellungsleistungen
+6	Personalaufwand
+7	Abschreibungen und sonstige betriebliche Aufwendungen
+8	Finanzerträge und Finanzaufwendungen, Steuern vom Einkommen und vom Ertrag, Rücklagenbewegung
+9	Eigenkapital, Einlagen unechter stiller Gesellschafter, Abschluss- und Evidenzkonten
